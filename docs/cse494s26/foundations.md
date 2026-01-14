@@ -128,8 +128,7 @@ Practice — classic greedy:
 - [Splitting the Field](https://usaco.org/index.php?page=viewproblem2&cpid=645)
 
 Practice — custom sorting:
-- [Prehistoric Programs](https://icpcarchive.github.io/World%20Finals/ICPC%20World%20Finals/2021%20ICPC%20World%20Finals/problems.pdf) (problem H) [submit link](https://www.acmicpc.net/problem/26137) *
-- [Boxes](https://codeforces.com/blog/entry/63533#:~:text=1,5)
+- [Prehistoric Programs](https://codeforces.com/gym/104288/problem/H) *
 
 ## 6. Binary Search Beyond Arrays
 

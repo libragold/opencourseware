@@ -3,7 +3,7 @@ title: "CSE 494"
 slug: /
 ---
 
-# CSE 494: Competitive Programming and Algorithms
+# CSE 494: Competitive Programming and Problem Solving
 
 Welcome to CSE 494! This course focuses on competitive programming and advanced algorithmic problem-solving techniques.
 
