@@ -17,7 +17,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/courses/cse494s26">
+            to="/cse494">
             Browse Courses →
           </Link>
         </div>
@@ -59,7 +59,7 @@ export default function Home() {
               <CourseCard
                 title="CSE 494 - Competitive Programming"
                 description="Spring 2026 course covering algorithms, data structures, and problem-solving techniques for competitive programming."
-                link="/courses/cse494s26"
+                link="/cse494"
               />
             </div>
           </div>

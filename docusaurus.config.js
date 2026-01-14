@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer').themes.github;
-const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -20,19 +20,6 @@ const config = {
   projectName: 'opencourseware',
 
   onBrokenLinks: 'throw',
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'warn',
-    },
-  },
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is in Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
 
   presets: [
     [
@@ -42,7 +29,7 @@ const config = {
         docs: false, // Disable default docs, we use plugins for each course
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       }),
     ],
@@ -77,23 +64,9 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Courses',
-            items: [
-              {
-                label: 'CSE 494 - Competitive Programming',
-                to: '/courses/cse494s26',
-              },
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()} Open Courseware. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
         additionalLanguages: ['cpp', 'java', 'python'],
       },
     }),
@@ -104,21 +77,15 @@ const config = {
       {
         id: 'cse494s26',
         path: 'docs/cse494s26',
-        routeBasePath: 'courses/cse494s26',
-        sidebarPath: require.resolve('./sidebars-cse494s26.js'),
-        versions: {
-          current: {
-            label: 'Spring 2026',
-            path: 'current',
-          },
-        },
-        // Enable versioning dropdown
-        includeCurrentVersion: true,
-        remarkPlugins: [require('remark-math')],
-        rehypePlugins: [require('rehype-katex')],
+        routeBasePath: 'cse494',
+        sidebarPath: './sidebars-cse494s26.js',
+        sidebarCollapsible: true,
+        sidebarCollapsed: false,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
   ],
 };
 
-module.exports = config;
+export default config;
