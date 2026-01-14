@@ -13,11 +13,17 @@ Office: Wexler A839
 ## Meeting Information
 
 **Location:** BYAC 110  
-**Time:** 10:30AM–11:45AM
+**Time:** Mondays and Wednesdays, 10:30AM–11:45AM
+**Exceptions:** All class activities (lectures, office hours, weekly competition and so on) between March 18 and March 23 are canceled due to ICPC NAC 2026.
+
+## Office Hours
+
+**Time:** Mondays 12PM–1PM, and Thursdays 2PM–3PM
+**Zoom link:** [https://asu.zoom.us/j/88169981598](https://asu.zoom.us/j/88169981598) (ASU credentials required)
 
 ## Onboarding
 
-Please complete the onboarding form: [https://forms.gle/zw4JAcuLqAEKofV37](https://forms.gle/zw4JAcuLqAEKofV37)
+Please complete the onboarding form: [https://forms.gle/zw4JAcuLqAEKofV37](https://forms.gle/zw4JAcuLqAEKofV37) (No longer accepting responses)
 
 ## Discord Server
 
