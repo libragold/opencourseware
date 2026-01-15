@@ -101,7 +101,7 @@ Use a multiset when:
 - You need to repeatedly choose the best valid option
 
 Practice:
-- [Concert Tickets](https://cses.fi/problemset/task/1091) *
+- [Concert Tickets](https://cses.fi/problemset/task/1091)
 - [Towers](https://cses.fi/problemset/task/1073)
 
 ## 5. Greedy Algorithms and Sorting
@@ -121,14 +121,12 @@ Sorting is often the first step in greedy solutions.
 
 Understanding *why* greedy works is more important than memorizing implementations.
 
-Practice — classic greedy:
+Practice:
 - [Kayaking](https://codeforces.com/contest/863/problem/B)
-- [Ferris Wheel](https://cses.fi/problemset/task/1090) *
+- [Ferris Wheel](https://cses.fi/problemset/task/1090)
 - [Nested Range Check](https://cses.fi/problemset/task/2168)
 - [Splitting the Field](https://usaco.org/index.php?page=viewproblem2&cpid=645)
-
-Practice — custom sorting:
-- [Prehistoric Programs](https://codeforces.com/gym/104288/problem/H) *
+- [Prehistoric Programs](https://codeforces.com/gym/104288/problem/H)
 
 ## 6. Binary Search Beyond Arrays
 
@@ -144,7 +142,7 @@ If a condition holds for some value $X$, it often holds for all larger (or small
 Binary search on the answer is a fundamental competitive programming pattern.
 
 Practice:
-- [Packmen](https://codeforces.com/contest/847/problem/E) *
+- [Packmen](https://codeforces.com/contest/847/problem/E)
 - [Trick Or Treat](https://open.kattis.com/problems/tricktreat)
 
 ## More practices
@@ -206,8 +204,8 @@ Common patterns:
 - Fast and slow pointers: different speeds for different purposes
 
 Practice:
-- [Distinct Values Subarrays](https://cses.fi/problemset/task/3420) (CSES) — classical example
-- [Haybale Feast](https://usaco.org/index.php?page=viewproblem2&cpid=767) * — standard example with competitive programming flavor
+- [Distinct Values Subarrays](https://cses.fi/problemset/task/3420) — classical example
+- [Haybale Feast](https://usaco.org/index.php?page=viewproblem2&cpid=767) — standard example with competitive programming flavor
 
 ## 10. Prefix Sums and Difference Arrays
 
@@ -215,7 +213,7 @@ Practice:
 
 Prefix sums precompute cumulative values to answer range queries quickly.
 
-**Canonical example 1:**
+Canonical example:
 Given an array $a$ and queries of the form $(l, r)$, output $a_l + a_{l+1} + \ldots + a_r$ for each query.
 
 Solution:
@@ -223,14 +221,14 @@ Solution:
 - Answer query $(l, r)$: $p[r] - p[l-1]$
 - Time: $O(n)$ preprocessing, $O(1)$ per query
 
-**Practice:**
+Practice:
 - [Static Range Sum](https://judge.yosupo.jp/problem/static_range_sum) — canonical problem
 
 ### 10.2 Difference Arrays
 
 Difference arrays efficiently apply range updates.
 
-**Canonical example 2:**
+Canonical example:
 Given an empty array and updates of the form $(l, r, x)$ meaning "add $x$ to $a_l, a_{l+1}, \ldots, a_r$", output the array after all updates.
 
 Solution:
@@ -242,9 +240,9 @@ Solution:
 Key insight:
 Range updates become point updates in the difference array.
 
-**Practice:**
-- [Maximum Subarray Sum II](https://cses.fi/problemset/task/1644) (CSES)
-- [Modern Art](https://usaco.org/index.php?page=viewproblem2&cpid=744) (USACO) — 2D difference array
+Practice:
+- [Maximum Subarray Sum II](https://cses.fi/problemset/task/1644)
+- [Modern Art](https://usaco.org/index.php?page=viewproblem2&cpid=744) — 2D difference array
 
 ### 10.3 General Pattern
 
@@ -272,5 +270,5 @@ Common applications:
 - Build dependencies
 - Task scheduling with constraints
 
-**Practice:**
-- [Milking Order](https://usaco.org/index.php?page=viewproblem2&cpid=838) (USACO)
+Practice:
+- [Milking Order](https://usaco.org/index.php?page=viewproblem2&cpid=838)
