@@ -11,13 +11,15 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-site.com',
+  url: 'https://ocw.zilin.one',
   // Set the /<baseUrl>/ path of your site
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  organizationName: 'your-org',
+  organizationName: 'libragold',
   projectName: 'opencourseware',
+
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
 
