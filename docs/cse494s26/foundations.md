@@ -144,9 +144,6 @@ Binary search on the answer is a fundamental competitive programming pattern.
 Practice:
 - [Packmen](https://codeforces.com/contest/847/problem/E)
 - [Trick Or Treat](https://open.kattis.com/problems/tricktreat)
-
-## More practices
-
 - [Meetings](https://usaco.org/index.php?page=viewproblem2&cpid=967)
 - [Fail Fast](https://www.acmicpc.net/problem/28147)
 
@@ -182,8 +179,8 @@ Common patterns:
 - Combining multiple greedy criteria
 
 Practice:
-- [Missing Coin Sum](https://cses.fi/problemset/task/2183) (CSES)
-- [Running Miles](https://codeforces.com/contest/1826/problem/D) * — demonstrates observation-driven greedy with prefix/suffix preprocessing
+- [Missing Coin Sum](https://cses.fi/problemset/task/2183)
+- [Running Miles](https://codeforces.com/contest/1826/problem/D) — demonstrates observation-driven greedy with prefix/suffix preprocessing
 
 ## 9. Two Pointers Technique
 
