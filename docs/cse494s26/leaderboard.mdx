@@ -1,0 +1,35 @@
+---
+title: "Leaderboard"
+---
+
+import codeforcesActivity from '@site/src/data/codeforces_activity.yaml';
+import LeaderboardTable from '@site/src/components/LeaderboardTable';
+
+# Leaderboard
+
+This leaderboard summarizes Codeforces activity for CSE 494, based on the data in `src/data/codeforces_activity.yaml`.
+
+## Cutoff
+
+Data cutoff: **{codeforcesActivity.cutoff_date}**
+
+## Included Competitions
+
+<ul>
+  {codeforcesActivity.competitions.map((competition) => (
+    <li key={competition.id}>
+      <a
+        href={competition.link || `https://codeforces.com/contest/${competition.id}`}
+      >
+        {competition.name}
+      </a>{' '}
+      ({competition.id})
+    </li>
+  ))}
+</ul>
+
+## Rankings
+
+Tie-breaker: total live solves, then handle (A-Z).
+
+<LeaderboardTable data={codeforcesActivity} />

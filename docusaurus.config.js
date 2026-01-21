@@ -87,6 +87,23 @@ const config = {
         rehypePlugins: [rehypeKatex],
       },
     ],
+    function yamlLoaderPlugin() {
+      return {
+        name: 'yaml-loader-plugin',
+        configureWebpack() {
+          return {
+            module: {
+              rules: [
+                {
+                  test: /\.ya?ml$/,
+                  use: 'yaml-loader',
+                },
+              ],
+            },
+          };
+        },
+      };
+    },
   ],
 };
 

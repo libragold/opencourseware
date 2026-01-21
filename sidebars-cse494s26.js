@@ -33,8 +33,8 @@ let sidebarItems = [];
 
 if (fs.existsSync(currentDir)) {
   const files = fs.readdirSync(currentDir)
-    .filter(file => file.endsWith('.md'))
-    .map(file => file.replace('.md', ''));
+    .filter(file => file.endsWith('.md') || file.endsWith('.mdx'))
+    .map(file => file.replace(/\.mdx?$/, ''));
   
   // Sort files: preferred order first, then any others alphabetically
   const ordered = [];
