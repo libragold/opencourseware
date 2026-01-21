@@ -7,26 +7,21 @@ import LeaderboardTable from '@site/src/components/LeaderboardTable';
 
 # Leaderboard
 
-This leaderboard summarizes Codeforces activity for CSE 494, based on the data in `src/data/codeforces_activity.yaml`.
-
-## Cutoff
-
 Data cutoff: **{codeforcesActivity.cutoff_date}**
 
 ## Included Competitions
 
-<ul>
+<ol>
   {codeforcesActivity.competitions.map((competition) => (
     <li key={competition.id}>
       <a
         href={competition.link || `https://codeforces.com/contest/${competition.id}`}
       >
         {competition.name}
-      </a>{' '}
-      ({competition.id})
+      </a>
     </li>
   ))}
-</ul>
+</ol>
 
 ## Rankings
 
