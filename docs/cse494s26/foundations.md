@@ -221,6 +221,7 @@ Solution:
 
 Practice:
 - [Static Range Sum](https://judge.yosupo.jp/problem/static_range_sum) — canonical problem
+- [Maximum Subarray Sum II](https://cses.fi/problemset/task/1644)
 
 ### 10.2 Difference Arrays
 
@@ -239,7 +240,6 @@ Key insight:
 Range updates become point updates in the difference array.
 
 Practice:
-- [Maximum Subarray Sum II](https://cses.fi/problemset/task/1644)
 - [Modern Art](https://usaco.org/index.php?page=viewproblem2&cpid=744) — 2D difference array
 
 ### 10.3 General Pattern
@@ -248,25 +248,3 @@ Both techniques rely on the same principle:
 - Transform the problem to work with differences or cumulative sums
 - Apply updates/queries in the transformed space
 - Convert back to the original representation when needed
-
-## 11. Topological Sort
-
-Topological sort orders the vertices of a directed acyclic graph (DAG) such that for every edge $(u \to v)$, $u$ appears before $v$ in the ordering.
-
-When to use:
-- Problems involving dependencies or prerequisites
-- Scheduling tasks with ordering constraints
-- Any problem that can be modeled as a DAG
-
-Key properties:
-- Only possible for DAGs (no cycles)
-- Multiple valid orderings may exist
-- Can be computed using DFS or Kahn's algorithm (BFS-based)
-
-Common applications:
-- Course prerequisites
-- Build dependencies
-- Task scheduling with constraints
-
-Practice:
-- [Milking Order](https://usaco.org/index.php?page=viewproblem2&cpid=838)
