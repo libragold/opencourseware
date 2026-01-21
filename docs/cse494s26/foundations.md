@@ -203,7 +203,8 @@ Common patterns:
 Practice:
 - [Distinct Values Subarrays](https://cses.fi/problemset/task/3420) — classical example
 - [Haybale Feast](https://usaco.org/index.php?page=viewproblem2&cpid=767) — standard example with competitive programming flavor
-
+- [Representatives](https://www.spoj.com/problems/KOIREP/)
+- [Kth Largest Subarray Sum](https://www.spoj.com/problems/ABA12E/)
 ## 10. Prefix Sums and Difference Arrays
 
 ### 10.1 Prefix Sums
