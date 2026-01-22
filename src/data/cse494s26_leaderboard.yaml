@@ -1,4 +1,4 @@
-cutoff_date: "2026-01-20 23:44:48 MST"
+cutoff_date: "2026-01-21 21:26:18 MST"
 competitions:
   - id: 664839
     name: "Week 1 - Foundations"
@@ -12,14 +12,14 @@ competitions:
     end: "2026-01-17 10:35:00 MST"
 records_by_handle:
   pain_peko:
-    total_credits: 9
+    total_credits: 8
     total_live_credits: 4
-    total_upsolve_credits: 5
+    total_upsolve_credits: 4
     competitions:
       - competition_id: 664839
-        total_credits: 9
+        total_credits: 8
         live_credits: 4
-        upsolve_credits: 5
+        upsolve_credits: 4
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -55,12 +55,6 @@ records_by_handle:
             title: "Spring Cleaning"
             link: "https://codeforces.com/contest/664839/problem/E"
             submitted_at: "2026-01-17 15:40:17 MST"
-            solve_type: "upsolve"
-            credits: 1
-          - id: "E"
-            title: "Spring Cleaning"
-            link: "https://codeforces.com/contest/664839/problem/E"
-            submitted_at: "2026-01-17 15:42:44 MST"
             solve_type: "upsolve"
             credits: 1
   hackolympus:
@@ -114,14 +108,14 @@ records_by_handle:
             solve_type: "upsolve"
             credits: 1
   ordinary_:
-    total_credits: 5
+    total_credits: 6
     total_live_credits: 2
-    total_upsolve_credits: 3
+    total_upsolve_credits: 4
     competitions:
       - competition_id: 664839
-        total_credits: 5
+        total_credits: 6
         live_credits: 2
-        upsolve_credits: 3
+        upsolve_credits: 4
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -145,6 +139,12 @@ records_by_handle:
             title: "Karen and Coffee"
             link: "https://codeforces.com/contest/664839/problem/D"
             submitted_at: "2026-01-18 13:02:54 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "E"
+            title: "Spring Cleaning"
+            link: "https://codeforces.com/contest/664839/problem/E"
+            submitted_at: "2026-01-21 11:46:56 MST"
             solve_type: "upsolve"
             credits: 1
   Z1nk0s:
@@ -219,6 +219,12 @@ records_by_handle:
             link: "https://codeforces.com/contest/2191/problem/A"
             submitted_at: "2026-01-17 08:52:06 MST"
             solve_type: "live"
+            credits: 0
+          - id: "B"
+            title: "MEX Reordering"
+            link: "https://codeforces.com/contest/2191/problem/B"
+            submitted_at: "2026-01-21 13:45:16 MST"
+            solve_type: "upsolve"
             credits: 0
   aglty:
     total_credits: 3
@@ -749,5 +755,37 @@ records_by_handle:
             title: "Honest Coach"
             link: "https://codeforces.com/contest/664839/problem/A"
             submitted_at: "2026-01-18 02:00:08 MST"
+            solve_type: "upsolve"
+            credits: 1
+  MangoKing:
+    total_credits: 1
+    total_live_credits: 0
+    total_upsolve_credits: 1
+    competitions:
+      - competition_id: 664839
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-21 14:17:14 MST"
+            solve_type: "upsolve"
+            credits: 1
+  anubhav43:
+    total_credits: 1
+    total_live_credits: 0
+    total_upsolve_credits: 1
+    competitions:
+      - competition_id: 664839
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-21 20:52:15 MST"
             solve_type: "upsolve"
             credits: 1

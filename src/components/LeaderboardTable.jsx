@@ -8,8 +8,11 @@ import TableRow from '@mui/material/TableRow';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import Box from '@mui/material/Box';
+import Tooltip from '@mui/material/Tooltip';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import StarIcon from '@mui/icons-material/Star';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 const SOLVE_LABELS = {
   live: 'solved live at',
@@ -18,6 +21,21 @@ const SOLVE_LABELS = {
 
 function getSolveLabel(solveType) {
   return SOLVE_LABELS[solveType] || 'solved at';
+}
+
+function getSolveIcon(problem) {
+  if (problem?.credits === 2) {
+    return <StarIcon sx={{ fontSize: '1rem', color: '#f2b01e', verticalAlign: 'text-bottom' }} />;
+  }
+  if (problem?.credits === 1) {
+    return <StarIcon sx={{ fontSize: '1rem', color: '#b0b7c3', verticalAlign: 'text-bottom' }} />;
+  }
+  if (problem?.credits === 0) {
+    return (
+      <InfoOutlinedIcon sx={{ fontSize: '1rem', color: '#6b7280', verticalAlign: 'text-bottom' }} />
+    );
+  }
+  return null;
 }
 
 function countLiveSolves(problems) {
@@ -109,14 +127,34 @@ function Row({ row, index, competitions, competitionMeta }) {
                         {competitionName}
                       </a>
                       <ul>
-                        {problems.map((problem, problemIndex) => (
-                          <li key={`${row.handle}-${competitionId}-${problem.id}-${problemIndex}`}>
-                            <a href={problem.link}>
-                              {problem.id}. {problem.title}
-                            </a>{' '}
-                            — {getSolveLabel(problem.solve_type)} {problem.submitted_at}
-                          </li>
-                        ))}
+                        {problems.map((problem, problemIndex) => {
+                          const solveIcon = getSolveIcon(problem);
+                          const solveLabel = `${getSolveLabel(problem.solve_type)} ${problem.submitted_at}`;
+                          return (
+                            <li key={`${row.handle}-${competitionId}-${problem.id}-${problemIndex}`}>
+                              <a href={problem.link}>
+                                {problem.id}. {problem.title}
+                              </a>
+                              {solveIcon ? (
+                                <Tooltip title={solveLabel}>
+                                  <span
+                                    style={{
+                                      display: 'inline-flex',
+                                      alignItems: 'center',
+                                      marginLeft: '0.25rem',
+                                      verticalAlign: 'text-bottom',
+                                      lineHeight: 1,
+                                    }}
+                                  >
+                                    {solveIcon}
+                                  </span>
+                                </Tooltip>
+                              ) : (
+                                solveLabel
+                              )}
+                            </li>
+                          );
+                        })}
                       </ul>
                     </li>
                   );
