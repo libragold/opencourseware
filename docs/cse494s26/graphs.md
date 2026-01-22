@@ -48,11 +48,10 @@ Depth-First Search explores “as deep as possible” before backtracking.
 ### Complexity
 - `O(n + m)` time, `O(n)` memory 
 
-Standard Examples:
+#### Standard Examples:
 - [Counting Rooms (CSES)](https://cses.fi/problemset/task/1192)
 - [Building Roads (CSES)](https://cses.fi/problemset/task/1666)
-Problems:
--
+
 ---
 
 ## 2. BFS
@@ -73,17 +72,20 @@ Breadth-First Search explores in increasing distance from a start node (by “le
 ### Complexity
 - `O(n + m)` time, `O(n)` memory
 
-Standard Examples:
+#### Standard Examples:
 - [Message Route (CSES)](https://cses.fi/problemset/task/1667)
-Problems:
--
+
 ---
 
-More Graph Search Problems:
-Standard Examples:
+### Graph Search Problems:
+
+#### Standard Examples:
 - [Building Teams (CSES)](https://cses.fi/problemset/task/1668)
-Problems:
--
+#### Problems:
+- [Subarray Sum Constraints (CSES)](https://cses.fi/problemset/task/3294)
+- [Palindromic Paths (CF)](https://codeforces.com/group/KIrM1Owd8u/contest/632003/problem/E)
+- [Third Avenue (AC)](https://atcoder.jp/contests/abc184/tasks/abc184_e)
+- [Olya and Energy Drinks (CF)](https://codeforces.com/contest/877/problem/D)
 ---
 ## 3. Shortest Paths
 
@@ -110,9 +112,10 @@ Standard Examples:
 - [Shortest Routes I (CSES)](https://cses.fi/problemset/task/1671) (Check Your Dijkstra implementation)
 - [Shortest Routes II (CSES)](https://cses.fi/problemset/task/1672) (Check Your Floyd-Warshall implementation)
 - [Shortest Routes III (CSES)](https://cses.fi/problemset/task/1673) (Check Your Bellman-Ford implementation)
+
 Problems:
 - [Flight Discount (CSES)](https://cses.fi/problemset/task/1195)
-
+- [Fine Dining (USACO)](https://usaco.org/index.php?cpid=861&page=viewproblem2)
 ---
 
 ## 4. Topological Sort
