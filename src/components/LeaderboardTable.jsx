@@ -112,7 +112,7 @@ function Row({ row, index, competitions, competitionMeta }) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={competitions.length + 4}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 2 }}>
-              <ol>
+              <ul>
                 {row.competitionsForHandle.map((competition) => {
                   const competitionId = String(competition.competition_id);
                   const meta = competitionMeta.get(competitionId) || {};
@@ -159,7 +159,7 @@ function Row({ row, index, competitions, competitionMeta }) {
                     </li>
                   );
                 })}
-              </ol>
+              </ul>
               <p>
                 <strong>
                   Total points: {row.record.total_credits ?? 0}
@@ -182,9 +182,16 @@ export default function LeaderboardTable({ data }) {
 
   return (
     <TableContainer>
-      <Table aria-label="collapsible table">
+      <Table
+        aria-label="collapsible table"
+        sx={{
+          '& .MuiTableCell-root': {
+            padding: '4px 8px',
+          },
+        }}
+      >
         <TableHead>
-          <TableRow>
+          <TableRow sx={{ '& th': { fontWeight: 700 } }}>
             <TableCell />
             <TableCell align="right">#</TableCell>
             <TableCell>Handle</TableCell>
