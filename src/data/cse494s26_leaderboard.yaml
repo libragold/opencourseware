@@ -1,4 +1,4 @@
-cutoff_date: "2026-01-21 21:26:18 MST"
+cutoff_date: "2026-01-26 08:55:51 MST"
 competitions:
   - id: 664839
     name: "Week 1 - Foundations"
@@ -10,11 +10,21 @@ competitions:
     link: "https://codeforces.com/contest/2191"
     start: "2026-01-17 07:35:00 MST"
     end: "2026-01-17 10:35:00 MST"
+  - id: 2189
+    name: "Codeforces Round 1075 (Div. 2)"
+    link: "https://codeforces.com/contest/2189"
+    start: "2026-01-23 07:35:00 MST"
+    end: "2026-01-23 09:35:00 MST"
+  - id: 665693
+    name: "Week 2 - Foundations (cont)"
+    link: "https://codeforces.com/group/AnBhEByjKm/contest/665693"
+    start: "2026-01-23 13:15:00 MST"
+    end: "2026-01-23 15:15:00 MST"
 records_by_handle:
   pain_peko:
-    total_credits: 8
+    total_credits: 10
     total_live_credits: 4
-    total_upsolve_credits: 4
+    total_upsolve_credits: 6
     competitions:
       - competition_id: 664839
         total_credits: 8
@@ -57,15 +67,32 @@ records_by_handle:
             submitted_at: "2026-01-17 15:40:17 MST"
             solve_type: "upsolve"
             credits: 1
+      - competition_id: 665693
+        total_credits: 2
+        live_credits: 0
+        upsolve_credits: 2
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 15:21:36 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Counting Test"
+            link: "https://codeforces.com/contest/665693/problem/B"
+            submitted_at: "2026-01-24 00:50:14 MST"
+            solve_type: "upsolve"
+            credits: 1
   hackolympus:
-    total_credits: 6
-    total_live_credits: 6
-    total_upsolve_credits: 0
+    total_credits: 11
+    total_live_credits: 8
+    total_upsolve_credits: 3
     competitions:
       - competition_id: 664839
-        total_credits: 6
+        total_credits: 8
         live_credits: 6
-        upsolve_credits: 0
+        upsolve_credits: 2
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -85,15 +112,44 @@ records_by_handle:
             submitted_at: "2026-01-16 14:30:07 MST"
             solve_type: "live"
             credits: 2
-  Souradeep1101:
-    total_credits: 3
-    total_live_credits: 2
-    total_upsolve_credits: 1
-    competitions:
-      - competition_id: 664839
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-21 23:00:24 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "E"
+            title: "Spring Cleaning"
+            link: "https://codeforces.com/contest/664839/problem/E"
+            submitted_at: "2026-01-22 22:18:38 MST"
+            solve_type: "upsolve"
+            credits: 1
+      - competition_id: 665693
         total_credits: 3
         live_credits: 2
         upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 13:20:45 MST"
+            solve_type: "live"
+            credits: 2
+          - id: "B"
+            title: "Counting Test"
+            link: "https://codeforces.com/contest/665693/problem/B"
+            submitted_at: "2026-01-23 15:16:25 MST"
+            solve_type: "upsolve"
+            credits: 1
+  Souradeep1101:
+    total_credits: 8
+    total_live_credits: 4
+    total_upsolve_credits: 4
+    competitions:
+      - competition_id: 664839
+        total_credits: 4
+        live_credits: 2
+        upsolve_credits: 2
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -107,10 +163,39 @@ records_by_handle:
             submitted_at: "2026-01-16 15:58:51 MST"
             solve_type: "upsolve"
             credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-22 14:41:55 MST"
+            solve_type: "upsolve"
+            credits: 1
+      - competition_id: 665693
+        total_credits: 4
+        live_credits: 2
+        upsolve_credits: 2
+        problems:
+          - id: "B"
+            title: "Counting Test"
+            link: "https://codeforces.com/contest/665693/problem/B"
+            submitted_at: "2026-01-23 14:32:40 MST"
+            solve_type: "live"
+            credits: 2
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 20:38:52 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "D"
+            title: "Stripe 2"
+            link: "https://codeforces.com/contest/665693/problem/D"
+            submitted_at: "2026-01-23 21:09:08 MST"
+            solve_type: "upsolve"
+            credits: 1
   ordinary_:
-    total_credits: 6
+    total_credits: 7
     total_live_credits: 2
-    total_upsolve_credits: 4
+    total_upsolve_credits: 5
     competitions:
       - competition_id: 664839
         total_credits: 6
@@ -147,9 +232,20 @@ records_by_handle:
             submitted_at: "2026-01-21 11:46:56 MST"
             solve_type: "upsolve"
             credits: 1
+      - competition_id: 665693
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-25 11:38:21 MST"
+            solve_type: "upsolve"
+            credits: 1
   Z1nk0s:
-    total_credits: 5
-    total_live_credits: 4
+    total_credits: 7
+    total_live_credits: 6
     total_upsolve_credits: 1
     competitions:
       - competition_id: 664839
@@ -175,6 +271,17 @@ records_by_handle:
             submitted_at: "2026-01-17 11:06:23 MST"
             solve_type: "upsolve"
             credits: 1
+      - competition_id: 665693
+        total_credits: 2
+        live_credits: 2
+        upsolve_credits: 0
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 15:03:43 MST"
+            solve_type: "live"
+            credits: 2
   matthew6:
     total_credits: 5
     total_live_credits: 2
@@ -226,15 +333,21 @@ records_by_handle:
             submitted_at: "2026-01-21 13:45:16 MST"
             solve_type: "upsolve"
             credits: 0
+          - id: "C"
+            title: "Sorting Game"
+            link: "https://codeforces.com/contest/2191/problem/C"
+            submitted_at: "2026-01-22 20:22:49 MST"
+            solve_type: "upsolve"
+            credits: 0
   aglty:
-    total_credits: 3
+    total_credits: 5
     total_live_credits: 2
-    total_upsolve_credits: 1
+    total_upsolve_credits: 3
     competitions:
       - competition_id: 664839
-        total_credits: 3
+        total_credits: 5
         live_credits: 2
-        upsolve_credits: 1
+        upsolve_credits: 3
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -248,15 +361,27 @@ records_by_handle:
             submitted_at: "2026-01-16 15:33:11 MST"
             solve_type: "upsolve"
             credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-21 22:03:26 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-22 20:24:47 MST"
+            solve_type: "upsolve"
+            credits: 1
   vihaan004:
-    total_credits: 4
+    total_credits: 6
     total_live_credits: 2
-    total_upsolve_credits: 2
+    total_upsolve_credits: 4
     competitions:
       - competition_id: 664839
-        total_credits: 4
+        total_credits: 6
         live_credits: 2
-        upsolve_credits: 2
+        upsolve_credits: 4
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -276,10 +401,22 @@ records_by_handle:
             submitted_at: "2026-01-16 22:26:22 MST"
             solve_type: "upsolve"
             credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-22 20:07:23 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "E"
+            title: "Spring Cleaning"
+            link: "https://codeforces.com/contest/664839/problem/E"
+            submitted_at: "2026-01-22 22:37:54 MST"
+            solve_type: "upsolve"
+            credits: 1
   hzhan421:
-    total_credits: 6
+    total_credits: 7
     total_live_credits: 4
-    total_upsolve_credits: 2
+    total_upsolve_credits: 3
     competitions:
       - competition_id: 664839
         total_credits: 6
@@ -310,6 +447,17 @@ records_by_handle:
             submitted_at: "2026-01-20 11:17:27 MST"
             solve_type: "upsolve"
             credits: 1
+      - competition_id: 665693
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-25 16:59:06 MST"
+            solve_type: "upsolve"
+            credits: 1
   nlepacik:
     total_credits: 2
     total_live_credits: 2
@@ -327,9 +475,9 @@ records_by_handle:
             solve_type: "live"
             credits: 2
   Ragnarokphx:
-    total_credits: 3
+    total_credits: 4
     total_live_credits: 2
-    total_upsolve_credits: 1
+    total_upsolve_credits: 2
     competitions:
       - competition_id: 664839
         total_credits: 3
@@ -348,15 +496,26 @@ records_by_handle:
             submitted_at: "2026-01-17 17:01:50 MST"
             solve_type: "upsolve"
             credits: 1
+      - competition_id: 665693
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 17:13:43 MST"
+            solve_type: "upsolve"
+            credits: 1
   thegingeraffe:
-    total_credits: 4
+    total_credits: 7
     total_live_credits: 2
-    total_upsolve_credits: 2
+    total_upsolve_credits: 5
     competitions:
       - competition_id: 664839
-        total_credits: 4
+        total_credits: 6
         live_credits: 2
-        upsolve_credits: 2
+        upsolve_credits: 4
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -376,15 +535,38 @@ records_by_handle:
             submitted_at: "2026-01-20 15:50:08 MST"
             solve_type: "upsolve"
             credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-22 12:25:38 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "E"
+            title: "Spring Cleaning"
+            link: "https://codeforces.com/contest/664839/problem/E"
+            submitted_at: "2026-01-23 10:40:15 MST"
+            solve_type: "upsolve"
+            credits: 1
+      - competition_id: 665693
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 19:17:08 MST"
+            solve_type: "upsolve"
+            credits: 1
   AustinJonesX:
-    total_credits: 5
+    total_credits: 8
     total_live_credits: 2
-    total_upsolve_credits: 3
+    total_upsolve_credits: 6
     competitions:
       - competition_id: 664839
-        total_credits: 5
+        total_credits: 8
         live_credits: 2
-        upsolve_credits: 3
+        upsolve_credits: 6
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -410,6 +592,24 @@ records_by_handle:
             submitted_at: "2026-01-20 23:29:11 MST"
             solve_type: "upsolve"
             credits: 1
+          - id: "E"
+            title: "Spring Cleaning"
+            link: "https://codeforces.com/contest/664839/problem/E"
+            submitted_at: "2026-01-22 17:49:46 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "F"
+            title: "Train Hard, Win Easy"
+            link: "https://codeforces.com/contest/664839/problem/F"
+            submitted_at: "2026-01-23 11:20:26 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "G"
+            title: "Max Median"
+            link: "https://codeforces.com/contest/664839/problem/G"
+            submitted_at: "2026-01-23 12:34:17 MST"
+            solve_type: "upsolve"
+            credits: 1
       - competition_id: 2191
         total_credits: 0
         live_credits: 0
@@ -422,9 +622,9 @@ records_by_handle:
             solve_type: "upsolve"
             credits: 0
   Cerluain:
-    total_credits: 2
+    total_credits: 4
     total_live_credits: 2
-    total_upsolve_credits: 0
+    total_upsolve_credits: 2
     competitions:
       - competition_id: 664839
         total_credits: 2
@@ -437,6 +637,23 @@ records_by_handle:
             submitted_at: "2026-01-16 14:10:27 MST"
             solve_type: "live"
             credits: 2
+      - competition_id: 665693
+        total_credits: 2
+        live_credits: 0
+        upsolve_credits: 2
+        problems:
+          - id: "B"
+            title: "Counting Test"
+            link: "https://codeforces.com/contest/665693/problem/B"
+            submitted_at: "2026-01-23 17:19:19 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-25 16:28:03 MST"
+            solve_type: "upsolve"
+            credits: 1
   Samer.ali:
     total_credits: 2
     total_live_credits: 2
@@ -482,14 +699,14 @@ records_by_handle:
             solve_type: "upsolve"
             credits: 1
   rlhon:
-    total_credits: 6
-    total_live_credits: 6
-    total_upsolve_credits: 0
+    total_credits: 11
+    total_live_credits: 8
+    total_upsolve_credits: 3
     competitions:
       - competition_id: 664839
-        total_credits: 2
+        total_credits: 5
         live_credits: 2
-        upsolve_credits: 0
+        upsolve_credits: 3
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -497,6 +714,24 @@ records_by_handle:
             submitted_at: "2026-01-16 14:20:06 MST"
             solve_type: "live"
             credits: 2
+          - id: "C"
+            title: "Powering the Hero"
+            link: "https://codeforces.com/contest/664839/problem/C"
+            submitted_at: "2026-01-22 20:14:52 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-23 09:58:57 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-23 11:35:21 MST"
+            solve_type: "upsolve"
+            credits: 1
       - competition_id: 2191
         total_credits: 4
         live_credits: 4
@@ -514,15 +749,32 @@ records_by_handle:
             submitted_at: "2026-01-17 09:50:06 MST"
             solve_type: "live"
             credits: 2
+      - competition_id: 2189
+        total_credits: 2
+        live_credits: 2
+        upsolve_credits: 0
+        problems:
+          - id: "B"
+            title: "The Curse of the Frog"
+            link: "https://codeforces.com/contest/2189/problem/B"
+            submitted_at: "2026-01-23 08:47:48 MST"
+            solve_type: "live"
+            credits: 2
+          - id: "C1"
+            title: "XOR Convenience (Easy Version)"
+            link: "https://codeforces.com/contest/2189/problem/C1"
+            submitted_at: "2026-01-23 11:23:21 MST"
+            solve_type: "upsolve"
+            credits: 0
   agarc553:
-    total_credits: 4
+    total_credits: 7
     total_live_credits: 2
-    total_upsolve_credits: 2
+    total_upsolve_credits: 5
     competitions:
       - competition_id: 664839
-        total_credits: 4
+        total_credits: 5
         live_credits: 2
-        upsolve_credits: 2
+        upsolve_credits: 3
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -542,10 +794,33 @@ records_by_handle:
             submitted_at: "2026-01-19 23:20:34 MST"
             solve_type: "upsolve"
             credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-21 21:43:29 MST"
+            solve_type: "upsolve"
+            credits: 1
+      - competition_id: 665693
+        total_credits: 2
+        live_credits: 0
+        upsolve_credits: 2
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 14:00:47 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Counting Test"
+            link: "https://codeforces.com/contest/665693/problem/B"
+            submitted_at: "2026-01-24 20:44:30 MST"
+            solve_type: "upsolve"
+            credits: 1
   kashyap.hegde:
-    total_credits: 4
+    total_credits: 5
     total_live_credits: 2
-    total_upsolve_credits: 2
+    total_upsolve_credits: 3
     competitions:
       - competition_id: 664839
         total_credits: 4
@@ -570,10 +845,21 @@ records_by_handle:
             submitted_at: "2026-01-19 16:49:45 MST"
             solve_type: "upsolve"
             credits: 1
+      - competition_id: 665693
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 17:50:47 MST"
+            solve_type: "upsolve"
+            credits: 1
   saan-v:
-    total_credits: 5
+    total_credits: 6
     total_live_credits: 2
-    total_upsolve_credits: 3
+    total_upsolve_credits: 4
     competitions:
       - competition_id: 664839
         total_credits: 5
@@ -604,9 +890,20 @@ records_by_handle:
             submitted_at: "2026-01-19 00:52:03 MST"
             solve_type: "upsolve"
             credits: 1
+      - competition_id: 665693
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 15:24:09 MST"
+            solve_type: "upsolve"
+            credits: 1
   bztillot:
-    total_credits: 11
-    total_live_credits: 4
+    total_credits: 15
+    total_live_credits: 8
     total_upsolve_credits: 7
     competitions:
       - competition_id: 664839
@@ -673,11 +970,75 @@ records_by_handle:
             submitted_at: "2026-01-17 09:24:07 MST"
             solve_type: "live"
             credits: 2
+      - competition_id: 2189
+        total_credits: 4
+        live_credits: 4
+        upsolve_credits: 0
+        problems:
+          - id: "C1"
+            title: "XOR Convenience (Easy Version)"
+            link: "https://codeforces.com/contest/2189/problem/C1"
+            submitted_at: "2026-01-23 08:14:57 MST"
+            solve_type: "live"
+            credits: 2
+          - id: "B"
+            title: "The Curse of the Frog"
+            link: "https://codeforces.com/contest/2189/problem/B"
+            submitted_at: "2026-01-23 08:54:33 MST"
+            solve_type: "live"
+            credits: 2
   parchmenter:
-    total_credits: 0
-    total_live_credits: 0
-    total_upsolve_credits: 0
+    total_credits: 13
+    total_live_credits: 4
+    total_upsolve_credits: 9
     competitions:
+      - competition_id: 664839
+        total_credits: 7
+        live_credits: 0
+        upsolve_credits: 7
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-23 06:36:38 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-23 08:29:50 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "C"
+            title: "Powering the Hero"
+            link: "https://codeforces.com/contest/664839/problem/C"
+            submitted_at: "2026-01-23 10:03:28 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-23 10:27:40 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "E"
+            title: "Spring Cleaning"
+            link: "https://codeforces.com/contest/664839/problem/E"
+            submitted_at: "2026-01-23 12:07:13 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "F"
+            title: "Train Hard, Win Easy"
+            link: "https://codeforces.com/contest/664839/problem/F"
+            submitted_at: "2026-01-23 12:10:16 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "G"
+            title: "Max Median"
+            link: "https://codeforces.com/contest/664839/problem/G"
+            submitted_at: "2026-01-23 12:50:52 MST"
+            solve_type: "upsolve"
+            credits: 1
       - competition_id: 2191
         total_credits: 0
         live_credits: 0
@@ -707,15 +1068,55 @@ records_by_handle:
             submitted_at: "2026-01-20 07:38:21 MST"
             solve_type: "upsolve"
             credits: 0
+      - competition_id: 2189
+        total_credits: 4
+        live_credits: 4
+        upsolve_credits: 0
+        problems:
+          - id: "A"
+            title: "Table with Numbers"
+            link: "https://codeforces.com/contest/2189/problem/A"
+            submitted_at: "2026-01-23 08:58:15 MST"
+            solve_type: "live"
+            credits: 0
+          - id: "B"
+            title: "The Curse of the Frog"
+            link: "https://codeforces.com/contest/2189/problem/B"
+            submitted_at: "2026-01-23 09:07:19 MST"
+            solve_type: "live"
+            credits: 2
+          - id: "C1"
+            title: "XOR Convenience (Easy Version)"
+            link: "https://codeforces.com/contest/2189/problem/C1"
+            submitted_at: "2026-01-23 09:15:11 MST"
+            solve_type: "live"
+            credits: 2
+      - competition_id: 665693
+        total_credits: 2
+        live_credits: 0
+        upsolve_credits: 2
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 13:28:26 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Counting Test"
+            link: "https://codeforces.com/contest/665693/problem/B"
+            submitted_at: "2026-01-23 14:12:55 MST"
+            solve_type: "upsolve"
+            credits: 1
   dariodaddamio:
-    total_credits: 4
+    total_credits: 7
     total_live_credits: 0
-    total_upsolve_credits: 4
+    total_upsolve_credits: 7
     competitions:
       - competition_id: 664839
-        total_credits: 4
+        total_credits: 7
         live_credits: 0
-        upsolve_credits: 4
+        upsolve_credits: 7
         problems:
           - id: "A"
             title: "Honest Coach"
@@ -741,6 +1142,24 @@ records_by_handle:
             submitted_at: "2026-01-17 14:17:07 MST"
             solve_type: "upsolve"
             credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-22 22:29:36 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "E"
+            title: "Spring Cleaning"
+            link: "https://codeforces.com/contest/664839/problem/E"
+            submitted_at: "2026-01-23 11:55:55 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "G"
+            title: "Max Median"
+            link: "https://codeforces.com/contest/664839/problem/G"
+            submitted_at: "2026-01-23 12:25:54 MST"
+            solve_type: "upsolve"
+            credits: 1
   DefyCodes:
     total_credits: 1
     total_live_credits: 0
@@ -758,19 +1177,25 @@ records_by_handle:
             solve_type: "upsolve"
             credits: 1
   MangoKing:
-    total_credits: 1
+    total_credits: 2
     total_live_credits: 0
-    total_upsolve_credits: 1
+    total_upsolve_credits: 2
     competitions:
       - competition_id: 664839
-        total_credits: 1
+        total_credits: 2
         live_credits: 0
-        upsolve_credits: 1
+        upsolve_credits: 2
         problems:
           - id: "A"
             title: "Honest Coach"
             link: "https://codeforces.com/contest/664839/problem/A"
             submitted_at: "2026-01-21 14:17:14 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-22 14:08:03 MST"
             solve_type: "upsolve"
             credits: 1
   anubhav43:
@@ -789,3 +1214,196 @@ records_by_handle:
             submitted_at: "2026-01-21 20:52:15 MST"
             solve_type: "upsolve"
             credits: 1
+  hson17:
+    total_credits: 3
+    total_live_credits: 0
+    total_upsolve_credits: 3
+    competitions:
+      - competition_id: 664839
+        total_credits: 3
+        live_credits: 0
+        upsolve_credits: 3
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-21 23:25:01 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "C"
+            title: "Powering the Hero"
+            link: "https://codeforces.com/contest/664839/problem/C"
+            submitted_at: "2026-01-23 01:21:10 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-23 12:29:12 MST"
+            solve_type: "upsolve"
+            credits: 1
+  Yellingbear:
+    total_credits: 1
+    total_live_credits: 0
+    total_upsolve_credits: 1
+    competitions:
+      - competition_id: 664839
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-22 13:36:41 MST"
+            solve_type: "upsolve"
+            credits: 1
+  ClankerBeater:
+    total_credits: 2
+    total_live_credits: 0
+    total_upsolve_credits: 2
+    competitions:
+      - competition_id: 664839
+        total_credits: 2
+        live_credits: 0
+        upsolve_credits: 2
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-22 22:04:18 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-22 22:39:08 MST"
+            solve_type: "upsolve"
+            credits: 1
+  CallMeChris:
+    total_credits: 1
+    total_live_credits: 0
+    total_upsolve_credits: 1
+    competitions:
+      - competition_id: 664839
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-22 23:29:27 MST"
+            solve_type: "upsolve"
+            credits: 1
+  grapes25361337:
+    total_credits: 3
+    total_live_credits: 0
+    total_upsolve_credits: 3
+    competitions:
+      - competition_id: 664839
+        total_credits: 3
+        live_credits: 0
+        upsolve_credits: 3
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-23 03:24:52 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-23 04:10:45 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "C"
+            title: "Powering the Hero"
+            link: "https://codeforces.com/contest/664839/problem/C"
+            submitted_at: "2026-01-23 10:07:48 MST"
+            solve_type: "upsolve"
+            credits: 1
+  Turbowired:
+    total_credits: 1
+    total_live_credits: 0
+    total_upsolve_credits: 1
+    competitions:
+      - competition_id: 664839
+        total_credits: 1
+        live_credits: 0
+        upsolve_credits: 1
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-23 09:20:42 MST"
+            solve_type: "upsolve"
+            credits: 1
+  Kradrorcan:
+    total_credits: 6
+    total_live_credits: 0
+    total_upsolve_credits: 6
+    competitions:
+      - competition_id: 664839
+        total_credits: 4
+        live_credits: 0
+        upsolve_credits: 4
+        problems:
+          - id: "A"
+            title: "Honest Coach"
+            link: "https://codeforces.com/contest/664839/problem/A"
+            submitted_at: "2026-01-23 10:01:51 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Building an Aquarium"
+            link: "https://codeforces.com/contest/664839/problem/B"
+            submitted_at: "2026-01-23 11:27:05 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "C"
+            title: "Powering the Hero"
+            link: "https://codeforces.com/contest/664839/problem/C"
+            submitted_at: "2026-01-23 11:53:46 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "D"
+            title: "Karen and Coffee"
+            link: "https://codeforces.com/contest/664839/problem/D"
+            submitted_at: "2026-01-23 12:53:50 MST"
+            solve_type: "upsolve"
+            credits: 1
+      - competition_id: 665693
+        total_credits: 2
+        live_credits: 0
+        upsolve_credits: 2
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-24 20:09:41 MST"
+            solve_type: "upsolve"
+            credits: 1
+          - id: "B"
+            title: "Counting Test"
+            link: "https://codeforces.com/contest/665693/problem/B"
+            submitted_at: "2026-01-24 21:02:11 MST"
+            solve_type: "upsolve"
+            credits: 1
+  Chaiwallah:
+    total_credits: 2
+    total_live_credits: 2
+    total_upsolve_credits: 0
+    competitions:
+      - competition_id: 665693
+        total_credits: 2
+        live_credits: 2
+        upsolve_credits: 0
+        problems:
+          - id: "A"
+            title: "Subarray Distinct Values"
+            link: "https://codeforces.com/contest/665693/problem/A"
+            submitted_at: "2026-01-23 14:08:33 MST"
+            solve_type: "live"
+            credits: 2
