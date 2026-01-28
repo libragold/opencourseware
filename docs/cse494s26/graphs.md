@@ -42,7 +42,7 @@ Depth-First Search explores “as deep as possible” before backtracking.
 ### Implementation Notes
 - **Visited array** prevents revisits.
 - **Parent tracking** can be used to reconstruct paths or build a DFS tree.
-- Care for **recursion depth** - especially in python. Simplest implementations are usually recursive however.
+- Care for **recursion depth** in python. Simplest implementations are usually recursive however.
 - In problems where just the "search" feature is required - that is both DFS and BFS would work, DFS is preferred as the implementation is quicker.
 
 ### Complexity
@@ -61,7 +61,6 @@ Breadth-First Search explores in increasing distance from a start node (by “le
 
 ### When to use
 - Shortest path in **unweighted graphs** (each edge cost = 1)
-- Finding minimum number of moves on grids
 - Multi-source shortest distances (start from many sources at once)
 - Layering
 
@@ -112,13 +111,15 @@ Standard Examples:
 - [Shortest Routes I (CSES)](https://cses.fi/problemset/task/1671) (Check Your Dijkstra implementation)
 - [Shortest Routes II (CSES)](https://cses.fi/problemset/task/1672) (Check Your Floyd-Warshall implementation)
 - [Shortest Routes III (CSES)](https://cses.fi/problemset/task/1673) (Check Your Bellman-Ford implementation)
+- [Investigation (CSES)](https://cses.fi/problemset/task/1202) - Standard Dijkstra variants
 
 Problems:
 - [Flight Discount (CSES)](https://cses.fi/problemset/task/1195)
+- [Train (AC)](https://atcoder.jp/contests/abc192/tasks/abc192_e)
 - [Fine Dining (USACO)](https://usaco.org/index.php?cpid=861&page=viewproblem2)
 ---
 
-## 4. Topological Sort
+## 4. DAGs and Topological Sort
 
 Topological sort orders vertices of a directed acyclic graph (DAG) such that for every edge `(u -> v)`, `u` appears before `v`.
 
@@ -133,14 +134,15 @@ Topological sort orders vertices of a directed acyclic graph (DAG) such that for
 - Two standard methods:
   - **Kahn’s algorithm (BFS-based):** indegree + queue
   - **DFS finish times:** reverse postorder
-
+- Many DAG problems require you to process nodes in a topologically sorted order, but maintain additional info at each step (e.g. longest path or # of paths in a DAG).
 ### Cycle detection
 - Kahn: if you can’t process all nodes, there is a cycle.
-- DFS: recursion-stack technique.
 
 Standard Examples:
 - [Course Schedule (CSES)](https://cses.fi/problemset/task/1679)
-
+Problems:
+- [Milking Order (USACO)](https://usaco.org/index.php?cpid=838&page=viewproblem2)
+- [Commuter Pass (JOI)](https://oj.uz/problem/view/JOI18_commuter_pass) solution may be found on USACO Guide.
 ---
 
 ## 5. Strongly Connected Components
@@ -184,7 +186,6 @@ DSU maintains a partition of nodes into connected components under merges.
 
 Practice:
 - [Road Construction (CSES)](https://cses.fi/problemset/task/1676)
-
 ---
 
 ## 7. Minimum Spanning Trees (MST)
