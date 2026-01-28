@@ -145,7 +145,7 @@ Complexity
 
 Example problems:
 - [Course Schedule (CSES)](https://cses.fi/problemset/task/1679)
-
+- [Commuter Pass (JOI)](https://oj.uz/problem/view/JOI18_commuter_pass) solution may be found on USACO Guide.
 ---
 
 ## 6. Strongly Connected Components
