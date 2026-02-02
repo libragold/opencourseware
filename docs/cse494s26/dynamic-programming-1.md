@@ -162,7 +162,7 @@ Base Cases:\
 ---
 
 While the formal phrasing of the dp involves two dimensions, traditionally knapsack is implemented with only one.\
-$dp[x]$ maintains the best value of a knapsack with weight $x$ as we process the items. Updates with the $i$-th element happens as follows for all $j$:
+$dp[x]$ maintains the best value of a knapsack with weight $x$ as we process the items. Updates with the $i$-th element happens as follows for all $j$ in **reverse order**:
 $$
 dp[j] = max(dp[j - w[i]] + v[i], dp[j]) \text{ if } j >= w[i]
 $$
@@ -261,6 +261,7 @@ $|tails|$
 - [Leaping Tak (AC)](https://atcoder.jp/contests/abc179/tasks/abc179_d)
 - [Jump Game (LC)](https://leetcode.com/problems/jump-game-vi/description/)
 - [Antimatter (CF)](https://codeforces.com/problemset/problem/383/D)
+
 A good source of DP problems to begin with can be found on [USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp).\
 They also link to this beginner friendly [contest](https://codeforces.com/gym/100135).
 <!-- ## 3. Subarray DP
