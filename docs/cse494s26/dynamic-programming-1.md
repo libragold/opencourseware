@@ -260,7 +260,7 @@ $|tails|$
 #### More DP problems
 - [Leaping Tak (AC)](https://atcoder.jp/contests/abc179/tasks/abc179_d)
 - [Jump Game (LC)](https://leetcode.com/problems/jump-game-vi/description/)
-
+- [Antimatter (CF)](https://codeforces.com/problemset/problem/383/D)
 A good source of DP problems to begin with can be found on [USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp).\
 They also link to this beginner friendly [contest](https://codeforces.com/gym/100135).
 <!-- ## 3. Subarray DP
