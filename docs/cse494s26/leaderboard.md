@@ -9,7 +9,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 # Leaderboard
 
-Data cutoff: **{codeforcesActivity.cutoff_date}**
+Last updated: **{codeforcesActivity.last_updated}**
 
 ## Included Competitions
 

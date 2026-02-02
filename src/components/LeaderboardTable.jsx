@@ -120,6 +120,7 @@ function Row({ row, index, competitions, competitionMeta }) {
                     meta.name || competition.name || `Contest ${competitionId}`;
                   const competitionLink =
                     meta.link || competition.link || `https://codeforces.com/contest/${competitionId}`;
+                  const competitionProblems = meta.problems || [];
                   const problems = competition.problems || [];
                   return (
                     <li key={`${row.handle}-${competitionId}`}>
@@ -128,12 +129,19 @@ function Row({ row, index, competitions, competitionMeta }) {
                       </a>
                       <ul>
                         {problems.map((problem, problemIndex) => {
+                          const problemInfo = competitionProblems.find(
+                            (p) => String(p.id) === String(problem.problem_id),
+                          );
                           const solveIcon = getSolveIcon(problem);
                           const solveLabel = `${getSolveLabel(problem.solve_type)} ${problem.submitted_at}`;
+                          const problemTitle = problemInfo?.title ?? `Problem ${problem.problem_id}`;
+                          const problemLink =
+                            problemInfo?.link ??
+                            `${competitionLink}/problem/${problem.problem_id}`;
                           return (
-                            <li key={`${row.handle}-${competitionId}-${problem.id}-${problemIndex}`}>
-                              <a href={problem.link}>
-                                {problem.id}. {problem.title}
+                            <li key={`${row.handle}-${competitionId}-${problem.problem_id}-${problemIndex}`}>
+                              <a href={problemLink}>
+                                {problem.problem_id}. {problemTitle}
                               </a>
                               {solveIcon ? (
                                 <Tooltip title={solveLabel}>

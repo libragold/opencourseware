@@ -1,0 +1,24 @@
+- handle: pain_peko
+  competition_id: 664839
+  problem_id: C
+  solve_type: upsolve
+  credits: 1
+  remark: "upsolved after leaving the competition early"
+- handle: parchmenter
+  competition_id: 665693
+  problem_id: A
+  solve_type: upsolve
+  credits: 1
+  remark: "remote participation"
+- handle: agarc553
+  competition_id: 665693
+  problem_id: A
+  solve_type: upsolve
+  credits: 1
+  remark: "remote participation"
+- handle: parchmenter
+  competition_id: 665693
+  problem_id: B
+  solve_type: upsolve
+  credits: 1
+  remark: "remote participation"

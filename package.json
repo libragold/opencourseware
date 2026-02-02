@@ -11,10 +11,7 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "migrate:course": "node scripts/migrate-course.js",
-    "version:course": "node scripts/version-course.js",
-    "add:course": "node scripts/add-course.js"
+    "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
     "@docusaurus/core": "^3.1.0",
