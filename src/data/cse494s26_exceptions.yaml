@@ -22,3 +22,9 @@
   solve_type: upsolve
   credits: 1
   remark: "remote participation"
+- handle: hackolympus
+  competition_id: 665693
+  problem_id: B
+  solve_type: upsolve
+  credits: 2
+  remark: "TLE due to fast IO in contest overturned"

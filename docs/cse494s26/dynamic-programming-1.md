@@ -33,8 +33,6 @@ Answer:
 
 ### 0.2 Minimum Cost to Climb Stairs (1, 2, or 3 steps)
 
-**DP Type:** *Optimality DP* (minimize a value)
-
 Same staircase rules (move **1**, **2**, or **3** steps), but each step $i$ has a positive cost $c[i]$ paid when you land on it.
 Find the minimum total cost to reach the top.
 
@@ -260,7 +258,7 @@ $|tails|$
 #### More DP problems
 - [Leaping Tak (AC)](https://atcoder.jp/contests/abc179/tasks/abc179_d)
 - [Jump Game (LC)](https://leetcode.com/problems/jump-game-vi/description/)
-- [Antimatter (CF)](https://codeforces.com/problemset/problem/383/D)
+- [Antimatter (CF)](https://codeforces.com/problemset/problem/383/D)\
 
 A good source of DP problems to begin with can be found on [USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp).\
 They also link to this beginner friendly [contest](https://codeforces.com/gym/100135).
