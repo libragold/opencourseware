@@ -1,4 +1,4 @@
-last_updated: 2026-02-03 12:39:35 MST
+last_updated: 2026-02-03 12:59:23 MST
 competitions:
   - id: 664839
     name: Week 1 - Foundations
@@ -707,7 +707,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   hackolympus:
-    total_credits: 15
+    total_credits: 16
     total_live_credits: 10
     competitions:
       - competition_id: 664839
@@ -734,7 +734,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 665693
-        total_credits: 5
+        total_credits: 6
         problems:
           - problem_id: A
             submitted_at: 2026-01-23 13:20:45 MST
@@ -743,7 +743,7 @@ records_by_handle:
           - problem_id: B
             submitted_at: 2026-01-23 15:16:25 MST
             solve_type: upsolve
-            credits: 1
+            credits: 2
           - problem_id: D
             submitted_at: 2026-01-27 14:35:13 MST
             solve_type: upsolve
