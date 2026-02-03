@@ -14,6 +14,7 @@ const END_DATE = '2026-05-01'; // local date in America/Phoenix (inclusive)
 
 const OUTPUT_PATH = path.join('src', 'data', 'cse494s26_leaderboard.yaml');
 const EXCEPTIONS_PATH = path.join('src', 'data', 'cse494s26_exceptions.yaml');
+const EXCLUDED_HANDLES_PATH = path.join('src', 'data', 'cse494s26_excluded_handles.yaml');
 
 function parseDotEnv(filepath) {
   if (!fs.existsSync(filepath)) return {};
@@ -365,6 +366,30 @@ function loadExceptions(filepath) {
     .filter((e) => e.handle && Number.isFinite(e.competition_id) && e.problem_id);
 }
 
+function parseHandleList(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.map(String);
+  if (typeof value === 'string') {
+    return value
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+  if (typeof value === 'object' && Array.isArray(value.handles)) {
+    return value.handles.map(String);
+  }
+  return [];
+}
+
+function loadExcludedHandles(filepath) {
+  const fromEnv = parseHandleList(process.env.CSE494S26_EXCLUDED_HANDLES);
+  if (!fs.existsSync(filepath)) return fromEnv;
+  const raw = fs.readFileSync(filepath, 'utf8');
+  if (!raw.trim()) return fromEnv;
+  const data = yaml.load(raw);
+  return [...fromEnv, ...parseHandleList(data)];
+}
+
 function normalizeHandle(handle) {
   return String(handle || '').trim().toLowerCase();
 }
@@ -508,13 +533,25 @@ async function main() {
 
   const exceptions = loadExceptions(EXCEPTIONS_PATH);
   console.log(`Fetching group members for ${GROUP_CODE}...`);
-  const handles = await fetchGroupMembers(GROUP_CODE, allGroupContestIds, creds, exceptions);
+  let handles = await fetchGroupMembers(GROUP_CODE, allGroupContestIds, creds, exceptions);
   const handleKeySet = new Set(handles.map((h) => normalizeHandle(h)));
   for (const ex of exceptions) {
     const key = normalizeHandle(ex.handle);
     if (!handleKeySet.has(key)) {
       handles.push(ex.handle);
       handleKeySet.add(key);
+    }
+  }
+  const excludedHandles = loadExcludedHandles(EXCLUDED_HANDLES_PATH)
+    .map(normalizeHandle)
+    .filter(Boolean);
+  const excludedSet = new Set(excludedHandles);
+  if (excludedSet.size > 0) {
+    const before = handles.length;
+    handles = handles.filter((h) => !excludedSet.has(normalizeHandle(h)));
+    const removed = before - handles.length;
+    if (removed > 0) {
+      console.log(`  excluded handles: removed ${removed}`);
     }
   }
   handles.sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));

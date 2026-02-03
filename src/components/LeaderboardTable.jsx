@@ -5,12 +5,10 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
 import Tooltip from '@mui/material/Tooltip';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import StarIcon from '@mui/icons-material/Star';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
@@ -78,6 +76,11 @@ function buildRows(data) {
     if (b.totalLiveSolves !== a.totalLiveSolves) {
       return b.totalLiveSolves - a.totalLiveSolves;
     }
+    const ptsA = a.record.total_credits ?? 0;
+    const ptsB = b.record.total_credits ?? 0;
+    if (ptsB !== ptsA) {
+      return ptsB - ptsA;
+    }
     return a.handle.localeCompare(b.handle, 'en', { sensitivity: 'base' });
   });
 
@@ -87,20 +90,27 @@ function buildRows(data) {
 function Row({ row, index, competitions, competitionMeta }) {
   const [open, setOpen] = useState(false);
 
+  const totalPts = row.record.total_credits ?? 0;
+
   return (
     <>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell>
-          <IconButton
-            aria-label="expand row"
-            size="small"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </IconButton>
-        </TableCell>
         <TableCell align="right">{index + 1}</TableCell>
-        <TableCell>{row.handle}</TableCell>
+        <TableCell>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, flexWrap: 'wrap' }}>
+            <span>{row.handle}</span>
+            <Chip
+              size="small"
+              label={`${totalPts} pts`}
+              onClick={() => setOpen(!open)}
+              aria-label={open ? 'collapse details' : 'expand details'}
+              sx={{
+                '& .MuiChip-label': { px: 1 },
+                cursor: 'pointer',
+              }}
+            />
+          </Box>
+        </TableCell>
         {competitions.map((competition) => (
           <TableCell key={`${row.handle}-${competition.id}`} align="right">
             {row.liveCounts.get(String(competition.id)) || 0}
@@ -109,7 +119,7 @@ function Row({ row, index, competitions, competitionMeta }) {
         <TableCell align="right">{row.totalLiveSolves}</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={competitions.length + 4}>
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={competitions.length + 3}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 2 }}>
               <ul>
@@ -168,11 +178,6 @@ function Row({ row, index, competitions, competitionMeta }) {
                   );
                 })}
               </ul>
-              <p>
-                <strong>
-                  Total points: {row.record.total_credits ?? 0}
-                </strong>
-              </p>
             </Box>
           </Collapse>
         </TableCell>
@@ -200,7 +205,6 @@ export default function LeaderboardTable({ data }) {
       >
         <TableHead>
           <TableRow sx={{ '& th': { fontWeight: 700 } }}>
-            <TableCell />
             <TableCell align="right">#</TableCell>
             <TableCell>Handle</TableCell>
             {competitions.map((competition, index) => (
