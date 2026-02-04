@@ -251,14 +251,14 @@ $|tails|$
 #### Related problems
 - [Increasing Subsequence (CSES)](https://cses.fi/problemset/task/1145)
 - [Mysterious Present (CF)](https://codeforces.com/problemset/problem/4/D)
-- [Candy Machine (Baltic IOI)](https://dmoj.ca/problem/btoi09p2)
+- [Candy Machine (Baltic IOI)](https://dmoj.ca/problem/btoi09p2) *(problem statement slightly changed)
 
 ---
 
 #### More DP problems
 - [Leaping Tak (AC)](https://atcoder.jp/contests/abc179/tasks/abc179_d)
 - [Jump Game (LC)](https://leetcode.com/problems/jump-game-vi/description/)
-- [Antimatter (CF)](https://codeforces.com/problemset/problem/383/D)\
+- [Antimatter (CF)](https://codeforces.com/problemset/problem/383/D)
 
 A good source of DP problems to begin with can be found on [USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp).\
 They also link to this beginner friendly [contest](https://codeforces.com/gym/100135).
