@@ -1,4 +1,4 @@
-last_updated: 2026-02-02 08:13:57 MST
+last_updated: 2026-02-03 12:59:23 MST
 competitions:
   - id: 664839
     name: Week 1 - Foundations
@@ -707,7 +707,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   hackolympus:
-    total_credits: 15
+    total_credits: 16
     total_live_credits: 10
     competitions:
       - competition_id: 664839
@@ -734,7 +734,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 665693
-        total_credits: 5
+        total_credits: 6
         problems:
           - problem_id: A
             submitted_at: 2026-01-23 13:20:45 MST
@@ -743,7 +743,7 @@ records_by_handle:
           - problem_id: B
             submitted_at: 2026-01-23 15:16:25 MST
             solve_type: upsolve
-            credits: 1
+            credits: 2
           - problem_id: D
             submitted_at: 2026-01-27 14:35:13 MST
             solve_type: upsolve
@@ -767,7 +767,7 @@ records_by_handle:
             solve_type: live
             credits: 2
   hson17:
-    total_credits: 6
+    total_credits: 7
     total_live_credits: 0
     competitions:
       - competition_id: 664839
@@ -798,6 +798,13 @@ records_by_handle:
             credits: 1
           - problem_id: D
             submitted_at: 2026-01-30 14:38:16 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 666056
+        total_credits: 1
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-03 00:14:50 MST
             solve_type: upsolve
             credits: 1
   hzhan421:
@@ -1132,7 +1139,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   nlepacik:
-    total_credits: 2
+    total_credits: 3
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -1142,6 +1149,13 @@ records_by_handle:
             submitted_at: 2026-01-16 13:53:46 MST
             solve_type: live
             credits: 2
+      - competition_id: 666056
+        total_credits: 1
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-02 14:05:57 MST
+            solve_type: upsolve
+            credits: 1
   ordinary_:
     total_credits: 7
     total_live_credits: 2
@@ -1177,7 +1191,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   pain_peko:
-    total_credits: 10
+    total_credits: 11
     total_live_credits: 4
     competitions:
       - competition_id: 664839
@@ -1216,6 +1230,13 @@ records_by_handle:
             credits: 1
           - problem_id: B
             submitted_at: 2026-01-24 00:50:14 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 666056
+        total_credits: 1
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-02 10:18:37 MST
             solve_type: upsolve
             credits: 1
   parchmenter:
@@ -1440,37 +1461,6 @@ records_by_handle:
             submitted_at: 2026-01-23 15:24:09 MST
             solve_type: upsolve
             credits: 1
-  sahajrastogi:
-    total_credits: 0
-    total_live_credits: 0
-    competitions:
-      - competition_id: 2191
-        total_credits: 0
-        problems:
-          - problem_id: A
-            submitted_at: 2026-01-21 23:49:27 MST
-            solve_type: upsolve
-            credits: 0
-          - problem_id: B
-            submitted_at: 2026-01-21 23:52:55 MST
-            solve_type: upsolve
-            credits: 0
-          - problem_id: C
-            submitted_at: 2026-01-22 00:05:47 MST
-            solve_type: upsolve
-            credits: 0
-          - problem_id: D1
-            submitted_at: 2026-01-22 00:16:21 MST
-            solve_type: upsolve
-            credits: 0
-          - problem_id: D2
-            submitted_at: 2026-01-22 00:34:58 MST
-            solve_type: upsolve
-            credits: 0
-          - problem_id: F
-            submitted_at: 2026-01-22 01:41:10 MST
-            solve_type: upsolve
-            credits: 0
   saidoku:
     total_credits: 2
     total_live_credits: 2
@@ -1707,7 +1697,3 @@ records_by_handle:
             submitted_at: 2026-01-30 15:01:49 MST
             solve_type: live
             credits: 2
-  zilinj:
-    total_credits: 0
-    total_live_credits: 0
-    competitions: []

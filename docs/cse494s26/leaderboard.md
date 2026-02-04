@@ -40,6 +40,6 @@ Last updated: **{codeforcesActivity.last_updated}**
 
 ## Rankings
 
-Ranking is sorted by total live solves (descending), and if there is a tie, it is broken by handle in alphabetical order.
+Ranking is sorted by total live solves (descending). Ties are broken by total points (descending), then by handle in alphabetical order.
 
 <LeaderboardTable data={codeforcesActivity} />
