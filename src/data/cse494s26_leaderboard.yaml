@@ -1,4 +1,4 @@
-last_updated: 2026-02-03 12:59:23 MST
+last_updated: 2026-02-06 22:25:58 MST
 competitions:
   - id: 664839
     name: Week 1 - Foundations
@@ -225,6 +225,30 @@ competitions:
       - id: F
         title: Or Machine
         link: https://codeforces.com/contest/666056/problem/F
+  - id: 669564
+    name: Week 4 - Dynamic Programming
+    link: https://codeforces.com/group/AnBhEByjKm/contest/669564
+    start: 2026-02-06 13:15:00 MST
+    end: 2026-02-06 15:15:00 MST
+    problems:
+      - id: A
+        title: Six-Seven
+        link: https://codeforces.com/contest/669564/problem/A
+      - id: B
+        title: Long Jumps
+        link: https://codeforces.com/contest/669564/problem/B
+      - id: C
+        title: Yarik and Array
+        link: https://codeforces.com/contest/669564/problem/C
+      - id: D
+        title: Consecutive Subsequence
+        link: https://codeforces.com/contest/669564/problem/D
+      - id: E
+        title: Preparing for Merge Sort
+        link: https://codeforces.com/contest/669564/problem/E
+      - id: F
+        title: Marble Council
+        link: https://codeforces.com/contest/669564/problem/F
 records_by_handle:
   acc_test123:
     total_credits: 1
@@ -238,7 +262,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   agarc553:
-    total_credits: 11
+    total_credits: 12
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -284,14 +308,18 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 666056
-        total_credits: 1
+        total_credits: 2
         problems:
           - problem_id: A
             submitted_at: 2026-01-30 21:03:49 MST
             solve_type: upsolve
             credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-04 20:09:24 MST
+            solve_type: upsolve
+            credits: 1
   aglty:
-    total_credits: 5
+    total_credits: 6
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -311,6 +339,13 @@ records_by_handle:
             credits: 1
           - problem_id: D
             submitted_at: 2026-01-22 20:24:47 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 666056
+        total_credits: 1
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-04 11:40:56 MST
             solve_type: upsolve
             credits: 1
   anubhav43:
@@ -347,7 +382,7 @@ records_by_handle:
             solve_type: live
             credits: 2
   AustinJonesX:
-    total_credits: 14
+    total_credits: 17
     total_live_credits: 4
     competitions:
       - competition_id: 664839
@@ -414,6 +449,21 @@ records_by_handle:
             submitted_at: 2026-01-29 09:55:15 MST
             solve_type: live
             credits: 2
+      - competition_id: 666056
+        total_credits: 3
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-05 10:20:06 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-06 01:49:22 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: C
+            submitted_at: 2026-02-06 05:12:49 MST
+            solve_type: upsolve
+            credits: 1
   bztillot:
     total_credits: 23
     total_live_credits: 14
@@ -501,7 +551,7 @@ records_by_handle:
             solve_type: live
             credits: 2
   CallMeChris:
-    total_credits: 2
+    total_credits: 4
     total_live_credits: 0
     competitions:
       - competition_id: 664839
@@ -518,9 +568,20 @@ records_by_handle:
             submitted_at: 2026-01-28 10:20:27 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 666056
+        total_credits: 2
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-03 14:11:08 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-05 21:39:05 MST
+            solve_type: upsolve
+            credits: 1
   Cerluain:
-    total_credits: 7
-    total_live_credits: 2
+    total_credits: 11
+    total_live_credits: 6
     competitions:
       - competition_id: 664839
         total_credits: 2
@@ -555,9 +616,20 @@ records_by_handle:
             submitted_at: 2026-01-31 15:56:38 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 669564
+        total_credits: 4
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 13:35:50 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 14:00:04 MST
+            solve_type: live
+            credits: 2
   Chaiwallah:
-    total_credits: 6
-    total_live_credits: 6
+    total_credits: 12
+    total_live_credits: 12
     competitions:
       - competition_id: 665693
         total_credits: 2
@@ -577,6 +649,21 @@ records_by_handle:
             submitted_at: 2026-01-30 15:09:10 MST
             solve_type: live
             credits: 2
+      - competition_id: 669564
+        total_credits: 6
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 14:19:46 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 14:53:08 MST
+            solve_type: live
+            credits: 2
+          - problem_id: E
+            submitted_at: 2026-02-06 15:12:14 MST
+            solve_type: live
+            credits: 2
   ClankerBeater:
     total_credits: 2
     total_live_credits: 0
@@ -593,7 +680,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   dariodaddamio:
-    total_credits: 7
+    total_credits: 10
     total_live_credits: 0
     competitions:
       - competition_id: 664839
@@ -625,6 +712,21 @@ records_by_handle:
             credits: 1
           - problem_id: G
             submitted_at: 2026-01-23 12:25:54 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 666056
+        total_credits: 3
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-05 18:56:41 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-05 22:46:06 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: C
+            submitted_at: 2026-02-06 10:12:53 MST
             solve_type: upsolve
             credits: 1
   DefyCodes:
@@ -669,8 +771,8 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   great_sage:
-    total_credits: 11
-    total_live_credits: 8
+    total_credits: 16
+    total_live_credits: 12
     competitions:
       - competition_id: 664839
         total_credits: 6
@@ -706,9 +808,24 @@ records_by_handle:
             submitted_at: 2026-01-30 16:44:30 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 669564
+        total_credits: 5
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 14:38:03 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 14:57:23 MST
+            solve_type: live
+            credits: 2
+          - problem_id: C
+            submitted_at: 2026-02-06 15:20:34 MST
+            solve_type: upsolve
+            credits: 1
   hackolympus:
-    total_credits: 16
-    total_live_credits: 10
+    total_credits: 24
+    total_live_credits: 16
     competitions:
       - competition_id: 664839
         total_credits: 8
@@ -760,14 +877,37 @@ records_by_handle:
             solve_type: live
             credits: 0
       - competition_id: 666056
-        total_credits: 2
+        total_credits: 4
         problems:
           - problem_id: A
             submitted_at: 2026-01-30 13:47:47 MST
             solve_type: live
             credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-04 00:40:41 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: E
+            submitted_at: 2026-02-06 00:40:19 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 669564
+        total_credits: 6
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 13:49:19 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 14:08:19 MST
+            solve_type: live
+            credits: 2
+          - problem_id: C
+            submitted_at: 2026-02-06 14:21:46 MST
+            solve_type: live
+            credits: 2
   hson17:
-    total_credits: 7
+    total_credits: 8
     total_live_credits: 0
     competitions:
       - competition_id: 664839
@@ -801,14 +941,18 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 666056
-        total_credits: 1
+        total_credits: 2
         problems:
           - problem_id: A
             submitted_at: 2026-02-03 00:14:50 MST
             solve_type: upsolve
             credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-06 14:26:44 MST
+            solve_type: upsolve
+            credits: 1
   hzhan421:
-    total_credits: 12
+    total_credits: 14
     total_live_credits: 6
     competitions:
       - competition_id: 664839
@@ -850,15 +994,23 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 666056
-        total_credits: 2
+        total_credits: 4
         problems:
           - problem_id: A
             submitted_at: 2026-01-30 13:31:32 MST
             solve_type: live
             credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 01:12:25 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: C
+            submitted_at: 2026-02-06 12:49:53 MST
+            solve_type: upsolve
+            credits: 1
   IgniusFrost:
-    total_credits: 7
-    total_live_credits: 6
+    total_credits: 11
+    total_live_credits: 10
     competitions:
       - competition_id: 664839
         total_credits: 5
@@ -882,13 +1034,24 @@ records_by_handle:
             submitted_at: 2026-01-30 13:47:15 MST
             solve_type: live
             credits: 2
+      - competition_id: 669564
+        total_credits: 4
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 14:23:32 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 14:50:52 MST
+            solve_type: live
+            credits: 2
   imsqsh:
     total_credits: 0
     total_live_credits: 0
     competitions: []
   in_4m8_ion:
-    total_credits: 13
-    total_live_credits: 4
+    total_credits: 19
+    total_live_credits: 10
     competitions:
       - competition_id: 664839
         total_credits: 6
@@ -943,6 +1106,21 @@ records_by_handle:
             submitted_at: 2026-02-01 22:22:32 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 669564
+        total_credits: 6
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 13:27:19 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 13:45:01 MST
+            solve_type: live
+            credits: 2
+          - problem_id: C
+            submitted_at: 2026-02-06 14:28:31 MST
+            solve_type: live
+            credits: 2
   kashyap.hegde:
     total_credits: 6
     total_live_credits: 2
@@ -974,7 +1152,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   Kradrorcan:
-    total_credits: 10
+    total_credits: 11
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -1012,7 +1190,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 666056
-        total_credits: 3
+        total_credits: 4
         problems:
           - problem_id: A
             submitted_at: 2026-01-30 14:17:54 MST
@@ -1022,9 +1200,13 @@ records_by_handle:
             submitted_at: 2026-01-30 16:23:25 MST
             solve_type: upsolve
             credits: 1
+          - problem_id: C
+            submitted_at: 2026-02-05 11:46:37 MST
+            solve_type: upsolve
+            credits: 1
   MangoKing:
-    total_credits: 11
-    total_live_credits: 4
+    total_credits: 14
+    total_live_credits: 6
     competitions:
       - competition_id: 664839
         total_credits: 2
@@ -1068,10 +1250,21 @@ records_by_handle:
             solve_type: live
             credits: 2
       - competition_id: 666056
-        total_credits: 2
+        total_credits: 3
         problems:
           - problem_id: A
             submitted_at: 2026-01-30 13:54:51 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-05 15:21:37 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 669564
+        total_credits: 2
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 13:56:50 MST
             solve_type: live
             credits: 2
   matthew6:
@@ -1138,8 +1331,19 @@ records_by_handle:
             submitted_at: 2026-01-30 16:51:47 MST
             solve_type: upsolve
             credits: 1
+  N43527:
+    total_credits: 2
+    total_live_credits: 2
+    competitions:
+      - competition_id: 669564
+        total_credits: 2
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 13:31:08 MST
+            solve_type: live
+            credits: 2
   nlepacik:
-    total_credits: 3
+    total_credits: 4
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -1150,14 +1354,18 @@ records_by_handle:
             solve_type: live
             credits: 2
       - competition_id: 666056
-        total_credits: 1
+        total_credits: 2
         problems:
           - problem_id: A
             submitted_at: 2026-02-02 14:05:57 MST
             solve_type: upsolve
             credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-04 13:02:39 MST
+            solve_type: upsolve
+            credits: 1
   ordinary_:
-    total_credits: 7
+    total_credits: 9
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -1190,9 +1398,20 @@ records_by_handle:
             submitted_at: 2026-01-25 11:38:21 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 666056
+        total_credits: 2
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-04 11:30:31 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-05 21:12:32 MST
+            solve_type: upsolve
+            credits: 1
   pain_peko:
-    total_credits: 11
-    total_live_credits: 4
+    total_credits: 23
+    total_live_credits: 14
     competitions:
       - competition_id: 664839
         total_credits: 8
@@ -1233,12 +1452,43 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 666056
-        total_credits: 1
+        total_credits: 3
         problems:
           - problem_id: A
             submitted_at: 2026-02-02 10:18:37 MST
             solve_type: upsolve
             credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-04 11:00:15 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: E
+            submitted_at: 2026-02-06 00:18:43 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 669564
+        total_credits: 10
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 13:27:47 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 13:31:02 MST
+            solve_type: live
+            credits: 2
+          - problem_id: D
+            submitted_at: 2026-02-06 14:04:56 MST
+            solve_type: live
+            credits: 2
+          - problem_id: C
+            submitted_at: 2026-02-06 14:11:19 MST
+            solve_type: live
+            credits: 2
+          - problem_id: E
+            submitted_at: 2026-02-06 14:22:11 MST
+            solve_type: live
+            credits: 2
   parchmenter:
     total_credits: 14
     total_live_credits: 4
@@ -1324,7 +1574,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   Ragnarokphx:
-    total_credits: 4
+    total_credits: 5
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -1343,6 +1593,13 @@ records_by_handle:
         problems:
           - problem_id: A
             submitted_at: 2026-01-23 17:13:43 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 666056
+        total_credits: 1
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 00:12:53 MST
             solve_type: upsolve
             credits: 1
   rk7697:
@@ -1421,8 +1678,8 @@ records_by_handle:
             solve_type: upsolve
             credits: 0
   rwill132:
-    total_credits: 2
-    total_live_credits: 2
+    total_credits: 8
+    total_live_credits: 8
     competitions:
       - competition_id: 666056
         total_credits: 2
@@ -1431,9 +1688,24 @@ records_by_handle:
             submitted_at: 2026-01-30 13:43:58 MST
             solve_type: live
             credits: 2
+      - competition_id: 669564
+        total_credits: 6
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 13:41:05 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 14:33:50 MST
+            solve_type: live
+            credits: 2
+          - problem_id: C
+            submitted_at: 2026-02-06 14:58:18 MST
+            solve_type: live
+            credits: 2
   saan-v:
-    total_credits: 6
-    total_live_credits: 2
+    total_credits: 11
+    total_live_credits: 6
     competitions:
       - competition_id: 664839
         total_credits: 5
@@ -1461,9 +1733,24 @@ records_by_handle:
             submitted_at: 2026-01-23 15:24:09 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 669564
+        total_credits: 5
+        problems:
+          - problem_id: B
+            submitted_at: 2026-02-06 13:57:05 MST
+            solve_type: live
+            credits: 2
+          - problem_id: C
+            submitted_at: 2026-02-06 14:23:08 MST
+            solve_type: live
+            credits: 2
+          - problem_id: D
+            submitted_at: 2026-02-06 18:13:24 MST
+            solve_type: upsolve
+            credits: 1
   saidoku:
-    total_credits: 2
-    total_live_credits: 2
+    total_credits: 7
+    total_live_credits: 6
     competitions:
       - competition_id: 666056
         total_credits: 2
@@ -1472,6 +1759,21 @@ records_by_handle:
             submitted_at: 2026-01-30 14:35:11 MST
             solve_type: live
             credits: 2
+      - competition_id: 669564
+        total_credits: 5
+        problems:
+          - problem_id: B
+            submitted_at: 2026-02-06 14:25:49 MST
+            solve_type: live
+            credits: 2
+          - problem_id: C
+            submitted_at: 2026-02-06 14:57:40 MST
+            solve_type: live
+            credits: 2
+          - problem_id: D
+            submitted_at: 2026-02-06 17:30:06 MST
+            solve_type: upsolve
+            credits: 1
   Samer.ali:
     total_credits: 2
     total_live_credits: 2
@@ -1518,8 +1820,8 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   thegingeraffe:
-    total_credits: 12
-    total_live_credits: 2
+    total_credits: 18
+    total_live_credits: 6
     competitions:
       - competition_id: 664839
         total_credits: 6
@@ -1568,14 +1870,33 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 666056
-        total_credits: 1
+        total_credits: 3
         problems:
           - problem_id: A
             submitted_at: 2026-01-30 19:54:14 MST
             solve_type: upsolve
             credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-05 14:22:08 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: C
+            submitted_at: 2026-02-05 20:20:29 MST
+            solve_type: upsolve
+            credits: 1
+      - competition_id: 669564
+        total_credits: 4
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 14:22:55 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 15:12:00 MST
+            solve_type: live
+            credits: 2
   Turbowired:
-    total_credits: 3
+    total_credits: 5
     total_live_credits: 0
     competitions:
       - competition_id: 664839
@@ -1596,8 +1917,19 @@ records_by_handle:
             submitted_at: 2026-01-30 08:38:39 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 666056
+        total_credits: 2
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-06 10:33:05 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-02-06 12:00:30 MST
+            solve_type: upsolve
+            credits: 1
   vihaan004:
-    total_credits: 8
+    total_credits: 9
     total_live_credits: 2
     competitions:
       - competition_id: 664839
@@ -1634,6 +1966,13 @@ records_by_handle:
             submitted_at: 2026-01-27 00:45:36 MST
             solve_type: upsolve
             credits: 1
+      - competition_id: 666056
+        total_credits: 1
+        problems:
+          - problem_id: A
+            submitted_at: 2026-02-03 15:20:41 MST
+            solve_type: upsolve
+            credits: 1
   wbbbs:
     total_credits: 2
     total_live_credits: 2
@@ -1657,8 +1996,8 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   Z1nk0s:
-    total_credits: 12
-    total_live_credits: 10
+    total_credits: 16
+    total_live_credits: 14
     competitions:
       - competition_id: 664839
         total_credits: 5
@@ -1695,5 +2034,16 @@ records_by_handle:
             credits: 2
           - problem_id: B
             submitted_at: 2026-01-30 15:01:49 MST
+            solve_type: live
+            credits: 2
+      - competition_id: 669564
+        total_credits: 4
+        problems:
+          - problem_id: C
+            submitted_at: 2026-02-06 14:16:39 MST
+            solve_type: live
+            credits: 2
+          - problem_id: B
+            submitted_at: 2026-02-06 14:49:14 MST
             solve_type: live
             credits: 2
