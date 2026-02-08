@@ -143,7 +143,7 @@ $dp[i][j]$ is defined as the maximum value of a collection of items of weight $j
 Transition:\
 Don’t take item $i$:\
 &emsp;&emsp; $dp[i][x] = dp[i-1][x]$\
-Take item $i$ (if $x >= w[i]$):\
+Take item $i$ (if $x \geq w[i]$):\
 &emsp;&emsp; $dp[i][x] = dp[i-1][x-w[i]] + v[i]$
 
 All together:
@@ -162,7 +162,7 @@ Base Cases:\
 While the formal phrasing of the dp involves two dimensions, traditionally knapsack is implemented with only one.\
 $dp[x]$ maintains the best value of a knapsack with weight $x$ as we process the items. Updates with the $i$-th element happens as follows for all $j$ in **reverse order**:
 $$
-dp[j] = max(dp[j - w[i]] + v[i], dp[j]) \text{ if } j >= w[i]
+dp[j] = max(dp[j - w[i]] + v[i], dp[j]) \text{ if } j \geq w[i]
 $$
 
 The idea of maintaining a dp table of information and updating it after processing each element of an array is very common.
