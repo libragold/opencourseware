@@ -131,19 +131,11 @@ You have $n$ items. Item $i$ has weight $w[i]$ and value $v[i]$. You have a capa
 ---
 #### Approach 1:
 
-<<<<<<< HEAD
-Transition:\
-Don’t take item $i$:\
-&emsp;&emsp; $dp[i][x] = dp[i-1][x]$\
-Take item $i$ (if $x \geq w[i]$):\
-&emsp;&emsp; $dp[i][x] = dp[i-1][x-w[i]] + v[i]$
-=======
 Let $dp[i][x]$ be the maximum value with the first $i$ items in the knapsack with capacity $x$.
 
 Transition:
 - Don’t take item $i$: $dp[i][x] = dp[i-1][x]$
 - Take item $i$ (if $x \ge w[i]$): $dp[i][x] = dp[i-1][x-w[i]] + v[i]$
->>>>>>> 2508ec203c3cfbe7d3fc3b84b7b47e9a505b563b
 
 All together:
 $$
@@ -160,11 +152,7 @@ Base Cases: $dp[0][0] = 0$, $dp[0][x] = -\infty$
 
 While the above approach involves two dimensional dp, traditionally knapsack is implemented with a one-dimensional array. Let $dp[x]$ maintain the best value of a knapsack with capacity $x$ as we process the items. Updates with the $i$-th element happens as follows for all $x$ in **reverse order**:
 $$
-<<<<<<< HEAD
-dp[j] = max(dp[j - w[i]] + v[i], dp[j]) \text{ if } j \geq w[i]
-=======
 dp[x] \leftarrow \max(dp[x - w[i]] + v[i], dp[x]) \text{ if } x \ge w[i].
->>>>>>> 2508ec203c3cfbe7d3fc3b84b7b47e9a505b563b
 $$
 
 The idea of maintaining a dp table of information and updating it after processing each element of an array is very common.
