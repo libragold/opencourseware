@@ -24,7 +24,7 @@ The segment tree:
 Your browser doesn't support.
 </video>
 
-The new complexity is $O(n\log n + q\log n)$. How are we sure that each operation takes only $O(\log n)$ time?
+The new complexity is $O(n + q\log n)$. How are we sure that each query takes only $O(\log n)$ time?
 
 ---
 We can also adapt this method to work with any associative operation:
@@ -33,7 +33,58 @@ We can also adapt this method to work with any associative operation:
 
 The segment tree can be useful even when queries only need to be supported statically (updates not required). There are data structures we will see later which can process static queries more efficiently for operations like min and max. For supporting static range sums, we have already seen the prefix sum technique.
 
+Here is a full C++ implementation setup used by the current ASU team and it is setup to make modifying the base segment tree easy for most use cases. Most of it is pulled from https://github.com/bqi343. Additionally, we recommend you use the query function instead of queryR as it is faster, but as the recursive implementation may be easier to understand for some people, we have left it in.
+<details>
+    <summary>Segment Tree Code</summary>
+
+```cpp    
+#include <bits/stdc++.h>
+using namespace std;
+//credit to Benjamin Qi for implementation
+//may need to change indentation after copying
+template <class T> struct SegTree { 
+    // cmb(ID,b) = b
+    const T ID{0};
+    T cmb(T a, T b) { return a+b;}
+    int n; vector<T> seg;
+    void init(int _n) { // upd, query also work if n = _n
+        for (n = 1; n < _n; ) n *= 2; 
+        seg.assign(2*n,ID); 
+    }
+    void pull(int p) { 
+        seg[p] = cmb(seg[2*p],seg[2*p+1]); 
+    }
+    void upd(int p, T val) {// set val at position p
+        seg[p += n] = val; 
+        for (p /= 2; p; p /= 2) pull(p); 
+    }
+    T query(int l, int r) {// zero-indexed, inclusive
+        T ra = ID, rb = ID;
+        for (l += n, r += n+1; l < r; l /= 2, r /= 2) {
+            if (l&1) ra = cmb(ra,seg[l++]);
+            if (r&1) rb = cmb(seg[--r],rb);
+        }
+        return cmb(ra,rb);
+    }
+    T queryR(int l, int r){
+        return queryRec(l, r, 1, 0, n-1);
+    }
+    T queryRec(int l, int r, int v, int nl, int nr){ //v is the index of the seg tree node; [nl,nr] is the range v covers
+        if(r < nl || l > nr) return ID;
+        if(l <= nl && nr <= r) return seg[v];
+        int mid = (nl + nr)/2;
+        return cmb(queryRec(l,r,2*v,nl,mid),queryRec(l,r,2*v+1,mid+1,nr));
+    }
+};
+
+int main(){
+    int n; cin >> n;
+    SegTree<int> seg; seg.init(n); //initializes seg tree of n integers, 0 indexed.
+}
+```
+</details>
 ---
+
 In many problems, it is enough to treat the segment tree as a black box up to picking the segment tree's operation:
 - [Ant Colony (CF)](https://codeforces.com/contest/474/problem/F)
 - [Enemy is Weak(CF)](https://codeforces.com/problemset/problem/61/E?) (may help to solve inversion counting first)
