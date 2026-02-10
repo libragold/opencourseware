@@ -98,5 +98,7 @@ Offline Tricks:
 - [Distinct Values Queries (CSES)](https://cses.fi/problemset/task/1734)
 - [KQUERY (SPOJ)](https://www.spoj.com/problems/KQUERY/)
 
+The information stored on a node does not need to be just one number, it can be any set of numbers so long as the combination function is still associative. For example, if in addition to a minimum query on a range, we needed to answer how frequent the minimum is on that range, we could simply store both values in our segment tree node. We can also use this idea to support updates on traditional dp problems:
 
-
+- [Subarray Sum Queries (CSES)](https://cses.fi/problemset/task/1190/)
+- [Sereja and Brackets (CF)](https://codeforces.com/problemset/problem/380/C)
