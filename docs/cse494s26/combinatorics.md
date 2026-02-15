@@ -7,7 +7,7 @@ title: "Combinatorics"
 ### Binomial coefficient patterns: “choose the positions”
 When you need to place $k$ identical “special markers” into $n$ distinct slots (or choose which $k$ items are special), the count is
 $$
-\binom{n}{k}.
+\binom{n}{k}
 $$
 Classic example: number of binary strings of length $n$ with exactly $k$ ones is $\binom{n}{k}$ (choose the $k$ positions of the ones).
 
@@ -29,7 +29,7 @@ and modular inverses (division mod $p$).
 ### Fermat inverse (prime modulus)
 If $p$ is prime and $a \not\equiv 0 \pmod p$, then:
 $$
-a^{-1} \equiv a^{p-2} \pmod p.
+a^{-1} \equiv a^{p-2} \pmod p
 $$
 
 ### Precomputation plan
@@ -55,7 +55,7 @@ x_1 + x_2 + \cdots + x_n = m, \quad x_i \ge 0
 $$
 is
 $$
-\binom{m+n-1}{n-1}.
+\binom{m+n-1}{n-1}
 $$
 
 ### Common variations
@@ -84,7 +84,7 @@ $$
 =
 \sum_{\emptyset \ne S \subseteq [k]}
 (-1)^{|S|+1}
-\left|\bigcap_{i\in S} A_i\right|.
+\left|\bigcap_{i\in S} A_i\right|
 $$
 
 When $k$ is up to ~20-25, iterating all $2^k$ subsets is feasible.
