@@ -398,6 +398,11 @@ function normalizeProblemId(problemId) {
   return String(problemId || '').trim().toUpperCase();
 }
 
+function contestProblemLink(contest, problemId) {
+  const base = String(contest?.link || `https://codeforces.com/contest/${contest?.id || ''}`).replace(/\/+$/, '');
+  return `${base}/problem/${problemId}`;
+}
+
 function exceptionKey(handle, contestId, problemId) {
   return `${normalizeHandle(handle)}::${Number(contestId)}::${normalizeProblemId(problemId)}`;
 }
@@ -511,7 +516,7 @@ async function main() {
     contest.problems = probs.map((p) => ({
       id: p.id,
       title: p.title,
-      link: `https://codeforces.com/contest/${contest.id}/problem/${p.id}`,
+      link: contestProblemLink(contest, p.id),
     }));
   }
 
@@ -523,7 +528,7 @@ async function main() {
       contest.problems = probs.map((p) => ({
         id: p.id,
         title: p.title,
-        link: `https://codeforces.com/contest/${contest.id}/problem/${p.id}`,
+        link: contestProblemLink(contest, p.id),
       }));
     } catch {
       // For BEFORE contests or temporarily unavailable standings, leave problems empty.
