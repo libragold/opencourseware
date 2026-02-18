@@ -99,6 +99,9 @@ For many PIE counting tasks:
 - [Devu and Flowers (CF)](https://codeforces.com/problemset/problem/451/E)
 ---
 
-
+#### General Problems:
+- [Max-Min Sums (AC)](https://atcoder.jp/contests/abc151/tasks/abc151_e)
+- [Colorful Blocks (AC)](https://atcoder.jp/contests/abc167/tasks/abc167_e)
+- [Strivore (AC)](https://atcoder.jp/contests/abc171/tasks/abc171_f)
 
 
