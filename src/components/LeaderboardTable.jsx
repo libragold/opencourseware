@@ -17,6 +17,33 @@ const SOLVE_LABELS = {
   upsolve: 'upsolved at',
 };
 
+function trimTrailingSlash(url) {
+  return String(url || '').replace(/\/+$/, '');
+}
+
+function getContestLink(link, competitionId) {
+  return trimTrailingSlash(link) || `https://codeforces.com/contest/${competitionId}`;
+}
+
+function isGroupContestLink(link) {
+  return /\/group\/[^/]+\/contest\/\d+$/.test(trimTrailingSlash(link));
+}
+
+function isOfficialProblemLink(link) {
+  return /^https?:\/\/codeforces\.com\/contest\/\d+\/problem\//.test(String(link || ''));
+}
+
+function getProblemLink({ contestLink, competitionId, problemId, explicitLink }) {
+  const baseContestLink = getContestLink(contestLink, competitionId);
+  const fallbackProblemLink = `${baseContestLink}/problem/${problemId}`;
+
+  if (!explicitLink) return fallbackProblemLink;
+  if (isGroupContestLink(baseContestLink) && isOfficialProblemLink(explicitLink)) {
+    return fallbackProblemLink;
+  }
+  return explicitLink;
+}
+
 function getSolveLabel(solveType) {
   return SOLVE_LABELS[solveType] || 'solved at';
 }
@@ -128,13 +155,15 @@ function Row({ row, index, competitions, competitionMeta }) {
                   const meta = competitionMeta.get(competitionId) || {};
                   const competitionName =
                     meta.name || competition.name || `Contest ${competitionId}`;
-                  const competitionLink =
-                    meta.link || competition.link || `https://codeforces.com/contest/${competitionId}`;
+                  const competitionLink = getContestLink(
+                    meta.link || competition.link,
+                    competitionId,
+                  );
                   const competitionProblems = meta.problems || [];
                   const problems = competition.problems || [];
                   return (
                     <li key={`${row.handle}-${competitionId}`}>
-                      <a href={competitionLink}>
+                      <a href={competitionLink} target="_blank" rel="noopener noreferrer">
                         {competitionName}
                       </a>
                       <ul>
@@ -145,12 +174,15 @@ function Row({ row, index, competitions, competitionMeta }) {
                           const solveIcon = getSolveIcon(problem);
                           const solveLabel = `${getSolveLabel(problem.solve_type)} ${problem.submitted_at}`;
                           const problemTitle = problemInfo?.title ?? `Problem ${problem.problem_id}`;
-                          const problemLink =
-                            problemInfo?.link ??
-                            `${competitionLink}/problem/${problem.problem_id}`;
+                          const problemLink = getProblemLink({
+                            contestLink: competitionLink,
+                            competitionId,
+                            problemId: problem.problem_id,
+                            explicitLink: problemInfo?.link,
+                          });
                           return (
                             <li key={`${row.handle}-${competitionId}-${problem.problem_id}-${problemIndex}`}>
-                              <a href={problemLink}>
+                              <a href={problemLink} target="_blank" rel="noopener noreferrer">
                                 {problem.problem_id}. {problemTitle}
                               </a>
                               {solveIcon ? (
@@ -209,7 +241,11 @@ export default function LeaderboardTable({ data }) {
             <TableCell>Handle</TableCell>
             {competitions.map((competition, index) => (
               <TableCell key={competition.id} align="right">
-                <a href={competition.link || `https://codeforces.com/contest/${competition.id}`}>
+                <a
+                  href={getContestLink(competition.link, competition.id)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {index + 1}
                 </a>
               </TableCell>

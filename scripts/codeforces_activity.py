@@ -239,7 +239,7 @@ def main():
                 problem = sub.get("problem", {})
                 problem_index = problem.get("index", "")
                 problem_name = problem.get("name", "").replace("\t", " ").strip()
-                problem_link = f"https://codeforces.com/contest/{cid}/problem/{problem_index}"
+                problem_link = f"{contest_link}/problem/{problem_index}"
                 new_rows.append(
                     [
                         dt,
