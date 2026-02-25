@@ -19,7 +19,8 @@ Practice:
 - [Common Divisors(CSES)](https://cses.fi/problemset/task/1081)
 - [kth divisor (CF)](https://codeforces.com/problemset/problem/762/A)
 - [Secret Message (recent CF div 2)](https://codeforces.com/contest/2194/problem/C)
-- [Tonya and Burenka-179](https://codeforces.com/contest/1718/problem/C)
+- [Division or Subtraction (AC)](https://atcoder.jp/contests/abc161/tasks/abc161_f)
+- [Tonya and Burenka-179 (CF)](https://codeforces.com/contest/1718/problem/C)
 ---
 
 ### Some useful divisor formulas:
@@ -88,7 +89,9 @@ Use cases:
 - many factorizations
 - counting prime exponents / computing divisor counts for many numbers
 
-Practice:
+You can even compute totients for all numbers with sieve.
+
+- [Enlarge GCD (CF)](https://codeforces.com/problemset/problem/1034/A)
 ---
 
 ### “Sieve over values” (iterate multiples)
@@ -106,7 +109,44 @@ If the inner computation is $O(1)$, this has time complexity $O(n\log n)$.
 Practice:
 - [Not Divisible (AtCoder ABC170 D)](https://atcoder.jp/contests/abc170/tasks/abc170_d)
 - [Common Divisors (CSES 1081)](https://cses.fi/problemset/task/1081) - (Can we find a better time complexity?)
+- [Turn on the Light 3](https://qoj.ac/contest/2021/problem/10724)
 ---
 Problems
 - [Prime Generator (SPOJ)](https://www.spoj.com/problems/PRIME1/)
+---
+
+## GCD / LCM tricks (identities, prefix/suffix, inclusion–exclusion)
+
+### Core identities 
+
+- Euclidean Algorithm:
+$$
+\gcd(a,b) = \gcd\bigl(b,\ a \text{ mod } b\bigr)
+$$
+
+- LCM via gcd:
+$$
+\mathrm{lcm}(a,b) = \frac{a}{\gcd(a,b)} \cdot b
+$$
+
+Implementation note: compute as `(a / gcd(a,b)) * b` to reduce overflow risk.
+
+---
+
+### LCM/GCD via prime exponents
+
+To compute $\mathrm{lcm}(a_1,\dots,a_n)$ (especially under a modulus), you often:
+1. factor all numbers
+2. keep the maximum exponent of each prime
+3. rebuild the lcm as $\prod p^{\max e_p}$ (optionally modulo $M$)
+
+Similarly for $\gcd$ you may take the minimum exponent of each prime.
+
+Practice:
+- [Flatten (AtCoder ABC152 E)](https://atcoder.jp/contests/abc152/tasks/abc152_e)
+
+---
+Problems:
+- [GCD on Blackboard (AtCoder ABC125 C)](https://atcoder.jp/contests/abc125/tasks/abc125_c)
+- [CGCDSSQ (CF 475D)](https://codeforces.com/problemset/problem/475/D)
 ---
