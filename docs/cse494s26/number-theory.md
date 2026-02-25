@@ -115,7 +115,7 @@ Problems
 - [Prime Generator (SPOJ)](https://www.spoj.com/problems/PRIME1/)
 ---
 
-## GCD / LCM tricks (identities, prefix/suffix, inclusion–exclusion)
+## GCD / LCM 
 
 ### Core identities 
 
