@@ -78,10 +78,9 @@ spf[1]=1
 for i in 2..N:
   if spf[i]==0:              // i is prime
     spf[i]=i
-    if (1LL*i*i <= N):
-      for j in i*i, i*i+i, ..., <= N:
-        if spf[j]==0:
-          spf[j]=i
+    for j in i*i, i*i+i, ..., <= N:
+      if spf[j]==0:
+        spf[j]=i
 ```
 Note that from the prime factorization, you can find all divisors in $O(\text{\# of divisors})$ instead of $O(\sqrt{n})$, which can be relevant sometimes. 
 
@@ -100,8 +99,8 @@ This pattern is *not* about primality; it’s about counting multiples efficient
 - for each value $d$, look at all multiples $k = d, 2d, 3d, \dots$
 
 ```text
-for d in 1..M:
-  for k in d, 2d, 3d, ..., <= M:
+for d in 1..N:
+  for k in d, 2d, 3d, ..., <= N:
     // do something with (d divides k)
 ```
 If the inner computation is $O(1)$, this has time complexity $O(n\log n)$.
