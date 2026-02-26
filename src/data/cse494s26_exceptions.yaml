@@ -28,3 +28,33 @@
   solve_type: upsolve
   credits: 2
   remark: "TLE due to fast IO in contest overturned"
+- handle: dariodaddamio
+  competition_id: 671265
+  problem_id: D
+  solve_type: upsolve
+  credits: 0
+  remark: "audit"
+- handle: dariodaddamio
+  competition_id: 671265
+  problem_id: E
+  solve_type: upsolve
+  credits: 0
+  remark: "audit"
+- handle: anubhav43
+  competition_id: 671265
+  problem_id: A
+  solve_type: live
+  credits: 0
+  remark: "audit"
+- handle: anubhav43
+  competition_id: 671265
+  problem_id: B
+  solve_type: live
+  credits: 0
+  remark: "audit"
+- handle: anubhav43
+  competition_id: 671265
+  problem_id: D
+  solve_type: live
+  credits: 0
+  remark: "audit"
