@@ -64,8 +64,8 @@ Notes:
 - Use this when you need primality for *all* numbers up to $N$.
 
 Practice:
-- [T-primes (CF 230B)](https://codeforces.com/problemset/problem/230/B)
-- [Sherlock and his girlfriend (CF 776B)](https://codeforces.com/problemset/problem/776/B)
+- [T-primes (CF)](https://codeforces.com/problemset/problem/230/B)
+- [Sherlock and his girlfriend (CF)](https://codeforces.com/problemset/problem/776/B)
 ---
 
 ### SPF sieve (smallest prime factor) for fast factorization
@@ -105,9 +105,11 @@ for d in 1..N:
 ```
 If the inner computation is $O(1)$, this has time complexity $O(n\log n)$.
 
+Let's revisit: [Counting Divisors (CSES)](https://cses.fi/problemset/task/1713)
+
 Practice:
 - [Not Divisible (AtCoder ABC170 D)](https://atcoder.jp/contests/abc170/tasks/abc170_d)
-- [Common Divisors (CSES 1081)](https://cses.fi/problemset/task/1081) - (Can we find a better time complexity?)
+- [Common Divisors (CSES)](https://cses.fi/problemset/task/1081) - (Can we find a better time complexity than before?)
 - [Turn on the Light 3](https://qoj.ac/contest/2021/problem/10724)
 ---
 Problems
