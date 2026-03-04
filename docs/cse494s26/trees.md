@@ -91,6 +91,7 @@ Trees are not the only place this binary jumping idea is useful - we can do this
 
 [Tree Queries (CF)](https://codeforces.com/problemset/problem/1328/E) 
 [Tractor Paths (USACO)](https://usaco.org/index.php?page=viewproblem2&cpid=1284)
+
 ---
 
 ### LCA
@@ -129,4 +130,5 @@ We can flatten a tree by doing a dfs traversal and recording infromation about t
 There are many potentially useful variations on how we flatten our tree. For example, we can record both the in and out times, or we could even record every time we "visit" a node in the dfs traversal. Which variation would be useful for making LCA work in $O(1)$?
 
 -[Tree Requests (CF)](https://codeforces.com/problemset/problem/570/D)
+
 ---
