@@ -18,7 +18,7 @@ Equivalent definitions which some problems use:
 
 A **forest** is a collection of trees.
 
-When a problem explicitly gives you a tree, they usually either give you an adjacency list for unrooted trees or a parent array for rooted trees.
+When a problem explicitly gives you a tree, they usually either give you an edge list for unrooted trees or a parent array for rooted trees.
 
 ---
 
@@ -64,16 +64,18 @@ Key reason it works:
 Problems:
 - [Independent Set (AC)](https://atcoder.jp/contests/dp/tasks/dp_p)
 - [Appleman and Tree (CF)](https://codeforces.com/problemset/problem/461/B)
+- [Tree Diameter (CSES)](https://cses.fi/problemset/task/1131)
+- [Tree Distances 1 (CSES)](https://cses.fi/problemset/task/1132)
 
-Compute stuff for every node ("Rerooting DP"):
-- [Tree Distances 1/2 (CSES)](https://cses.fi/problemset/task/1132)
+"Rerooting DP":
+- [Tree Distances 2 (CSES)](https://cses.fi/problemset/task/1133)
 - [V-Subtree (AC)](https://atcoder.jp/contests/dp/tasks/dp_v)
 ---
 
 ## Binary jumping/Sparse Table
 
 ### Binary jumping
-Let's begin with the canonical problem:
+Let's begin with: 
 [Company Queries I (CSES)](https://cses.fi/problemset/task/1687)
 
 Precompute “jump pointers” so you can move up the tree in powers of two:
@@ -87,22 +89,44 @@ Then any jump of k steps can be decomposed into powers of two (binary representa
 
 Trees are not the only place this binary jumping idea is useful - we can do this whenever we have a singular pointer from each state.
 
+[Tree Queries (CF)](https://codeforces.com/problemset/problem/1328/E) 
+[Tractor Paths (USACO)](https://usaco.org/index.php?page=viewproblem2&cpid=1284)
 ---
 
 ### LCA
 In a rooted tree, the **Lowest Common Ancestor (LCA)** of nodes u and v is:
 - The deepest node that is an ancestor of both u and v.
 
-How can we use the previous idea to solve:
+How can we use the previous idea to solve the following?
+
 - [Company Queries II (CSES)](https://cses.fi/problemset/task/1688)
 - [Distance Queries (CSES)](https://cses.fi/problemset/task/1135)
 
 ---
-<!-- ### Sparse Tables
+### Sparse Table
+Suppose we need to query the minimum on a range for an array that does not change. Using a segment tree we can achieve $O(\log n)$ for a query, but how do we achieve better?
 
-How can we use a sparse table to now be able to query the LCA of two nodes in O(1)?
+For each point in the array $x$ and each $k = 0, 1, \dots \lfloor \log _2 n \rfloor$, start by computing the minimum of the range $[x,x+2^k-1]$, with the binary jumping trick. To query in $O(1)$ instead of $O(\log n)$, we realize that the value of the minimum on a queried range $[a,b]$ is not affected if we count a value twice. 
+
+Therefore if $2^m$ is the largest power of $2$ that is less than or equal to $b-a+1$, then 
+$$
+\min[a,b] = \min( \min[a,a+2^m-1], \min[b-2^m+1,b])
+$$ 
+letting us query in $O(1)$.
+
+Can we use this this new data structure to query the LCA of two nodes in $O(1)$ instead of our previously best achieved $O(\log n)$? To do this, let's take a look at the Euler Tour:
+
 ---
 
 ## More Tree Queries
 
---- -->
+### Tree Flattening
+We can flatten a tree by doing a dfs traversal and recording infromation about the in/out times of nodes in the tree. For example, consider what happens if we flatten a tree and record the in-times of each node. 
+
+- [Path Queries (CSES)](https://cses.fi/problemset/task/1138)
+- [Distinct Colors (CSES)](https://cses.fi/problemset/task/1139)
+
+There are many potentially useful variations on how we flatten our tree. For example, we can record both the in and out times, or we could even record every time we "visit" a node in the dfs traversal. Which variation would be useful for making LCA work in $O(1)$?
+
+-[Tree Requests (CF)](https://codeforces.com/problemset/problem/570/D)
+---
