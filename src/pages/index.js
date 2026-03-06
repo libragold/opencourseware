@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import { courseCatalog } from '../data/courseCatalog';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -12,13 +13,13 @@ function HomepageHeader() {
           Open Courseware
         </Heading>
         <p className="hero__subtitle">
-          Open educational resources for competitive programming and algorithms
+          Open educational resources from courses I have taught
         </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/cse494">
-            Browse Courses →
+            to="/2026-spring-cse-494">
+            View Current Course →
           </Link>
         </div>
       </div>
@@ -26,15 +27,27 @@ function HomepageHeader() {
   );
 }
 
-function CourseCard({ title, description, link }) {
+function splitCourseCardTitle(cardTitle) {
+  const [courseNumber, ...rest] = cardTitle.split(' - ');
+  return {
+    courseNumber,
+    courseName: rest.join(' - '),
+  };
+}
+
+function CourseCard({ course, link }) {
+  const {courseNumber, courseName} = splitCourseCardTitle(course.cardTitle);
+
   return (
     <div className={clsx('col col--4', styles.card)}>
       <div className="card">
         <div className="card__header">
-          <Heading as="h3">{title}</Heading>
+          <Heading as="h3" className={styles.cardHeading}>
+            {course.semester} · {courseNumber}
+          </Heading>
         </div>
         <div className="card__body">
-          <p>{description}</p>
+          <p className={styles.cardCourseName}>{courseName}</p>
         </div>
         <div className="card__footer">
           <Link className="button button--primary button--block" to={link}>
@@ -46,24 +59,51 @@ function CourseCard({ title, description, link }) {
   );
 }
 
+function CourseSection({ institution, courses }) {
+  return (
+    <section className={styles.features}>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionTitle}>
+          {institution}
+        </Heading>
+        <div className="row">
+          {courses.map((course) => (
+            <CourseCard
+              key={course.routeBasePath}
+              course={course}
+              link={`/${course.routeBasePath}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
+  const groupedCourses = courseCatalog.reduce((groups, course) => {
+    const existing = groups.find((group) => group.institution === course.institution);
+    if (existing) {
+      existing.courses.push(course);
+    } else {
+      groups.push({institution: course.institution, courses: [course]});
+    }
+    return groups;
+  }, []);
+
   return (
     <Layout
       title="Home"
-      description="Open educational resources for competitive programming and algorithms">
+      description="Open educational resources from courses I have taught">
       <HomepageHeader />
       <main>
-        <section className={styles.features}>
-          <div className="container">
-            <div className="row">
-              <CourseCard
-                title="CSE 494 - Competitive Programming"
-                description="Spring 2026 course covering algorithms, data structures, and problem-solving techniques for competitive programming."
-                link="/cse494"
-              />
-            </div>
-          </div>
-        </section>
+        {groupedCourses.map((group) => (
+          <CourseSection
+            key={group.institution}
+            institution={group.institution}
+            courses={group.courses}
+          />
+        ))}
       </main>
     </Layout>
   );

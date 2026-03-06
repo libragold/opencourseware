@@ -3,11 +3,33 @@
 
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import { courseCatalog } from './src/data/courseCatalog.js';
+
+const coursePlugins = courseCatalog.map((course) => [
+  '@docusaurus/plugin-content-docs',
+  {
+    id: course.id,
+    path: course.docsDir,
+    routeBasePath: course.routeBasePath,
+    sidebarPath: course.sidebarPath,
+    sidebarCollapsible: true,
+    sidebarCollapsed: false,
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
+]);
+
+const getCourseNumber = (course) => course.cardTitle.split(' - ')[0];
+
+const courseDropdownItems = courseCatalog.map((course) => ({
+  label: `${course.semester} · ${getCourseNumber(course)}`,
+  to: `/${course.routeBasePath}`,
+}));
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Open Courseware',
-  tagline: 'Open educational resources for competitive programming and algorithms',
+  tagline: 'Open educational resources from courses I have taught',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -57,11 +79,14 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'cse494s26Sidebar',
-            docsPluginId: 'cse494s26',
+            to: '/',
             position: 'left',
-            label: 'CSE 494',
+            label: 'Home',
+          },
+          {
+            label: 'Courses',
+            position: 'left',
+            items: courseDropdownItems,
           },
         ],
       },
@@ -74,19 +99,7 @@ const config = {
     }),
 
   plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'cse494s26',
-        path: 'docs/cse494s26',
-        routeBasePath: 'cse494',
-        sidebarPath: './sidebars-cse494s26.js',
-        sidebarCollapsible: true,
-        sidebarCollapsed: false,
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
-      },
-    ],
+    ...coursePlugins,
     function yamlLoaderPlugin() {
       return {
         name: 'yaml-loader-plugin',

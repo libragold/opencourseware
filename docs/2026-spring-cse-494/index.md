@@ -1,9 +1,9 @@
 ---
-title: "CSE 494"
+title: "2026 Spring · CSE 494"
 slug: /
 ---
 
-# CSE 494: Competitive Programming and Problem Solving
+# Competitive Programming and Problem Solving
 
 Welcome to CSE 494! This course focuses on competitive programming and advanced algorithmic problem-solving techniques.
 
@@ -29,4 +29,4 @@ The course covers a wide range of topics including:
 
 ## Getting Started
 
-Check out the [Syllabus](/cse494/syllabus) for detailed information about the course, including meeting times, grading policies, and competition rules.
+Check out the [Syllabus](/2026-spring-cse-494/syllabus) for detailed information about the course, including meeting times, grading policies, and competition rules.

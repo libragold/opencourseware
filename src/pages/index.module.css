@@ -33,3 +33,15 @@
 .card {
   margin-bottom: 1rem;
 }
+
+.sectionTitle {
+  margin-bottom: 1.5rem;
+}
+
+.cardHeading {
+  margin-bottom: 0;
+}
+
+.cardCourseName {
+  margin: 0;
+}

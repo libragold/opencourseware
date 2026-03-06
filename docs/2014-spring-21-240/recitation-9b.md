@@ -1,0 +1,19 @@
+---
+title: "Recitation 9B"
+---
+
+Denote a $2\times 2$ orthogonal matrix by $\begin{bmatrix}a & c\\ b & d\end{bmatrix}$. Since it is an orthogonal matrix, the entries satisfy 
+$$a^2+b^2=1, ac+bd=0, c^2+d^2=1.$$
+ Since $a^2+b^2=1$, it is standard to parametrize $a$ and $b$ by $a=\cos\theta$ and $b=\sin\theta$. Using the last two equations, we can get $c=\mp \sin\theta, d=\pm\cos\theta$. In other words, we have two types of orthogonal matrix 
+$$A = \begin{bmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{bmatrix}, B = \begin{bmatrix}\cos\theta & \sin\theta \\ \sin\theta & -\cos\theta\end{bmatrix}.$$
+
+
+**Problem 1:** What does the linear transformation $S$ that sends $x$ to $Ax$ do? What about the linear transformation $T$ that sends $x$ to $A^2x$? Use these results to recover the double angle formulas for trigonometric functions.
+
+**Solution:** Since the linear transformation $S$ sends $\begin{bmatrix}1\\0\end{bmatrix}$ to $\begin{bmatrix}\cos\theta \\ \sin\theta\end{bmatrix}$ and $\begin{bmatrix}0\\1\end{bmatrix}$ to $\begin{bmatrix}-\sin\theta \\ \cos\theta\end{bmatrix}$, $S$ is a rotation about the origin by an angle of $\theta$. Since $T$ which is a linear transformation that sends $x$ to $Ax$ and then to $A(Ax)$, $T$ is a composition of $S$ with $S$ itself. Hence $T$ is a rotation about the origin by an angle of $2\theta$. On one hand, the matrix associated to $T$ is $\begin{bmatrix}\cos 2\theta & -\sin 2\theta \\ \sin 2\theta & \cos 2\theta\end{bmatrix}$. On the other hand, the matrix associated to $T$ is $A^2=\begin{bmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{bmatrix}^2=\begin{bmatrix}\cos^2\theta-\sin^2\theta & -2\sin\theta\cos\theta \\2\sin\theta\cos\theta & \cos^2\theta-\sin^2\theta\end{bmatrix}$. Comparing the entries, we obtain 
+$$\cos 2\theta = \cos^2\theta - \sin^2\theta, \sin 2\theta = 2\sin\theta\cos\theta.$$
+
+
+**Problem 2:** What are the eigenvalues and correspondent eigenvectors of the matrix $B$? How are those two eigenvectors related to each other? What does the linear transformation $S$ that sends $x$ to $Bx$ do? What about the linear transformation $T$ that sends $x$ to $B^2x$?
+
+**Solution:** To get the eigenvalues of the matrix $B$, consider the characteristic equation $det\left(B-\lambda I\right)=\begin{vmatrix}\cos\theta-\lambda & \sin\theta \\ \sin\theta & -\cos\theta-\lambda\end{vmatrix}=(\cos\theta-\lambda)(-\cos\theta-\lambda)-\sin^2\theta=\lambda^2-1=0$. This gives us two eigenvalues $\lambda_1 = 1, \lambda_2=-1$. For $\lambda_1=1$, the eigenvector can be $\mathbf{u}=(\sin\theta, 1-\cos\theta)$. For $\lambda_2=-1$, the eigenvector can be $\mathbf{v}=(-\sin\theta, 1+\cos\theta)$. These two vectors $\mathbf{u}, \mathbf{v}$ are perpendicular to each other because their inner product is $$. Now we have two perpendicular directions $\mathbf{u}$ and $\mathbf{v}$. On one hand, because the vector $\mathbf{u}$ is correspondent to the eigenvalue $1$, $S$ preserves all the vectors who have the same direction as $\mathbf{u}$. On the other hand, because the vector $\mathbf{v}$ is correspondent to the eigenvalue $-1$, $S$ reverses the direction of all the vectors who have the same direction as $\mathbf{v}$. Therefore $S$ is a reflection across the line through the origin with direction $\mathbf{u}$. Since the composition of two same reflections does nothing, the linear transformation $T$ that sends $x$ to $B^2x$ is an identity map. Also it is easy to check $B^2$ is indeed an identity matrix.
