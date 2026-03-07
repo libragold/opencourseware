@@ -133,6 +133,6 @@ All steps should be justified. You are strongly encouraged to do as much homewor
 
 **Week 16 — Student Presentation Week**
 
-- November 28
-- November 30
+- November 28: Student Presentation 1
+- November 30: Student Presentation 2
 - December 5: Final exam

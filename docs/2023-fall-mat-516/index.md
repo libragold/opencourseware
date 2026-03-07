@@ -93,25 +93,25 @@ No make-up test will be given unless a student has notified the instructor befor
 
 **Week 11**
 
-- October 30
-- November 1
+- October 30. Planarity from a topological viewpoint: regions and frontiers, the Jordan curve theorem for polygons, the three-arcs lemma, the region lemma, and the definition of plane graphs.
+- November 1. Faces of plane graphs, inner and outer faces, boundaries of faces, incidence, plane forests having exactly one face, and basic lemmas relating cycles and face boundaries.
 
 **Week 12**
 
-- November 6
-- November 8
+- November 6. Face boundaries in 2-connected and 3-connected plane graphs, maximal planar graphs and triangulations, Euler's formula, and the bounds on the number of edges in planar graphs, including the non-planarity of $K_5$ and $K_{3,3}$.
+- November 8. Kuratowski's theorem: characterizing planar graphs via subdivisions of $K_5$ and $K_{3,3}$, together with the structure of edge-maximal non-planar graphs.
 
 **Week 13**
 
-- November 13
-- November 15
+- November 13. Cycle spaces over $\mathbb F_2$, sparse families of cycles, facial cycles in plane graphs, and MacLane's theorem characterizing planarity by the existence of a sparse basis of the cycle space.
+- November 15. Plane duality for connected plane multigraphs, cycles and bonds under duality, abstract duals, and Whitney's theorem characterizing planar graphs by the existence of an abstract dual.
 
 **Week 14**
 
-- November 20
-- November 22
+- November 20. Edge coloring, König's line-coloring theorem for bipartite graphs, Vizing's theorem, list coloring, and Thomassen's theorem that every planar graph is 5-choosable.
+- November 22. List edge-coloring of bipartite graphs via Galvin's theorem, perfect graphs, chordal graphs and their decomposition by clique sums, Lovász's perfect graph theorem, and the statement of the strong perfect graph theorem.
 
 **Week 15**
 
-- November 27
-- November 29
+- November 27. *Student presentations* (15 min each + 3 min Q&A): Michael Buchanan — generalized Menger's theorem; Hricha Acharya — graph embedding on other surfaces; Devansh Patel — perfect graphs; Garrett Parzych — Ramsey theory.
+- November 29. *Student presentations* (25 min or 15 min + 3 min Q&A): Kasturi Barkataki — connection with knot theory (15 min); Taman Truong and Theodore Gossett — Brooks's theorem (25 min); Skand Parvatikar and Dennis Liu — rainbow results (25 min).
