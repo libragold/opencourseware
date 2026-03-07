@@ -17,8 +17,6 @@ when $d^2y/dx^2<0$.
 
 **Solution:** The curve crosses itself at $(-2, 0)$.
 
-<figure id="attachment_7910" aria-describedby="caption-attachment-7910" class="wp-caption aligncenter"><img loading="lazy" decoding="async" class="size-full wp-image-7910" src="https://blog.zilin.one/wp-content/uploads/2019/01/calc-122-27-1.png" alt="" width="343" height="372" srcset="https://blog.zilin.one/wp-content/uploads/2019/01/calc-122-27-1.png 343w, https://blog.zilin.one/wp-content/uploads/2019/01/calc-122-27-1-277x300.png 277w" sizes="auto, (max-width: 343px) 100vw, 343px" /><figcaption id="caption-attachment-7910" class="wp-caption-text">the curve crosses itself at (-2, 0)</figcaption></figure>
-
 This happens when 
 $$x = \cos t + 2 \cos 2t = \cos t(1+ 4\cos t)-2 = -2, y = \sin t + 2\sin 2t = \sin t(1+4\cos t) = 0,$$
  i.e., $\cos t = -1/4$. The tangent line at $(x_0, y_0)$ where $x_0 = x(t_0), y_0 = y(t_0)$ is given by $y'(t_0)(x-x_0) = x'(t_0)(y-y_0)$, i.e., $(\cos t_0 + 4\cos 2t_0)(x - x_0) = (-\sin t_0 - 4\sin 2t_0)(y - y_0)$. Now set $\cos t_0 = -1/4, \sin t_0 = \pm\sqrt{15}/4, x_0 = -2, y_0 = 0$ and get two equations of both tangents $\sqrt{15}(x+2)\pm y=0$.

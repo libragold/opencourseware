@@ -103,5 +103,3 @@ For many PIE counting tasks:
 - [Max-Min Sums (AC)](https://atcoder.jp/contests/abc151/tasks/abc151_e)
 - [Colorful Blocks (AC)](https://atcoder.jp/contests/abc167/tasks/abc167_e)
 - [Strivore (AC)](https://atcoder.jp/contests/abc171/tasks/abc171_f)
-
-

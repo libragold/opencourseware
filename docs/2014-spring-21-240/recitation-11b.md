@@ -22,5 +22,4 @@ $$\begin{bmatrix}2 \\ 1 \\ -2\end{bmatrix}\sim\begin{bmatrix}2/3 \\ 1/3 \\ -2/3\
  The orthonormal basis for $V_2$ is formed by 
 $$\begin{bmatrix}1 \\ -2 \\ 0\end{bmatrix}\sim \begin{bmatrix}1/\sqrt{5} \\ -2/\sqrt{5} \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 2 \\ 1\end{bmatrix} - (-4/\sqrt{5})\begin{bmatrix}1/\sqrt{5} \\ -2/\sqrt{5} \\ 0\end{bmatrix} = \begin{bmatrix}4/5 \\ -2/5 \\ 1\end{bmatrix}\sim \begin{bmatrix}4/\sqrt{45} \\ 2/\sqrt{45} \\ 5/\sqrt{45}\end{bmatrix}.$$
 
-
 (c) Put $P=\begin{bmatrix}2/3 & 1/\sqrt{5} & 4/\sqrt{45}\\1/3 & -2/\sqrt{5} & 2/\sqrt{45}\\-2/3 & 0 & 5/\sqrt{45}\end{bmatrix}$ and $D=\begin{bmatrix}-2 & 0 & 0\\ 0 & 7 & 0\\ 0 & 0 & 7\end{bmatrix}$. Then $M=PDP^T$.

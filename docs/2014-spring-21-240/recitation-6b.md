@@ -15,7 +15,6 @@ $$\begin{bmatrix}\mathbf{2}&-4&-2&3\\\mathbf{6}&-9&-5&8\\\mathbf{2}&-7&-3&9\\\ma
  Pick out the entries in boldface, normalized and assemble them to make 
 $$L=\begin{bmatrix}1 & 0 & 0 & 0 & 0\\ 3 & 1 & 0 & 0 & 0\\ 1 & -1 & 1 & 0 & 0\\ 2 & 2 & -1 & 1 & 0 \\ -3 & -3 & 2 & 0 & 1\end{bmatrix}.$$
 
-
 **Problem 3:** Consider the production model $\mathbf{x}=C\mathbf{x}+\mathbf{d}$ for an economy with two sectors, where 
 $$C=\begin{bmatrix}.0 & .5\\ .6 & .2\end{bmatrix}, \mathbf{b}=\begin{bmatrix}50\\30\end{bmatrix}.$$
  Use an inverse matrix to determine the production level necessary to satisfy the final demand.

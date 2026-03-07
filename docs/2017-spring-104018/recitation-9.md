@@ -34,7 +34,6 @@ Finally, $\lim_{x\to 0}\frac{\sin x}{e^x - 1} = \lim_{x\to 0}\frac{\sin x}{x}\fr
 $$1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!}.$$
  By Taylor&#8217;s theorem, 
 
-
 $$\lim_{x\to 0}\frac{\cos x - (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!})}{x^6} = 0,$$
  and so 
 $$\lim_{x\to 0}\frac{\cos x - 1 + \frac{x^2}{2!} - \frac{x^4}{4!}}{x^6} = -\frac{1}{6!}.$$
@@ -46,7 +45,6 @@ $$\lim_{x\to 0}\frac{\sin x - (x - \frac{x^3}{3!} + \frac{x^5}{5!})}{x^5} = 0,$$
 $$\lim_{x\to 0}\frac{\sin x - x + \frac{x^3}{3!}}{x^5} = \frac{1}{5!}.$$
  Finally, 
 $$\lim_{x \rightarrow 0}\frac{\cos x- 1 + \frac{x^2}{2}-\frac{x^4}{4!}}{x(\sin x - x+\frac{x^3}{3!})} = \lim_{x\to 0}\frac{\cos x - 1 + \frac{x^2}{2!} - \frac{x^4}{4!}}{x^6}\lim_{x\to 0}\frac{x^5}{\sin x - x + \frac{x^3}{3!}} = -\frac{1}{6}.$$
-
 
 **Problem 5** Use Taylor&#8217;s theorem to calculate $\sqrt{1.01}$ with precision of at least $10^{-6}$.
 
@@ -60,7 +58,6 @@ $$|f(0.01) - P(0.01)| = \frac{f'''(c)}{3!}(0.01)^3 = \frac{(3/8)(1+c)^{-5/2}}{3!
 
 **Problem 6** Use Taylor&#8217;s theorem to prove the following inequality, for every $x \in \mathbb{R}$: 
 $$e^x \geq 1+x+x^2/2!+x^3/3!+x^4/4!+x^5/5!.$$
-
 
 **Solution** The 5th order Taylor polynomial of $e^x$ is 
 $$P(x) = 1+x+x^2/2!+x^3/3!+x^4/4!+x^5/5!,$$

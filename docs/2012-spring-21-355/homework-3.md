@@ -132,7 +132,6 @@ Proof.
 
 Exercise: Let $X$ be an infinite set. For $p,q\in X$, define
 
-
 $$d(x,y)=\begin{cases}1&\text{if }p\neq q\\0&\text{if }p=q\end{cases}$$
  
 

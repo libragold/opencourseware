@@ -10,7 +10,6 @@ Exercise: Let $a<0$ and $x_1<$ be the real numbers. Define a sequence $\{x_n\}$ 
 
 $$x_{n+1}=\frac{1}{2}\left(x_n+\frac{a}{x_n}\right)\text{ for all }n\in\mathbb{N}$$
 
-
 <ol>
   <li>
     Prove that $x_{n+1}\leq x_n$ for all $n\geq 2$.
@@ -34,7 +33,6 @@ Proof.
 Exercise: For a sequence of real numbers $\{a_n\}$, denote, by $\{s_n\}$, the sequence of its arithmetic means as follows  
 
 $$s_n=\frac{1}{n}\sum^n_{k=1}{a+k}=\frac{1}{n}(a_1+a_2+\cdots+a_n)$$
-
 
 <ol>
   <li>
@@ -65,7 +63,6 @@ Proof (sketch).
 Exercise: We define the Fibonacci sequence $\{F_n\}$ by  
 
 $$F_0=0, F_1=1 \text{ and } F_{n+1}=F_n+F_{n-1} \text{ for } n\geq 1$$
-
 
 <ol>
   <li>

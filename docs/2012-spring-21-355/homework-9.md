@@ -38,7 +38,6 @@ Prove that every convex function is continuos. Hint: prove first that if $a<s<t<
 
 $$\frac{f(t)-f(s)}{t-s}\leq\frac{f(u)-f(s)}{u-s}\leq\frac{f(u)-f(t)}{u-t}$$
 
-
 Proof. First, we prove the first inequality in the hint. Notice that  
 
 $$\frac{f(t)-f(s)}{t-s}\leq\frac{f(u)-f(s)}{u-s}$$
@@ -46,7 +45,6 @@ $$\frac{f(t)-f(s)}{t-s}\leq\frac{f(u)-f(s)}{u-s}$$
 is equivalent to  
 
 $$f(t)\leq\frac{t-s}{u-s}f(u)+\frac{u-t}{u-s}f(s).$$
-
 
 But notice that if we take $x=u$, $y=s$ and $\lambda=\frac{t-s}{u-s}$ and plug them into the convexity inequality, the above inequality holds immediately. Similarly, we can prove the second inequality in the hint.
 

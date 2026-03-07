@@ -1,5 +1,0 @@
----
-title: "Assignment 2"
----
-
-

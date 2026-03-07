@@ -35,7 +35,6 @@ $$r^n + a_1r^{n-1} + a_2r^{n-2} + \dots + a_n = 0.$$
  If the roots of the characteristic equation are distinct reals $r_1, r_2, \dots, r_n$, then the general solution is 
 $$c_1e^{r_1x} + c_2e^{r_2x} + \dots + c_ne^{r_nx}.$$
 
-
 **Existence and uniqueness** Given a linear differential equation 
 $$y^{(n)} + p_1(x)y^{(n-1)} + p_2(x)y^{(n-2)} + \dots + p_n(x)y = g(x)$$
  with initial conditions 

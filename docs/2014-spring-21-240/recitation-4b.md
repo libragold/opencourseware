@@ -9,7 +9,6 @@ $$T(e_1)=\begin{pmatrix}\cos\phi \\ \sin\phi\end{pmatrix}, T(e_2)=\begin{pmatrix
  Therefore the standard matrix 
 $$A=\begin{pmatrix}T(e_1) & T(e_2)\end{pmatrix}=\begin{pmatrix}\cos\phi & -\sin\phi \\ \sin\phi & \cos\phi\end{pmatrix}.$$
 
-
 **Problem 2:** Let $T$ be the linear transformation whose standard matrix is 
 $$A=\begin{pmatrix}1 & -4 & 8 & 1\\ 0 & 2 & -1 & 3 \\ 0 & 0 & 0 & 5\end{pmatrix}$$
  Does $T$ maps $\mathbb{R}^4$ onto $\mathbb{R}^3$? Is $T$ a one-to-one mapping?

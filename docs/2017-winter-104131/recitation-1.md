@@ -14,8 +14,6 @@ In the last lecture, you have seen the **slope diagram** (also known as **slope 
 
 **Solution** See the excellent explanation on Khan Academy.
 
-
-
 ### Ordinary Differential Equation $y'=ay+b$
 
 **Problem 2** Solve $y' = 2y + 3$.

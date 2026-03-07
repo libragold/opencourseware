@@ -28,7 +28,6 @@ title: "Recitation 5B"
 **Problem 3:** Determine which of the matrices are invertible. 
 $$\begin{bmatrix}5 & 7 \\ -3 & -6\end{bmatrix}, \begin{bmatrix}3 & 0 & 0 \\ -3 & -4 & 0 \\ 8 & 5 & -3\end{bmatrix}, \begin{bmatrix}3 & 0 & -3 \\ 2 & 0 & 4 \\ -4 & 0 & 7\end{bmatrix}$$
 
-
 **Solution:** As for the first matrix, as two columns are not multiple of each other, they are linearly independent. By the invertible matrix theorem, it is invertible. As for the second one, its transpose has $n$ pivot positions. By the invertible matrix theorem, the transpose is invertible. Again by the theorem, the second matrix itself is invertible. As for the last one, its second column is a zero vector. By the invertible matrix theorem, the matrix is not invertible because its columns are not linearly independent.
 
 **Problem 4:** Let $A$ and $B$ be $n\times n$ matrices. Show that if $AB$ is invertible, so is $A$.

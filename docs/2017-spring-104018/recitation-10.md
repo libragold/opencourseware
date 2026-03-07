@@ -15,7 +15,6 @@ $$\tfrac{1}{4}\sin 4u = \tfrac{1}{2}\sin 2u\cos 2u = \sin u\cos u(1-2sin^2 u) = 
  Therefore the integral is equal to 
 $$\frac{1}{8}\left(\arcsin x - x\sqrt{1-x^2}\left(1-2x^2\right)\right) + C.$$
 
-
 **Problem 2** Find the following indefinite integrals: (a) $\int \frac{2x+7}{(x-1)(x^2-5x+6)}dx$; (b) $\int \frac{x^3+x^2-2x-4}{x^2-5x+6}dx$.
 
 **Solution** (a) The partial fraction decomposition of 
@@ -27,10 +26,8 @@ $$\frac{22x - 40}{x^2-5x+6} = \frac{A}{x-2} + \frac{B}{x-3}.$$
  Solve for $A, B$ and get $A = -4, B = 26$. The integral is thus 
 $$\tfrac{1}{2}x^2 + 6x - 4\ln |x-2| + 26\ln |x-3| + C.$$
 
-
 **Reduction formulas** For indefinite integrals of powers of trig functions, we have two useful reduction formulas (try to prove them by integration by parts): 
 $$\begin{aligned}m\int \cos^m x dx &= \cos^{m-1}x\sin x + (m-1)\int \cos^{m-2}x dx; \\ m\int \sin^m x dx &= -\sin^{m-1}\cos x + (m-1)\int \sin^{m-2}x dx.\end{aligned}$$
-
 
 **Proof of the 1st reduction formula** Start by setting: 
 $$I_n = \int \cos^n x dx.$$
@@ -63,10 +60,8 @@ $$\int sin^{-2}x dx = -\sin^{-1}\cos x + C = -\cot x + C.$$
  (e) Substitute $x = 2u$ and $dx = 2 du$ and get 
 $$\begin{aligned}\int \frac{1}{\sin 2u} 2du &= \int \frac{1}{\sin u\cos u}du \\ &= \int \frac{\sin^2 u + \cos^2 u}{\sin u\cos u}du \\ &= \int \tan u du + \int \cot u du \\ &= -\ln |\cos u| + \ln |\sin u| + C \\ &= \ln |\tan (x/2)| + C.\end{aligned}$$
 
-
 **Fact** Using integration by parts, we can get 
 $$\int e^x\sin x dx = \frac{1}{2}e^x(\sin x - \cos x) + C, \int e^x\cos x dx = \frac{1}{2}e^x(\sin x + \cos x).$$
-
 
 **Problem 4** Find the following indefinite integrals: (a) $\int xe^x\sin x dx$; (b) $\int x^2e^{x}\sin x dx$; (c) $\int \frac{\ln x}{x^2} dx$.
 
@@ -76,7 +71,6 @@ $$\int f dg = fg - \int g df = \frac{1}{2}xe^x(\sin x - \cos x) - \frac{1}{2}\in
 $$\int f dg = fg - \int g df = \frac{1}{2}x^2e^x(\sin x - \cos x) - \int xe^x(\sin x - \cos x)dx.$$
  The answer to $\int xe^x\sin x dx$ is given by part (a). The answer to $\int xe^x\cos x dx$ can be obtained similarly. (c) Integration by parts gives 
 $$\int \frac{\ln x}{x^2} dx = \int \ln x d(-1/x) = -\frac{\ln x}{x} - \int (-1/x)d(\ln x) = -\frac{\ln x}{x} + \int 1/x^2dx = -\frac{\ln x}{x} - \frac{1}{x} + C.$$
-
 
 **Problem 5** Let $f\colon [0,2] \to \mathbb{R}$ be the function defined by $f(x)=0$ for $x \in [0,1]$ and $f(x)=1$ for $x \in (1,2]$. Show that $f$ does not have antiderivative.
 

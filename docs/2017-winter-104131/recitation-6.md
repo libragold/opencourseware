@@ -9,7 +9,6 @@ $$e^t = \sum_{n=0}^\infty \frac{t^n}{n!}$$
  gives the clue: 
 $$e^{it} = \sum_{n=0}^\infty \frac{(it)^n}{n!} = \sum_{n=0}^\infty\frac{(-1)^nt^{2n}}{(2n)!} + i\sum_{n=0}^\infty\frac{(-1)^nt^{2n+1}}{(2n+1)!} = \cos t + i \sin t.$$
 
-
 Using _Euler&#8217;s formula_ $e^{it} = \cos t + i\sin t$, we can rewrite $y = c_1 e^{r_1 x} + c_2 e^{r_1 x}$, where $r_1, r_2 = \lambda \pm i\mu$, as a real-valued solution $y = e^{\lambda x}(C_1\cos\mu x + C_2 \sin \mu x)$.
 
 **Example 1** Solve the IVP $16y'' - 8y' + 145y = 0, y(0) = -2, y'(0) = 1$.

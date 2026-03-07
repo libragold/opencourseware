@@ -7,12 +7,10 @@ $$a^2+b^2=1, ac+bd=0, c^2+d^2=1.$$
  Since $a^2+b^2=1$, it is standard to parametrize $a$ and $b$ by $a=\cos\theta$ and $b=\sin\theta$. Using the last two equations, we can get $c=\mp \sin\theta, d=\pm\cos\theta$. In other words, we have two types of orthogonal matrix 
 $$A = \begin{bmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{bmatrix}, B = \begin{bmatrix}\cos\theta & \sin\theta \\ \sin\theta & -\cos\theta\end{bmatrix}.$$
 
-
 **Problem 1:** What does the linear transformation $S$ that sends $x$ to $Ax$ do? What about the linear transformation $T$ that sends $x$ to $A^2x$? Use these results to recover the double angle formulas for trigonometric functions.
 
 **Solution:** Since the linear transformation $S$ sends $\begin{bmatrix}1\\0\end{bmatrix}$ to $\begin{bmatrix}\cos\theta \\ \sin\theta\end{bmatrix}$ and $\begin{bmatrix}0\\1\end{bmatrix}$ to $\begin{bmatrix}-\sin\theta \\ \cos\theta\end{bmatrix}$, $S$ is a rotation about the origin by an angle of $\theta$. Since $T$ which is a linear transformation that sends $x$ to $Ax$ and then to $A(Ax)$, $T$ is a composition of $S$ with $S$ itself. Hence $T$ is a rotation about the origin by an angle of $2\theta$. On one hand, the matrix associated to $T$ is $\begin{bmatrix}\cos 2\theta & -\sin 2\theta \\ \sin 2\theta & \cos 2\theta\end{bmatrix}$. On the other hand, the matrix associated to $T$ is $A^2=\begin{bmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{bmatrix}^2=\begin{bmatrix}\cos^2\theta-\sin^2\theta & -2\sin\theta\cos\theta \\2\sin\theta\cos\theta & \cos^2\theta-\sin^2\theta\end{bmatrix}$. Comparing the entries, we obtain 
 $$\cos 2\theta = \cos^2\theta - \sin^2\theta, \sin 2\theta = 2\sin\theta\cos\theta.$$
-
 
 **Problem 2:** What are the eigenvalues and correspondent eigenvectors of the matrix $B$? How are those two eigenvectors related to each other? What does the linear transformation $S$ that sends $x$ to $Bx$ do? What about the linear transformation $T$ that sends $x$ to $B^2x$?
 

@@ -23,7 +23,6 @@ title: "Recitation 28"
 **Solution:** The distance is equal to 
 $$\begin{aligned}\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2} & = \sqrt{(r_1\cos\theta_1 - r_2\cos\theta_2)^2+(r_1\sin\theta_1 - r_2\sin\theta_2)^2} \\ & = \sqrt{r_1^2 + r_2^2 - 2r_1r_2(\cos\theta_1\cos\theta_2 + \sin\theta_1\sin\theta_2)} \\ & = \sqrt{r_1^2+r_2^2-2r_1r_2\cos(\theta_1-\theta_2)}.\end{aligned}$$
 
-
 **Example 4:** Identify the curve $r^2\cos 2\theta = 1$ by finding a Cartesian equation for the curve.
 
 **Solution:** Note that $\cos^2\theta = \cos^2\theta - \sin^2\theta$ and $x = r\cos\theta, y=r\sin\theta$. The Cartesian equation is $x^2 - y^2 = 1$, and so the curve is a hyperbla.

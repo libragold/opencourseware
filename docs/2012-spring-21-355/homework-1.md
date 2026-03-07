@@ -7,7 +7,6 @@ Throughout the course, we take $\mathbb{N}=\{1, 2, 3, \ldots\}$ as the set of na
 Exercise. For each subset of $\mathbb{R}$, give its maximum, minimum, supremum and infimum, if they exist:
 $$\{0, 8\}, (3, \infty), \left\{(-1)^n\cdot \left(1+\frac{1}{n}\right): n\in\mathbb{N}\right\}, \left\{ \frac{n}{n+1} : n\in\mathbb{N}\right\}$$
 
-
 Proof.
 
 <table>

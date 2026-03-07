@@ -232,4 +232,4 @@ In order to destroy the enemy, the total hit points of the troops have to be at 
   </tr>
 </table>
 
-Alternatively, there is a two-stop flight from Pittsburgh to Jackson that costs $335 and there is one from Salt Lake City to Aspen that costs $317. The skiers are willing to take at most 1 two-stop flight. Formulate the linear program to find the tour trip plan that minimizes the cost.
+Alternatively, there is a two-stop flight from Pittsburgh to Jackson that costs \$335 and there is one from Salt Lake City to Aspen that costs $317. The skiers are willing to take at most 1 two-stop flight. Formulate the linear program to find the tour trip plan that minimizes the cost.

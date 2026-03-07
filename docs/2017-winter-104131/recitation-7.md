@@ -7,12 +7,10 @@ title: "Recitation 7"
 The characteristic equation $r^2 + 4r + 4 = (r+2)^2 = 0$ has a repeated root $r=-2$, and so $y_1 = e^{-2x}$ is a solution. Assume the general solution is of the form $y = v(x)e^{-2x}$. Then 
 $$\begin{aligned}y' &= v'(x)e^{-2x} + v(x)(-2)e^{-2x} = (v' - 2v)e^{-2x}, \\ y'' &= v''(x)e^{-2x} + v'(x)(-2)e^{-2x} \cdot 2 + v(x)(-2)^2e^{-2x} = (v'' - 4v + 4v)e^{-2x}.\end{aligned}$$
 
-
 Therefore $v$ satisfies $[(v''-4v'+4v) + 4(v'-2v) + 4v]e^{-2x} = 0$, and so $v'' = 0$ implies $v(x) = c_1 + c_2x$. Therefore $y = (c_1 + c_2 x) e^{-2x}$ is a solution. In other words, the linear combination of $y_1 = e^{-2x}, y_2 = xe^{-2x}$ is a solution.
 
 We use Wronskian to verify $y_1, y_2$ for a _fundamental set of solutions_, that is, $y = c_1 y_1 + c_2 y_2$ generates all solutions: 
 $$W(y_1, y_2) = \begin{vmatrix}y_1 & y_2 \\ y_1' & y_2'\end{vmatrix} = \begin{vmatrix}e^{-2x} & xe^{-2x} \\ -2e^{-2x} & (1-2x)e^{-2x}\end{vmatrix} = e^{-4x} \neq 0.$$
-
 
 In general, if the characteristic equation of $ay'' + by' + cy = 0$ has a repeated root $r$, then $y = (c_1 + c_2x)e^{rx}$ is the general solution.
 

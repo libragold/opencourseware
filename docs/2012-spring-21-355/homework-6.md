@@ -34,7 +34,6 @@ Exercise: Find all subsequential limits of the sequence $\{s_n\}$ defined by
 
 $$s_1=0; s_{2n}=\frac{s_{2n-1}}{2}; s_{2n+1}=\frac{1}{2}+s_{2n}.$$
 
-
 Proof. The odd-numbered terms converge to $1$ and the even-numbered terms converge to $1/2$.
 
 Exercise: For each of the following metric spaces, given an example of a Cauchy sequence which does not converge. In each case, assume $d(x,y)=|x-y|$.

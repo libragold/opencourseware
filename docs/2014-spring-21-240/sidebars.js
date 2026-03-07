@@ -8,7 +8,6 @@ const course_21_240_spring_2014Sidebar = [
       'recitation-1b',
       'recitation-2a',
       'recitation-2b',
-      'recitation-3b',
       'recitation-4a',
       'recitation-4b',
       'recitation-5a',

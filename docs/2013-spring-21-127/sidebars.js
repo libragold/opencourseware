@@ -5,7 +5,6 @@ const course_21_127_spring_2013Sidebar = [
     label: 'Assignments',
     items: [
       'assignment-1',
-      'assignment-2',
       'assignment-2-supplement',
       'assignment-4',
       'assignment-5',

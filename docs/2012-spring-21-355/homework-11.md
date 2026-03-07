@@ -14,7 +14,6 @@ Suppose for sake of contradiction $g(x)=G'(x)$. Then $-g(-x)=G'(-x)$. But $g(x)+
 
 Exercise: Suppose $f,g:[a,b]\rightarrow\mathbb{R}$ are differentiable on $[a,b]$, and
 
-
 $$f(x)g'(x)-f'(x)g(x)\neq 0 \text{ for all }x\in[a,b]$$
  
 
@@ -30,14 +29,12 @@ for all points $x,t\in[a,b]$ with $0<|t-x|<\delta$.
 
 Proof. Since $f'$ is continuos on $[a,b]$, $f'$ is uniformly continuous on $[a,b]$. For any $\epsilon > 0$, there is $\delta > 0$, such that whenever$|x-s|<\delta$, $|f'(x)-f'(s)|<\epsilon$. Now, for all points $x,t\in[a,b]$ with $0<|t-x|<\delta$, by the mean value theorem, there is $s$ between $t$ and $x$, such that $f'(s)=\frac{f(t)-f(x)}{t-x}$. We have,
 
-
 $$\left|\frac{f(t)-f(x)}{t-x}-f'(x)\right|=|f'(s)-f'(x)|<\epsilon ,$$
  
 
 since $|s-x|<|t-x|<\delta$.
 
 Exercise: Suppose $f:\mathbb{R}\rightarrow\mathbb{R}$ is differentiable at $a\in\mathbb{R}$, and suppose two sequences $\{x_n\}$ and $\{y_n\}$ in $\mathbb{R}$ that satisfy $x_n\neq y_n, x_n\leq a\leq y_n$ for all $n\in\mathbb{N}$, and $\lim_{n\rightarrow\infty}x_n=a=\lim_{n\rightarrow\infty}y_n$. Prove that
-
 
 $$\lim_{n\rightarrow\infty}\frac{f(y_n)-f(x_n)}{y_n-x_n}=f'(a).$$
  
@@ -59,6 +56,5 @@ $$f(y_n)-f(x_n)=f'(a)(y_n-x_n)+r(y_n)(y_a-a)+r(x_n)(a-x_n)$$
 which implies,  
 
 $$\frac{f(y_n)-f(x_n)}{y_n-x_n}=f'(a)+r(y_n)\frac{y_n-a}{y_n-x_n}+r(x_n)\frac{a-x_n}{y_n-x_n}$$
-
 
 Notice that both $\frac{y_n-a}{y_n-x_n}$ and $\frac{a-x_n}{y_n-x_n}$ are between 0 and 1. So if we take the limit over the previous equation, we will get the conclusion.

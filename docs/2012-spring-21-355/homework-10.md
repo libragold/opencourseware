@@ -8,11 +8,9 @@ Exercise: Use definition to determine the derivative of the function
 
 $$f(x)=\frac{1}{\sqrt{x}}, x>0$$
 
-
 Proof. Using the definition, we can calculate the derivative  
 
 $$\begin{aligned}\lim_{t\rightarrow x}\frac{f(t)-f(x)}{t-x}&= \lim_{t\rightarrow x}\frac{1/\sqrt{t}-1/\sqrt{x}}{t-x}\\&= \lim_{t\rightarrow x}-\frac{1}{\sqrt{tx}(\sqrt{t}+\sqrt{x})}\\&= -\frac{1}{2x\sqrt{x}}\end{aligned}$$
-
 
 Thus $f'(x)=-\frac{1}{2x\sqrt{x}}$
 

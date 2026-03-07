@@ -12,7 +12,6 @@ const course_21_259_fall_2013Sidebar = [
       'paper-homework-6',
       'paper-homework-7',
       'paper-homework-8',
-      'paper-homework-9',
     ],
   },
   {

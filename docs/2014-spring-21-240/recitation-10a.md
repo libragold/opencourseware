@@ -7,10 +7,8 @@ Denote a $2\times 2$ orthogonal matrix by $\begin{bmatrix}a & c\\ b & d\end{bmat
 Since it is an orthogonal matrix, the entries satisfy 
 $$a^2+b^2=1, ac+bd=0, c^2+d^2=1.$$
 
-
 Since $a^2+b^2=1$, it is standard to parametrize $a$ and $b$ by $a=\cos\theta$ and $b=\sin\theta$. Using the last two equations, we can get $c=\mp \sin\theta, d=\pm\cos\theta$. In other words, we have two types of orthogonal matrix 
 $$A = \begin{bmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{bmatrix}, B = \begin{bmatrix}\cos\theta & \sin\theta \\ \sin\theta & -\cos\theta\end{bmatrix}.$$
-
 
 **Problem:** What are the eigenvalues and correspondent eigenvectors of the matrix $B$? How are those two eigenvectors related to each other? What does the linear transformation $S$ that sends $x$ to $Bx$ do? What about the linear transformation $T$ that sends $x$ to $B^2x$?
 
