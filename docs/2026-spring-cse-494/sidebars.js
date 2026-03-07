@@ -30,7 +30,7 @@ const preferredOrder = [
 ];
 
 // Read the current directory to get all markdown files
-const currentDir = path.join(__dirname, 'docs', '2026-spring-cse-494');
+const currentDir = __dirname;
 let sidebarItems = [];
 
 if (fs.existsSync(currentDir)) {
