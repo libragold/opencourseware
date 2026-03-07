@@ -20,13 +20,13 @@ $$(-1)^{1+2}\begin{vmatrix}-1 & -1 & 0 \\ -1 & 3 & -1 \\ -1 & -1 & 2\end{vmatrix
 
 Remark: Here are two facts about Laplacian matrices:
 
-  1. Its determinant is always 0.
-  2. All cofactors are equal.
+1. Its determinant is always 0.
+2. All cofactors are equal.
 
 **Problem 2:** Prove that the determinant of the matrix 
 $$\begin{bmatrix}1 & 1 & 1 \\ a & b & c \\ a^2 & b^2 & c^2\end{bmatrix}$$
- is not equal to 0 if and only if $a, b, c$ are distinct numbers.
+is not equal to 0 if and only if $a, b, c$ are distinct numbers.
 
 Solution: Row replacements do not change the determinant: 
 $$\begin{aligned}\begin{vmatrix}1 & 1 & 1 \\ a & b & c \\ a^2 & b^2 & c^2\end{vmatrix} & = \begin{vmatrix}1 & 1 & 1 \\ a & b & c \\ 0 & b^2-ab & c^2-ac\end{vmatrix} \\ & = \begin{vmatrix}1 & 1 & 1 \\ 0 & b-a & c-a \\ 0 & b(b-a) & c(c-a)\end{vmatrix} \\ & = \begin{vmatrix}1 & 1 & 1 \\ 0 & b-a & c-a \\ 0 & 0 & (c-b)(c-a)\end{vmatrix}\\&=&(b-a)(c-b)(c-a).\end{aligned}$$
- Therefore the determinant $(a-b)(b-c)(c-a)$ is not zero if and if none of the factors is zero, i.e., $a,b,c$ take different values.
+Therefore the determinant $(a-b)(b-c)(c-a)$ is not zero if and if none of the factors is zero, i.e., $a,b,c$ take different values.

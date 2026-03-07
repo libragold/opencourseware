@@ -9,115 +9,12 @@ $$\{0, 8\}, (3, \infty), \left\{(-1)^n\cdot \left(1+\frac{1}{n}\right): n\in\mat
 
 Proof.
 
-<table>
-  <tr>
-    <th>
-      Set
-    </th>
-    
-    <th>
-      Maximum
-    </th>
-    
-    <th>
-      Minimum
-    </th>
-    
-    <th>
-      Supremum
-    </th>
-    
-    <th>
-      Infimum
-    </th>
-  </tr>
-  
-  <tr>
-    <td>
-      $\{0, 8\}$
-    </td>
-    
-    <td>
-      8
-    </td>
-    
-    <td>
-    </td>
-    
-    <td>
-      8
-    </td>
-    
-    <td>
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      $(3, \infty)$
-    </td>
-    
-    <td>
-      &#8211;
-    </td>
-    
-    <td>
-      &#8211;
-    </td>
-    
-    <td>
-      &#8211;
-    </td>
-    
-    <td>
-      3
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      $\left\{(-1)^n\cdot \left(1+\frac{1}{n}\right): n\in\mathbb{N}\right\}$
-    </td>
-    
-    <td>
-      3/2
-    </td>
-    
-    <td>
-      -2
-    </td>
-    
-    <td>
-      3/2
-    </td>
-    
-    <td>
-      -2
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      $\left\{ \frac{n}{n+1} : n\in\mathbb{N}\right\}$
-    </td>
-    
-    <td>
-      &#8211;
-    </td>
-    
-    <td>
-      1/2
-    </td>
-    
-    <td>
-      1
-    </td>
-    
-    <td>
-      1/2
-    </td>
-  </tr>
-</table>
+| Set | Maximum | Minimum | Supremum | Infimum |
+|---|---|---|---|---|
+| $\{0, 8\}$ | 8 | | 8 | |
+| $(3, \infty)$ | – | – | – | 3 |
+| $\left\{(-1)^n\cdot \left(1+\frac{1}{n}\right): n\in\mathbb{N}\right\}$ | 3/2 | -2 | 3/2 | -2 |
+| $\left\{ \frac{n}{n+1} : n\in\mathbb{N}\right\}$ | – | 1/2 | 1 | 1/2 |
 
 Exercise: Prove that for any real number $x$, there exists an integer $m$ such that $m-1\leq x<m.$
 

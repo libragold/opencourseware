@@ -6,4 +6,4 @@ In this exercise, we are going to verify whether it is legitimate to use the inf
 
 Common Mistakes:
 
-  * Many students were careless in doing falsification. Maybe you need to double check the details while falsifying the formula.
+* Many students were careless in doing falsification. Maybe you need to double check the details while falsifying the formula.

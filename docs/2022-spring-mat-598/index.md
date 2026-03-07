@@ -19,31 +19,15 @@ Office hours: Friday 1pm–2:30pm
 
 **Primary references:**
 
-<ol class="wp-block-list">
-  <li>
-    Noga Alon, and Joel H. Spencer. <em>The probabilistic method</em>. John Wiley & Sons, 2016.
-  </li>
-  <li>
-    László Lovász. <em>Large networks and graph limits</em>. Vol. 60. American Mathematical Soc., 2012.
-  </li>
-  <li>
-    Rajeev Motwani, and Prabhakar Raghavan. <em>Randomized algorithms</em>. Cambridge university press, 1995.
-  </li>
-  <li>
-    Bernd Gärtner, Jiri Matousek. <em>Approximation Algorithms and Semidefinite Programming</em>. Springer Berlin Heidelberg, 2012.
-  </li>
-</ol>
+1. Noga Alon, and Joel H. Spencer. <em>The probabilistic method</em>. John Wiley & Sons, 2016.
+2. László Lovász. <em>Large networks and graph limits</em>. Vol. 60. American Mathematical Soc., 2012.
+3. Rajeev Motwani, and Prabhakar Raghavan. <em>Randomized algorithms</em>. Cambridge university press, 1995.
+4. Bernd Gärtner, Jiri Matousek. <em>Approximation Algorithms and Semidefinite Programming</em>. Springer Berlin Heidelberg, 2012.
 
 **Onboarding:**
 
-<ul class="wp-block-list">
-  <li>
-    Please fill out the pre-semester questionnaire.
-  </li>
-  <li>
-    Learn how to use LaTeX (I recommend the tutorials on Overleaf).
-  </li>
-</ul>
+- Please fill out the pre-semester questionnaire.
+- Learn how to use LaTeX (I recommend the tutorials on Overleaf).
 
 **Asking questions:**
 

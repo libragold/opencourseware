@@ -25,14 +25,8 @@ Enumerating permutations and combinations of sets and multisets, inclusion-exclu
 
 **Onboarding:**
 
-<ul class="wp-block-list">
-  <li>
-    Please fill out the pre-semester questionnaire.
-  </li>
-  <li>
-    (Optional) Learn how to use LaTeX (I recommend the tutorials on Overleaf).
-  </li>
-</ul>
+- Please fill out the pre-semester questionnaire.
+- (Optional) Learn how to use LaTeX (I recommend the tutorials on Overleaf).
 
 **Asking questions:**
 
@@ -78,20 +72,10 @@ No make-up test will be given unless a student has notified the instructor befor
 
 You will get up to 10% as a bonus for shooting a combinatorial video clip (2 to 5 minute long). Here is the timeline:
 
-<ol class="wp-block-list">
-  <li>
-    Form a team of up to 5 people, and sign up for the bonus by Oct 14.
-  </li>
-  <li>
-    Prepare a script and a storyboard, and get approved by Oct 28.
-  </li>
-  <li>
-    Filming and post-production, and get feedback by Nov 16.
-  </li>
-  <li>
-    Final presentation on Dec 2.
-  </li>
-</ol>
+1. Form a team of up to 5 people, and sign up for the bonus by Oct 14.
+2. Prepare a script and a storyboard, and get approved by Oct 28.
+3. Filming and post-production, and get feedback by Nov 16.
+4. Final presentation on Dec 2.
 
 ### Schedule
 

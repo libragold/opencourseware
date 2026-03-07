@@ -12,13 +12,13 @@ Proof. (Sketch) Take $E=\{(-1,1-1/n):n\in\mathbb{N}\}$ which is an open cover of
 
 Exercise: Let $X$ be a metric space.
 
-  * Prove that if $K_1$ and $K_2$ are compact subsets of $X$, then $K_1\cup K_2$ is compact.
-  * Let $\{K_\alpha\}$ be any collection of compact sets in $X$. Show that $\bigcap_\alpha K_\alpha$ is compact.
+* Prove that if $K_1$ and $K_2$ are compact subsets of $X$, then $K_1\cup K_2$ is compact.
+* Let $\{K_\alpha\}$ be any collection of compact sets in $X$. Show that $\bigcap_\alpha K_\alpha$ is compact.
 
 Proof.
 
-  * Suppose $E$ is an open cover for $K_1\cup K_2$. Observe that $E$ is also an open cover for both $K_1$ and $K_2$, we can choose two finite subcovers for $K_1$ and $K_2$ respectively. Collect those two finite subcovers together, we get the finite subcover for $K_1\cup K_2$.
-  * Pick a compact set $K$ from the collection and let $C$ be the interdiv of all compact sets in the collection. As compact sets are closed and $C$ is the interdiv of compact sets, $C$ is closed. Now $C$ is a closed subset of a compact set $K$, so $C$ is compact.
+* Suppose $E$ is an open cover for $K_1\cup K_2$. Observe that $E$ is also an open cover for both $K_1$ and $K_2$, we can choose two finite subcovers for $K_1$ and $K_2$ respectively. Collect those two finite subcovers together, we get the finite subcover for $K_1\cup K_2$.
+* Pick a compact set $K$ from the collection and let $C$ be the interdiv of all compact sets in the collection. As compact sets are closed and $C$ is the interdiv of compact sets, $C$ is closed. Now $C$ is a closed subset of a compact set $K$, so $C$ is compact.
 
 Remark: Using the first result, one can prove by induction that the union of finitely many compact sets is compact.
 
@@ -32,14 +32,14 @@ As $G$ is open and $K\subset G$, for each point $x$ in $K$, there is a positive 
 
 Exercise: Let $V\subset\mathbb{R}$ be an open set. For all $x\in V$ we define $I_x := (a_x, b_x)$, where $a_x:=\inf\{q\in\mathbb{R}:(q,x]\subset V)\}$ and $b_x:=\sup\{p\in\mathbb{R}:[x,p)\subset V]\}$.
 
-  * Prove: For all $x\in V$, we have $a_x,b_x\notin V$, and $V=\bigcup_{x\in V}I_x$.
-  * Prove: For all $x,y\in V$ we have $I_x=I_y$ or $I_x\cap I_y=\emptyset$.
-  * Prove: If $S$ is a collection of disjoint open intervals in $\mathbb{R}$, then $S$ is at most countable. Hint: Use that the $\mathbb{Q}$ is countable.
+* Prove: For all $x\in V$, we have $a_x,b_x\notin V$, and $V=\bigcup_{x\in V}I_x$.
+* Prove: For all $x,y\in V$ we have $I_x=I_y$ or $I_x\cap I_y=\emptyset$.
+* Prove: If $S$ is a collection of disjoint open intervals in $\mathbb{R}$, then $S$ is at most countable. Hint: Use that the $\mathbb{Q}$ is countable.
 
 Proof. (Sketch)
 
-  * We are only going to prove $a_x\notin V$. $b_x\notin V$ would be similar. Assume, for sake of contradiction, $a_x\in V$. For $V$ is open, there is a positive $r$ such that $N_r(a_x)\subset V$. By the definition of $a_x$, there is $a'\in[a_x,a_x+r)$ such that $(a',x]\subset V$. This gives us $(a_x-r,x]=(a_x-r,a_x+r)\cup(a',x]\subset V$. Hence $a_x-r\geq a_x$. A contradiction. Notice that $x\in I_x$ for all $x\in V$ as $V$ is open. Clearly $V\subset\bigcup_{x\in V}I_x$. Enough to show for every $x\in V$, $I_x\subset V$. This part is left to the readers.
-  * Suppose $I_x\cap I_y\neq\emptyset$. Let $z\in I_x\cap I_y$. Enough to see $I_x=I_z$ and $I_y=I_z$. Details are left to the readers.
-  * First observe that there is always a rational number in an open intervals. So for every open interval in $S$, pick one rational in it. Since the open intervals in $S$ are disjoint, the rationals we&#8217;ve chosen should be different. As there are only countably many rationals, we conclude $S$ is at most countable.
+* We are only going to prove $a_x\notin V$. $b_x\notin V$ would be similar. Assume, for sake of contradiction, $a_x\in V$. For $V$ is open, there is a positive $r$ such that $N_r(a_x)\subset V$. By the definition of $a_x$, there is $a'\in[a_x,a_x+r)$ such that $(a',x]\subset V$. This gives us $(a_x-r,x]=(a_x-r,a_x+r)\cup(a',x]\subset V$. Hence $a_x-r\geq a_x$. A contradiction. Notice that $x\in I_x$ for all $x\in V$ as $V$ is open. Clearly $V\subset\bigcup_{x\in V}I_x$. Enough to show for every $x\in V$, $I_x\subset V$. This part is left to the readers.
+* Suppose $I_x\cap I_y\neq\emptyset$. Let $z\in I_x\cap I_y$. Enough to see $I_x=I_z$ and $I_y=I_z$. Details are left to the readers.
+* First observe that there is always a rational number in an open intervals. So for every open interval in $S$, pick one rational in it. Since the open intervals in $S$ are disjoint, the rationals we&#8217;ve chosen should be different. As there are only countably many rationals, we conclude $S$ is at most countable.
 
 Remark: This problem shows that every open subset of $\mathbb{R}$ can be written uniquely as a union of at most countably many disjoint open intervals. (Require a little work to show the uniqueness.)

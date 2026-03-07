@@ -4,18 +4,18 @@ title: "Recitation 5B"
 
 **The Invertible Matrix Theorem:** Let $A$ be a square $n\times n$ matrix. Then the following statements are equivalent.
 
-  * $A$ is invertible matrix.
-  * $A$ is row equivalent to the $n\times n$ identity matrix.
-  * $A$ has $n$ pivot positions.
-  * The equation $Ax=0$ has only the trivial solution.
-  * The columns of $A$ form a linearly independent set.
-  * The linear transformation $x\mapsto Ax$ is one-to-one.
-  * The equation $Ax=b$ has at least one solution for each $b$ in $\mathbb{R}^n$.
-  * The columns of $A$ span $\mathbb{R}^n$.
-  * The linear transformation $x\mapsto Ax$ maps $\mathbb{R}^n$ onto $\mathbb{R}^n$.
-  * There is an $n\times n$ matrix $C$ such that $CA=I$.
-  * There is an $n\times n$ matrix $D$ such that $AD=I$.
-  * $A^T$ is an invertible matrix.
+* $A$ is invertible matrix.
+* $A$ is row equivalent to the $n\times n$ identity matrix.
+* $A$ has $n$ pivot positions.
+* The equation $Ax=0$ has only the trivial solution.
+* The columns of $A$ form a linearly independent set.
+* The linear transformation $x\mapsto Ax$ is one-to-one.
+* The equation $Ax=b$ has at least one solution for each $b$ in $\mathbb{R}^n$.
+* The columns of $A$ span $\mathbb{R}^n$.
+* The linear transformation $x\mapsto Ax$ maps $\mathbb{R}^n$ onto $\mathbb{R}^n$.
+* There is an $n\times n$ matrix $C$ such that $CA=I$.
+* There is an $n\times n$ matrix $D$ such that $AD=I$.
+* $A^T$ is an invertible matrix.
 
 **Problem 1:** Suppose $AB=AC$, where $B$ and $C$ are $n\times p$ matrices and $A$ is invertible. Show that $B=C$. Is this true, in general, when $A$ is not invertible?
 

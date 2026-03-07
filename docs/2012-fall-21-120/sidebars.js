@@ -30,8 +30,6 @@ const course_21_120_fall_2012Sidebar = [
     label: 'Tests',
     items: [
       'test-1',
-      'test-2',
-      'test-3',
     ],
   },
 ];

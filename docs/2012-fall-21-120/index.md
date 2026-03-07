@@ -9,9 +9,9 @@ Instructor: Professor [Russell C. Walker][1], Wean Hall 6219, ext. 8-9657, rw1k@
 
 Textbook: Stewart, [Essential Calculus: Early Transcendentals][2], Second Edition, Brooks/Cole, Cengage Learning, 2012, 2007.
 
-Teaching Assistant for Section F & G: Zilin Jiang (Roy), Wean Hall 7213, zilinj@andrew.cmu.edu or zj@cmu.edu
+Teaching Assistant for Section F & G: Zilin Jiang, Wean Hall 7213, zilinj@andrew.cmu.edu or zj@cmu.edu
 
-Office Hours for Roy (Teaching Assistant) in WEH 7213: T 7:00PM &#8211; 9:00PM, Th 6:30PM &#8211; 8:30PM.
+Office Hours for Zilin Jiang (Teaching Assistant) in WEH 7213: T 7:00PM&#8211;9:00PM, Th 6:30PM&#8211;8:30PM.
 
 Updates:
 
@@ -40,7 +40,7 @@ Recitations:
   * Recitation 1: August 28, 2012. (I apologize to the students in section F, because I didn&#8217;t finish all the problems given by the professor. There are two problems left. And we will go through them next time. And I forgot to mention my email address which is zj@cmu.edu.)
   * Recitation 2: August 30, 2012. (I shouldn&#8217;t have mentioned Euler&#8217;s formula, $e^{i\theta}=\cos\theta + i\sin\theta$, during the recitation for section F. But it is indeed the fastest way to recover the trigonometric formulas by hand. For a full list of trigonometric identities, please refer to [this page on Wikipedia][15].)
   * Recitation 3: September 4, 2012.
-  * Recitation 4: September 6, 2012.
+  * Recitation 4: September 6, 2012.
   * Recitation 5: September 11, 2012.
   * Recitation 6: September 13, 2012.
   * Recitation 7: September 18, 2012.
@@ -81,9 +81,9 @@ Tests:
 
   * [Test 1](/2012-fall-21-120/test-1): October 1, 2012.
   * Retest on [Test 1](/2012-fall-21-120/test-1): 7:30 AM Thursday October 11, 2012 in DH 2210.
-  * [Test 2](/2012-fall-21-120/test-2): November 5, 2012.
-  * Retest on [Test 2](/2012-fall-21-120/test-2): 7:30 AM Thursday November 15, 2012 in McConomy Auditorium.
-  * [Test 3](/2012-fall-21-120/test-3): November 30, 2012.
+  * Test 2: November 5, 2012.
+  * Retest on Test 2: 7:30 AM Thursday November 15, 2012 in McConomy Auditorium.
+  * Test 3: November 30, 2012.
 
  [1]: http://www.math.cmu.edu/~rw1k/
  [2]: http://www.amazon.com/Essential-Calculus-Transcendentals-James-Stewart/dp/1133112285

@@ -3,7 +3,7 @@ title: "2020 Fall · 18.211"
 slug: /
 ---
 
- 
+# Combinatorial Analysis
 
 **Fall 2020, Massachusetts Institute of Technology**
 
@@ -15,7 +15,7 @@ slug: /
 
 **Teaching assistant:** Daniil Klieuev
 
-### **Course description**
+### Course description
 
 Welcome to the land of combinatorics! In this guided tour, we will explore different concepts in combinatorics (also known as discrete creatures), and the connections thereof.
 
@@ -25,52 +25,26 @@ Welcome to the land of combinatorics! In this guided tour, we will explore diffe
 
 **Onboarding:**
 
-<ul class="wp-block-list">
-  <li>
-    Please fill out the pre-semester questionnaire.
-  </li>
-  <li>
-    Read Chapter 1 in the textbook before classes start; we will spend little or no class time on these. Self-check by trying some exercises in these sections.
-  </li>
-  <li>
-    Consider learning how to use LaTeX (I recommend the <a rel="noreferrer noopener" href="https://www.overleaf.com/learn/latex/Tutorials" target="_blank">tutorials on Overleaf</a>), although this is not required for this class.
-  </li>
-</ul>
+- Please fill out the pre-semester questionnaire.
+- Read Chapter 1 in the textbook before classes start; we will spend little or no class time on these. Self-check by trying some exercises in these sections.
+- Consider learning how to use LaTeX (I recommend the <a rel="noreferrer noopener" href="https://www.overleaf.com/learn/latex/Tutorials" target="_blank">tutorials on Overleaf</a>), although this is not required for this class.
 
 **Resources:**
 
-<ul class="wp-block-list">
-  <li>
-    <em>Concrete mathematics</em> by Ronald Graham, Donald Knuth, and Oren Patashnik <a rel="noreferrer noopener" href="https://lib.mit.edu/record/cat00916a/mit.000673438" target="_blank">[library]</a>
-  </li>
-  <li>
-    <em>Enumerative combinatorics, volume I</em> by Richard Stanley <a rel="noreferrer noopener" href="https://lib.mit.edu/record/msn/MR2868112" target="_blank">[library]</a>
-  </li>
-  <li>
-    <em>Graph theory</em> by Reinhard Diestel <a rel="noreferrer noopener" href="https://lib.mit.edu/record/cat00916a/mit.002611642" target="_blank">[library]</a>
-  </li>
-  <li>
-    <em>Probabilistic method</em> by Noga Alon, and Joel Spencer <a rel="noreferrer noopener" href="https://lib.mit.edu/record/cat00916a/mit.001509658" target="_blank">[library]</a>.
-  </li>
-  <li>
-    <em>Ramsey theory</em> by Ronald Graham, Bruce Rothschild, and Joel Spencer <a rel="noreferrer noopener" href="https://lib.mit.edu/record/cat00916a/mit.002195621" target="_blank">[library]</a>
-  </li>
-  <li>
-    <em>Generatingfunctionology</em> by Herbert Wilf <a rel="noreferrer noopener" href="https://lib.mit.edu/record/cat00916a/mit.001365155" target="_blank">[library]</a> <a rel="noreferrer noopener" href="http://www.math.upenn.edu/~wilf/DownldGF.html" target="_blank">[online]</a>
-  </li>
-  <li>
-    <em>Analytic combinatorics</em> by Philippe Flajolet, and Robert Sedgewick <a rel="noreferrer noopener" href="https://lib.mit.edu/record/cat00916a/mit.001700988" target="_blank">[library]</a> <a rel="noreferrer noopener" href="http://algo.inria.fr/flajolet/Publications/books.html" target="_blank">[online]</a>
-  </li>
-  <li>
-    <em>Thirty-three miniatures: mathematical and algorithmic applications of linear algebra</em> by Jiří Matoušek <a rel="noreferrer noopener" href="https://lib.mit.edu/record/cat00916a/mit.001986131" target="_blank">[library]</a> <a rel="noreferrer noopener" href="https://kam.mff.cuni.cz/~matousek/la-ams.html" target="_blank">[online]</a>
-  </li>
-</ul>
+- _Concrete mathematics_ by Ronald Graham, Donald Knuth, and Oren Patashnik [library](https://lib.mit.edu/record/cat00916a/mit.000673438)
+- _Enumerative combinatorics, volume I_ by Richard Stanley [library](https://lib.mit.edu/record/msn/MR2868112)
+- _Graph theory_ by Reinhard Diestel [library](https://lib.mit.edu/record/cat00916a/mit.002611642)
+- _Probabilistic method_ by Noga Alon, and Joel Spencer [library](https://lib.mit.edu/record/cat00916a/mit.001509658).
+- _Ramsey theory_ by Ronald Graham, Bruce Rothschild, and Joel Spencer [library](https://lib.mit.edu/record/cat00916a/mit.002195621)
+- _Generatingfunctionology_ by Herbert Wilf [library](https://lib.mit.edu/record/cat00916a/mit.001365155) [online](http://www.math.upenn.edu/~wilf/DownldGF.html)
+- _Analytic combinatorics_ by Philippe Flajolet, and Robert Sedgewick [library](https://lib.mit.edu/record/cat00916a/mit.001700988) [online](http://algo.inria.fr/flajolet/Publications/books.html)
+- _Thirty-three miniatures: mathematical and algorithmic applications of linear algebra_ by Jiří Matoušek [library](https://lib.mit.edu/record/cat00916a/mit.001986131) [online](https://kam.mff.cuni.cz/~matousek/la-ams.html)
 
 **Asking questions:**
 
 Math is easier to explain live, so for math questions it is best to come to office hours. Another possibility: Ask them on <a rel="noreferrer noopener" href="https://piazza.com/class/kdl01ex02at4a9" target="_blank">Piazza</a>. Administrative questions too can be asked there, especially if other students might be able to answer them or might learn from the answer.
 
-### **Grading**
+### Grading
 
 3 in-class midterms worth 20% each, and homework for the remaining 40%
 
@@ -80,18 +54,12 @@ Math is easier to explain live, so for math questions it is best to come to offi
 
 <a rel="noreferrer noopener" href="http://bit.ly/mitnavigatingresources" target="_blank">&#8220;How to get help&#8221; flowchart</a>
 
-### **Midterms**
+### Midterms
 
-<ul class="wp-block-list">
-  <li>
-    50 min in-class midterms.
-  </li>
-  <li>
-    No notes and electronic devices (including calculators, phones, etc.) may be used.
-  </li>
-</ul>
+- 50 min in-class midterms.
+- No notes and electronic devices (including calculators, phones, etc.) may be used.
 
-### **Homework**
+### Homework
 
 Submissions may be either typed or legibly written. All steps should be justified. You are strongly encouraged to do as much homework as possible individually; you will gain the most of out the course this way.
 
@@ -101,7 +69,7 @@ _Sources and collaboration policy._ Collaboration and use of external sources ar
 
 _Late policy._ The homework must be submitted by _noon_ of the day it is due. For each _hour_ that it is late, the assignment grade will be reduced by 5%.
 
-### **Schedule**
+### Schedule
 
 **Week 1**
 

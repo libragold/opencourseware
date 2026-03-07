@@ -10,12 +10,12 @@ Textbook: [An Introduction to Mathematical Logic and Type Theory: To Truth Throu
 
 Website: [21-300 Basic Logic and 21-600 Introduction to Mathematical Logic Fall 2011][3]
 
-Office Hours for Roy (Teaching Assistant) in WEH 7213: T 1:30 &#8211; 3:00, Th 1:00 &#8211; 3:00.
+Office Hours for Zilin Jiang (Teaching Assistant) in WEH 7213: T 1:30&#8211;3:00, Th 1:00&#8211;3:00.
 
 Updates:
 
-  * Usual office hours on Tuesdays have changed from 1:00 &#8211; 3:00 to 1:30 &#8211; 3:00. (September 14, 2011)
-  * Usual office hour has changed from TTh 2:00 &#8211; 4:00 to TTh 1:00 &#8211; 3:00. (September 10, 2011)
+  * Usual office hours on Tuesdays have changed from 1:00&#8211;3:00 to 1:30&#8211;3:00. (September 14, 2011)
+  * Usual office hour has changed from TTh 2:00&#8211;4:00 to TTh 1:00&#8211;3:00. (September 10, 2011)
 
 Homework Guideline: [Homework Guideline for 21-300 and 21-600 Fall 2011][4]
 

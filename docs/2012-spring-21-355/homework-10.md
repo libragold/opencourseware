@@ -26,8 +26,8 @@ Exercise: Assume $f:(a,b)\rightarrow \mathbb{R}$ is injective, and let $g$ denot
 
 Further, assume that
 
-  * $f$ is differentiable at a point $x\in(a,b)$ with $f'(x)\neq 0$. Prove that if $g$ is continuous at the point $f(x)$, then $g$ is differentiable at $f(x)$, and $g'(f(x))=1/f'(x)$. Hint: Use Theorem 4.2.
-  * $f$ is continuous on $a,b$ and differentiable at a point $x\in(a,b)$ with $f'(x)\neq 0$. Prove that $g$ is differentiable at the point $f(x)$, and that $g'(f(x))=1/f'(x)$. Hint: Use Theorem 4.2. Also you may use, without proof, the fact that $g$ is continuous at $f(x)$.
+* $f$ is differentiable at a point $x\in(a,b)$ with $f'(x)\neq 0$. Prove that if $g$ is continuous at the point $f(x)$, then $g$ is differentiable at $f(x)$, and $g'(f(x))=1/f'(x)$. Hint: Use Theorem 4.2.
+* $f$ is continuous on $a,b$ and differentiable at a point $x\in(a,b)$ with $f'(x)\neq 0$. Prove that $g$ is differentiable at the point $f(x)$, and that $g'(f(x))=1/f'(x)$. Hint: Use Theorem 4.2. Also you may use, without proof, the fact that $g$ is continuous at $f(x)$.
 
 Proof. Let $Y$ be the range of $f$. Pick any sequence in $Y$, say $\{y_n\}$, whose limit is $y=f(x)$.
 

@@ -14,7 +14,7 @@ title: "Recitation 8B"
 
 **Solution:** It is enough to find a basis for the solution set of $(A-\lambda I)\mathbf{x}=\mathbf{0}$. By row reduction, we obtain 
 $$\begin{bmatrix}1&1&1\\2&2&2\\3&3&3\end{bmatrix}\sim \begin{bmatrix}1&1&1\\0&0&0\\0&0&0\end{bmatrix}.$$
- Therefore the parametric vector form of the solutions is $\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}-1\\1\\0\end{bmatrix}x_2+\begin{bmatrix}-1\\0\\1\end{bmatrix}x_3$. In other words, a basis can be $\begin{bmatrix}-1\\1\\0\end{bmatrix}, \begin{bmatrix}-1\\0\\1\end{bmatrix}.$
+Therefore the parametric vector form of the solutions is $\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}-1\\1\\0\end{bmatrix}x_2+\begin{bmatrix}-1\\0\\1\end{bmatrix}x_3$. In other words, a basis can be $\begin{bmatrix}-1\\1\\0\end{bmatrix}, \begin{bmatrix}-1\\0\\1\end{bmatrix}.$
 
 **Problem 4:** If $A^2$ is the zero matrix, then the only eigenvalue of $A$ is $$.
 
@@ -24,4 +24,4 @@ $$\begin{bmatrix}1&1&1\\2&2&2\\3&3&3\end{bmatrix}\sim \begin{bmatrix}1&1&1\\0&0&
 
 **Solution:** The characteristic polynomial is $\mathrm{det}\left(\lambda I - A\right)$, which is equal to 
 $$\begin{aligned}\begin{vmatrix}\lambda-4 & 0 & 1 \\ 0 & \lambda-4 & 1 \\ -1 & 0 & \lambda-2\end{vmatrix} &=(\lambda-4)\begin{vmatrix}\lambda-4 & 1 \\ 0 & \lambda - 2\end{vmatrix}+\begin{vmatrix}0 & \lambda-4 \\ -1 & 0\end{vmatrix}\\&=(\lambda-4)(\lambda-4)(\lambda-2)+(\lambda-4)\\&=(\lambda-4)(\lambda-3)^2.\end{aligned}$$
- Therefore, the characteristic equation is $(\lambda-4)(\lambda-3)^2=0$.
+Therefore, the characteristic equation is $(\lambda-4)(\lambda-3)^2=0$.

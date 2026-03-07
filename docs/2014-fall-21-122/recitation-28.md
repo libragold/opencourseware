@@ -6,9 +6,9 @@ title: "Recitation 28"
 
 **Symmetry:** When we sketch polar curves it is sometimes helpful to take advantage of symmetry.
 
-  1. If a polar equation is unchanged when $\theta$ is replaced by $-\theta$, the curve is symmetric about the polar axis.
-  2. If the equation is unchanged when $r$ is replaced by $-r$, or when $\theta$ is replaced by $\theta+\pi$, the curve is symmetric about the pole. (This means that the curve remains unchanged if we rotate it through $180^\circ$ about the origin.)
-  3. If the equation is unchanged when $\theta$ is replaced by $\pi-\theta$, the curve is symmetric about the vertical line $\theta=\pi/2$.
+1. If a polar equation is unchanged when $\theta$ is replaced by $-\theta$, the curve is symmetric about the polar axis.
+2. If the equation is unchanged when $r$ is replaced by $-r$, or when $\theta$ is replaced by $\theta+\pi$, the curve is symmetric about the pole. (This means that the curve remains unchanged if we rotate it through $180^\circ$ about the origin.)
+3. If the equation is unchanged when $\theta$ is replaced by $\pi-\theta$, the curve is symmetric about the vertical line $\theta=\pi/2$.
 
 **Example 1:** Determine the symmetry of the curves (a) $r = 2$; (b) $\theta = 1$; (c) $r = 2\cos\theta$; (d) $r=1+\sin\theta$; (e) $r=\cos 2\theta$.
 

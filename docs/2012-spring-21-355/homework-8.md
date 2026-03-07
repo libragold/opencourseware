@@ -22,19 +22,19 @@ Proof. Suppose $f(x) = 0$ for all $x\in\mathbb{R}$ but $$, and $f(0)=1$. Then $f
 
 Exercise: Suppose $(X,d)$ is a metric space and $f,g:X\rightarrow\mathbb{R}$. State whether the following statements are true or false. If the statement is true, prove it. If it is false, give a counterexample.
 
-  1. If $f$ is continuous on $X$, then $|f|$ is continuous on $X$, where $|f|(x)=|f(x)|$ for all $x\in X$.
-  2. If |f| is continuous at $p\in X$, then $f$ is continuous at $p$.
-  3. Define $h: X\rightarrow\mathbb{R}$ by $h(x)=\max\{f(x),g(x)\}$ for all $x\in X$. If $f$ and $g$ are continuous at $p\in X$, then $h$ is continuous at $p$.
-  4. If $f$ is continuous at $p\in X$, and if $f(p)>M$ for some $M\in\mathbb{R}$, then there is a neighborhood $N$ of $p$ in $X$, such that $f(x)>M$ for all $x\in N$.
-  5. Suppose $d$ is the discrete metric on $X$. Then every map $f:X\rightarrow\mathbb{R}$ is continuous on $X$.
+1. If $f$ is continuous on $X$, then $|f|$ is continuous on $X$, where $|f|(x)=|f(x)|$ for all $x\in X$.
+2. If |f| is continuous at $p\in X$, then $f$ is continuous at $p$.
+3. Define $h: X\rightarrow\mathbb{R}$ by $h(x)=\max\{f(x),g(x)\}$ for all $x\in X$. If $f$ and $g$ are continuous at $p\in X$, then $h$ is continuous at $p$.
+4. If $f$ is continuous at $p\in X$, and if $f(p)>M$ for some $M\in\mathbb{R}$, then there is a neighborhood $N$ of $p$ in $X$, such that $f(x)>M$ for all $x\in N$.
+5. Suppose $d$ is the discrete metric on $X$. Then every map $f:X\rightarrow\mathbb{R}$ is continuous on $X$.
 
 Proof.
 
-  1. Since |f| is really the composition of two continuous functions, i.e., the function $f$ followed by the absolute value function, so it&#8217;s continuous.
-  2. Suppose $X=\mathbb{R}$ and $f(x)=1$ if $x\geq 0$, otherwise $f(x)=-1$. Then $|f|$ is a constant function, which is continuous, but $f$ itself fails to be continuous at $x=0$.
-  3. As $h(x)=\max\{f(x),g(x)\}=(f(x)+g(x)-|f(x)-g(x)|)/2$, $h$ is continuos.
-  4. Consider the pre-image of $(M,\infty]$. Since its an open set containing $f(p)$, by the continuity of $f$ at $p$, the pre-image is a neighborhood of $p$. Let $N=f^{-1}(M,\infty]$. It works.
-  5. Choose your favorite map $f:X\rightarrow\mathbb{R}$. Whatever $x\in X$ and $\epsilon>0$ are, always pick $\delta=1$. If $|x-x'|<\delta=1$, then $x=x'$, hence $f(x)-f(x')=0<\epsilon$.
+1. Since |f| is really the composition of two continuous functions, i.e., the function $f$ followed by the absolute value function, so it&#8217;s continuous.
+2. Suppose $X=\mathbb{R}$ and $f(x)=1$ if $x\geq 0$, otherwise $f(x)=-1$. Then $|f|$ is a constant function, which is continuous, but $f$ itself fails to be continuous at $x=0$.
+3. As $h(x)=\max\{f(x),g(x)\}=(f(x)+g(x)-|f(x)-g(x)|)/2$, $h$ is continuos.
+4. Consider the pre-image of $(M,\infty]$. Since its an open set containing $f(p)$, by the continuity of $f$ at $p$, the pre-image is a neighborhood of $p$. Let $N=f^{-1}(M,\infty]$. It works.
+5. Choose your favorite map $f:X\rightarrow\mathbb{R}$. Whatever $x\in X$ and $\epsilon>0$ are, always pick $\delta=1$. If $|x-x'|<\delta=1$, then $x=x'$, hence $f(x)-f(x')=0<\epsilon$.
 
 Exercise: Suppose $f$,$g$ and $h$ are functions from $\mathbb{R}$ to $\mathbb{R}$ satisfying $g(x)\leq h(x)\leq f(x)$ for all $x\in\mathbb{R}$. Further, suppose $f$ and $g$ are continuous at $x=a$ and $f(a)=g(a)$. Then, prove that $h$ is continuous at $x=a$.
 

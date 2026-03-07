@@ -13,7 +13,7 @@ slug: /
 
 **Office hours:** Mondays 10:15–11:00am, and Fridays 10am–11am.
 
-### **Course description**
+### Course description
 
 In this guided tour, we will explore quantum computation from the perspective of theoretical computer science. Topics include quantum algorithms, quantum error correction, and quantum information.
 
@@ -23,24 +23,18 @@ In this guided tour, we will explore quantum computation from the perspective of
 
 **Onboarding:**
 
-<ul class="wp-block-list">
-  <li>
-    Please fill out the <a rel="noreferrer noopener" href="https://forms.gle/GR3c92DND7XNNBUX6" target="_blank">pre-semester questionnaire</a>.
-  </li>
-  <li>
-    Learn how to use LaTeX (I recommend the <a rel="noreferrer noopener" href="https://www.overleaf.com/learn/latex/Tutorials" target="_blank">tutorials on Overleaf</a>).
-  </li>
-</ul>
+- Please fill out the <a rel="noreferrer noopener" href="https://forms.gle/GR3c92DND7XNNBUX6" target="_blank">pre-semester questionnaire</a>.
+- Learn how to use LaTeX (I recommend the <a rel="noreferrer noopener" href="https://www.overleaf.com/learn/latex/Tutorials" target="_blank">tutorials on Overleaf</a>).
 
 **Asking questions:**
 
 For class-related questions it is best to come to office hours. Another possibility: Ask them on <a rel="noreferrer noopener" href="http://piazza.com/asu/spring2021/cse598/home" target="_blank">Piazza</a>. Administrative questions too can be asked there, especially if other students might be able to answer them or might learn from the answer.
 
-### **Grading**
+### Grading
 
 Scribing lecture notes worth 10%, and homework for the remaining 90%.
 
-### **Homework**
+### Homework
 
 Submissions must be typed in LaTeX. All steps should be justified. You are strongly encouraged to do as much homework as possible individually; you will gain the most of out the course this way.
 
@@ -60,7 +54,7 @@ _Late policy. _In general no late homework will be accepted unless there is a ge
 
 **Homework 6** due on April 12
 
-### **Schedule**
+### Schedule
 
 **Week 1**
 

@@ -6,5 +6,5 @@ Through these exercises, students will acquire the technic called &#8216;falsifi
 
 Common Mistakes:
 
-  * Before falsifying a formula, you need to figure out how the formula is formed and by which order the logical connectives are processed.
-  * If you assume $A\equiv B$ to be true, don&#8217;t forget to discuss two possibilities: $A$ and $B$ are both true or are both false. If you are assuming $A\equiv B$ to be false, you might have the same issue.
+* Before falsifying a formula, you need to figure out how the formula is formed and by which order the logical connectives are processed.
+* If you assume $A\equiv B$ to be true, don&#8217;t forget to discuss two possibilities: $A$ and $B$ are both true or are both false. If you are assuming $A\equiv B$ to be false, you might have the same issue.
