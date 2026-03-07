@@ -5,7 +5,7 @@ slug: /
 
 # Calculus in Three Dimensions
 
-Instructor: Professor <a title="Mihai" href="http://www.math.cmu.edu/math/faculty/Mihai" target="_blank" rel="noopener">Daniela Mihai</a>, Wean Hall 8128, dmihai@andrew.cmu.edu
+Instructor: Professor [Daniela Mihai](http://www.math.cmu.edu/math/faculty/Mihai), Wean Hall 8128, dmihai@andrew.cmu.edu
 
 Textbook: Stewart, [Essential Calculus: Early Transcendentals][1], Second Edition, Brooks/Cole, Cengage Learning, 2012, 2007.
 
@@ -53,8 +53,8 @@ Homework Feedback:
 
 Fun Facts:
 
-* <a title="Origami Hyperbolic Paraboloid" href="http://www.youtube.com/watch?v=NRfnWaCA0x8" target="_blank" rel="noopener">Origami Hyperbolic Paraboloid</a> (Youtube Video) &#8211; Thanks to Nicolas who introduced this to me during my office hours.
-* <a title="Calculus: One of the Most Successful Technologies" href="http://www.youtube.com/watch?v=8ZLC0egL6pc" target="_blank" rel="noopener">Calculus: One of the Most Successful Technologies</a> (Youtube Video)
+* [Origami Hyperbolic Paraboloid](http://www.youtube.com/watch?v=NRfnWaCA0x8) (Youtube Video) &#8211; Thanks to Nicolas who introduced this to me during my office hours.
+* [Calculus: One of the Most Successful Technologies](http://www.youtube.com/watch?v=8ZLC0egL6pc) (Youtube Video)
 
 Practice Exam:
 

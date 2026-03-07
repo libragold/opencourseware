@@ -5,11 +5,11 @@ slug: /
 
 # Matrix Algebra with Applications
 
-Instructor: Professor <a title="Tim" href="http://www.math.cmu.edu/math/faculty/flaherty.html" target="_blank">Tim Flaherty</a>, Wean Hall 8128, dmihai@andrew.cmu.edu
+Instructor: Professor [Tim Flaherty](http://www.math.cmu.edu/math/faculty/flaherty.html), Wean Hall 8128, dmihai@andrew.cmu.edu
 
 Teaching Assistant for Section A & B: Zilin Jiang, Wean Hall 7213, zj@cmu.edu.
 
-Textbook: David C. Lay, <a title="textbook" href="http://www.amazon.com/Linear-Algebra-Its-Applications-Edition/dp/0321385179/" target="_blank">Linear Algebra and Its Applications</a>, 4th Edition, Pearson.[  
+Textbook: David C. Lay, [Linear Algebra and Its Applications](http://www.amazon.com/Linear-Algebra-Its-Applications-Edition/dp/0321385179/), 4th Edition, Pearson.[  
 ][1] 
 
 Office Hours for Zilin Jiang (Teaching Assistant) in WEH 7213: Tuesday 5:30PM-7:00PM, Thursday 5:00PM-6:30PM.

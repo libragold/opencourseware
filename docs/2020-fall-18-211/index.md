@@ -9,7 +9,7 @@ slug: /
 
 **Class meetings:** Mondays, Wednesdays and Fridays 11am–noon
 
-**Instructor:** <a rel="noreferrer noopener" href="https://www.zilin.one/" target="_blank">Zilin Jiang</a> (he, him, his)
+**Instructor:** [Zilin Jiang](https://www.zilin.one/) (he, him, his)
 
 **Office hours:** Mondays 1pm–2pm and Tuesdays 3:30pm–4:30pm
 
@@ -21,13 +21,13 @@ Welcome to the land of combinatorics! In this guided tour, we will explore diffe
 
 **Prerequisites:** Calculus II (GIR) and linear algebra (18.06 or 18.700 or 18.701). Prior experience with abstraction and proofs is helpful.
 
-**Required textbook:** _Invitation to discrete mathematics_ by Jiří Matoušek and Jaroslav Nešetřil <a rel="noreferrer noopener" href="http://library.mit.edu/item/002035632" target="_blank">[library]</a>
+**Required textbook:** _Invitation to discrete mathematics_ by Jiří Matoušek and Jaroslav Nešetřil [library](http://library.mit.edu/item/002035632)
 
 **Onboarding:**
 
 - Please fill out the pre-semester questionnaire.
 - Read Chapter 1 in the textbook before classes start; we will spend little or no class time on these. Self-check by trying some exercises in these sections.
-- Consider learning how to use LaTeX (I recommend the <a rel="noreferrer noopener" href="https://www.overleaf.com/learn/latex/Tutorials" target="_blank">tutorials on Overleaf</a>), although this is not required for this class.
+- Consider learning how to use LaTeX (I recommend the [tutorials on Overleaf](https://www.overleaf.com/learn/latex/Tutorials)), although this is not required for this class.
 
 **Resources:**
 
@@ -42,17 +42,17 @@ Welcome to the land of combinatorics! In this guided tour, we will explore diffe
 
 **Asking questions:**
 
-Math is easier to explain live, so for math questions it is best to come to office hours. Another possibility: Ask them on <a rel="noreferrer noopener" href="https://piazza.com/class/kdl01ex02at4a9" target="_blank">Piazza</a>. Administrative questions too can be asked there, especially if other students might be able to answer them or might learn from the answer.
+Math is easier to explain live, so for math questions it is best to come to office hours. Another possibility: Ask them on [Piazza](https://piazza.com/class/kdl01ex02at4a9). Administrative questions too can be asked there, especially if other students might be able to answer them or might learn from the answer.
 
 ### Grading
 
 3 in-class midterms worth 20% each, and homework for the remaining 40%
 
-<a rel="noreferrer noopener" href="https://studentlife.mit.edu/s3" target="_blank">Student Support Services (S<sup>3</sup>)</a>
+[Student Support Services (S<sup>3</sup>)](https://studentlife.mit.edu/s3)
 
-<a rel="noreferrer noopener" href="https://studentlife.mit.edu/das" target="_blank">Disability and Access Services</a>
+[Disability and Access Services](https://studentlife.mit.edu/das)
 
-<a rel="noreferrer noopener" href="http://bit.ly/mitnavigatingresources" target="_blank">&#8220;How to get help&#8221; flowchart</a>
+[&#8220;How to get help&#8221; flowchart](http://bit.ly/mitnavigatingresources)
 
 ### Midterms
 
@@ -63,9 +63,9 @@ Math is easier to explain live, so for math questions it is best to come to offi
 
 Submissions may be either typed or legibly written. All steps should be justified. You are strongly encouraged to do as much homework as possible individually; you will gain the most of out the course this way.
 
-_Sources and collaboration policy._ Collaboration and use of external sources are permitted, but must be fully acknowledged and cited. Collaboration may involve only discussion; all the writing must be done individually. Failure to do so will be treated as cheating (see <a rel="noreferrer noopener" href="https://integrity.mit.edu/handbook/academic-integrity-mit/what-academic-integrity" target="_blank">What is Academic Integrity?</a>).
+_Sources and collaboration policy._ Collaboration and use of external sources are permitted, but must be fully acknowledged and cited. Collaboration may involve only discussion; all the writing must be done individually. Failure to do so will be treated as cheating (see [What is Academic Integrity?](https://integrity.mit.edu/handbook/academic-integrity-mit/what-academic-integrity)).
 
-<a href="https://psetpartners.mit.edu/" target="_blank" rel="noreferrer noopener">Find your homework partners</a>
+[Find your homework partners](https://psetpartners.mit.edu/)
 
 _Late policy._ The homework must be submitted by _noon_ of the day it is due. For each _hour_ that it is late, the assignment grade will be reduced by 5%.
 

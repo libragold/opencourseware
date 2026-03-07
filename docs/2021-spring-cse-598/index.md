@@ -9,7 +9,7 @@ slug: /
 
 **Class meetings:** Mondays and Wednesdays 9–10:15am.
 
-**Instructor:** <a rel="noreferrer noopener" href="https://www.zilin.one/" target="_blank">Zilin Jiang</a> (he, him, his)
+**Instructor:** [Zilin Jiang](https://www.zilin.one/) (he, him, his)
 
 **Office hours:** Mondays 10:15–11:00am, and Fridays 10am–11am.
 
@@ -19,16 +19,16 @@ In this guided tour, we will explore quantum computation from the perspective of
 
 **Prerequisites:** A strong undergraduate background in linear algebra, discrete probability, and theory of computation. No background in physics is required.
 
-**Required textbook:** Mermin, N. David. _Quantum computer science: an introduction._ Cambridge University Press, 2007. <a rel="noreferrer noopener" href="https://search.lib.asu.edu/permalink/01ASU_INST/pio0a/alma991019560849703841" target="_blank">[library]</a>
+**Required textbook:** Mermin, N. David. _Quantum computer science: an introduction._ Cambridge University Press, 2007. [library](https://search.lib.asu.edu/permalink/01ASU_INST/pio0a/alma991019560849703841)
 
 **Onboarding:**
 
-- Please fill out the <a rel="noreferrer noopener" href="https://forms.gle/GR3c92DND7XNNBUX6" target="_blank">pre-semester questionnaire</a>.
-- Learn how to use LaTeX (I recommend the <a rel="noreferrer noopener" href="https://www.overleaf.com/learn/latex/Tutorials" target="_blank">tutorials on Overleaf</a>).
+- Please fill out the [pre-semester questionnaire](https://forms.gle/GR3c92DND7XNNBUX6).
+- Learn how to use LaTeX (I recommend the [tutorials on Overleaf](https://www.overleaf.com/learn/latex/Tutorials)).
 
 **Asking questions:**
 
-For class-related questions it is best to come to office hours. Another possibility: Ask them on <a rel="noreferrer noopener" href="http://piazza.com/asu/spring2021/cse598/home" target="_blank">Piazza</a>. Administrative questions too can be asked there, especially if other students might be able to answer them or might learn from the answer.
+For class-related questions it is best to come to office hours. Another possibility: Ask them on [Piazza](http://piazza.com/asu/spring2021/cse598/home). Administrative questions too can be asked there, especially if other students might be able to answer them or might learn from the answer.
 
 ### Grading
 
@@ -38,7 +38,7 @@ Scribing lecture notes worth 10%, and homework for the remaining 90%.
 
 Submissions must be typed in LaTeX. All steps should be justified. You are strongly encouraged to do as much homework as possible individually; you will gain the most of out the course this way.
 
-_Sources and collaboration policy._ Collaboration and use of external sources are permitted, but must be fully acknowledged and cited. Collaboration may involve only discussion; all the writing must be done individually. Failure to do so will be treated as cheating (see <a rel="noreferrer noopener" href="https://provost.asu.edu/academic-integrity" target="_blank">What is Academic Integrity?</a>).
+_Sources and collaboration policy._ Collaboration and use of external sources are permitted, but must be fully acknowledged and cited. Collaboration may involve only discussion; all the writing must be done individually. Failure to do so will be treated as cheating (see [What is Academic Integrity?](https://provost.asu.edu/academic-integrity)).
 
 _Late policy. _In general no late homework will be accepted unless there is a genuine emergency backed up by official documents.
 

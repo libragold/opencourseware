@@ -40,7 +40,7 @@ Homework 30% + Midterm 30% + Final 40% (+ Bonus 10%)
 
 You are encouraged to type your submissions in LaTeX. All steps should be justified. You are strongly encouraged to do as much homework as possible individually; you will gain the most of out the course this way.
 
-_Sources and collaboration policy._ Collaboration and use of external sources are permitted, but must be fully acknowledged and cited. Collaboration may involve only discussion; all the writing must be done individually. Failure to do so will be treated as cheating (see <a rel="noreferrer noopener" href="https://provost.asu.edu/academic-integrity" target="_blank">What is Academic Integrity?</a>).
+_Sources and collaboration policy._ Collaboration and use of external sources are permitted, but must be fully acknowledged and cited. Collaboration may involve only discussion; all the writing must be done individually. Failure to do so will be treated as cheating (see [What is Academic Integrity?](https://provost.asu.edu/academic-integrity)).
 
 _Late policy and grade appeal policy._ In general no late homework will be accepted unless there is a genuine emergency backed up by official documents. No grade appeal will be considered after one week of the posting of the grade for any assignment.
 
@@ -141,7 +141,7 @@ Oct 21. Two applications of generating function in probability: the average numb
 
 Oct 26. The generating function and the recurrence of partition numbers, the pentagonal number theorem.
 
-Oct 28. Franklin&#8217;s proof of the pentagonal number theorem, Ferrers diagrams. (<a rel="noreferrer noopener" href="https://fedyapetrov.wordpress.com/2019/10/06/eulers-proof-of-pentagonal-theorem/" target="_blank">Euler&#8217;s original proof</a>)
+Oct 28. Franklin&#8217;s proof of the pentagonal number theorem, Ferrers diagrams. ([Euler&#8217;s original proof](https://fedyapetrov.wordpress.com/2019/10/06/eulers-proof-of-pentagonal-theorem/))
 
 **Week 12**
 

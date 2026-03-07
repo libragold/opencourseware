@@ -9,7 +9,7 @@ Instructor: Professor [Michael E. Picollelli][1], Wean Hall 8124, ext. 8-2086, m
 
 Textbook: D&#8217;Angelo and West, [Mathematical Thinking: Problem Solving and Proofs][2], Second Edition.
 
-Website: <a href="http://www.math.cmu.edu/~mpicolle/concepts/" target="_blank">21-127 Concepts of Mathematics, Spring 2013</a>.
+Website: [21-127 Concepts of Mathematics, Spring 2013](http://www.math.cmu.edu/~mpicolle/concepts/).
 
 Teaching Assistant for Section C & D: Zilin Jiang, Wean Hall 7213, zilinj@andrew.cmu.edu
 
@@ -73,9 +73,9 @@ Homework Feedback for Section C & D:
 
 Resources:
 
-* Conventions for Writing Mathematical Proofs, <a href="http://www.math.washington.edu/~lee/Courses/310-2006/writing-proofs.pdf" target="_blank">PDF document</a>.
-* How to write proofs: a quick guide, <a href="http://cheng.staff.shef.ac.uk/proofguide/proofguide.pdf" target="_blank">PDF document</a>.
-* The Not So Short: Introduction to LATEX 2ε, <a href="http://tobi.oetiker.ch/lshort/lshort.pdf" target="_blank">PDF document</a>.
+* Conventions for Writing Mathematical Proofs, [PDF document](http://www.math.washington.edu/~lee/Courses/310-2006/writing-proofs.pdf).
+* How to write proofs: a quick guide, [PDF document](http://cheng.staff.shef.ac.uk/proofguide/proofguide.pdf).
+* The Not So Short: Introduction to LATEX 2ε, [PDF document](http://tobi.oetiker.ch/lshort/lshort.pdf).
 
 [1]: https://sites.google.com/site/mepicollelli/ "Michael E. Picollelli"
 [2]: http://www.amazon.com/Mathematical-Thinking-Problem-Solving-Proofs-2nd/dp/0130144126

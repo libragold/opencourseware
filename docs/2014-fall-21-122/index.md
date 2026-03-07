@@ -5,9 +5,9 @@ slug: /
 
 # Integration and Approximation
 
-Instructor: Professor <a title="Irina Gheorghiciuc" href="http://www.math.cmu.edu/~gheorghi/" target="_blank">Irina Gheorghiciuc</a>, Wean Hall 8220, gheorghi@andrew.cmu.edu
+Instructor: Professor [Irina Gheorghiciuc](http://www.math.cmu.edu/~gheorghi/), Wean Hall 8220, gheorghi@andrew.cmu.edu
 
-Textbook: James Stewart, <a title="Calculus: Early Transcendentals" href="http://www.amazon.com/gp/product/0538497904" target="_blank">Calculus: Early Transcendentals</a>, 7 Edition (November 19, 2010), Cengage Learning.
+Textbook: James Stewart, [Calculus: Early Transcendentals](http://www.amazon.com/gp/product/0538497904), 7 Edition (November 19, 2010), Cengage Learning.
 
 Teaching Assistant for Section E: Zilin Jiang, Wean Hall 7213, zj@cmu.edu or zilinj@andrew.cmu.edu
 

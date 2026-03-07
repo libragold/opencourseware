@@ -7,11 +7,11 @@ slug: /
 
 **Spring 2020, Massachusetts Institute of Technology**
 
-**Class meetings:** Mondays and Wednesdays 2:30pm–4:00pm in 2-146 (before March 14, 2020) and at <a href="https://mit.zoom.us/j/654406671">Zoom</a> online (after March 14, 2020)
+**Class meetings:** Mondays and Wednesdays 2:30pm–4:00pm in 2-146 (before March 14, 2020) and at [Zoom](https://mit.zoom.us/j/654406671) online (after March 14, 2020)
 
-**Instructor:** <a href="https://www.zilin.one/">Zilin Jiang</a>
+**Instructor:** [Zilin Jiang](https://www.zilin.one/)
 
-**Communication specialist:** <a href="https://cmsw.mit.edu/profile/malcah-effron/">Malcah Effron</a>
+**Communication specialist:** [Malcah Effron](https://cmsw.mit.edu/profile/malcah-effron/)
 
 #### Course description
 
