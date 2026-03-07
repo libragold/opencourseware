@@ -50,6 +50,4 @@ Recitations for Section B:
 * [Recitation 10B](/2014-spring-21-240/recitation-10b): April 24, 2014.
 * [Recitation 11B](/2014-spring-21-240/recitation-11b): May 1, 2014.
 
-Homework Solutions: Click <a title="Homework Solutions" href="https://www.dropbox.com/sh/4qtdrojkvc25wx1/vQEgPcwvyt" target="_blank">here</a> to view in Dropbox.
-
 [1]: http://www.amazon.com/Essential-Calculus-Transcendentals-James-Stewart/dp/1133112285
