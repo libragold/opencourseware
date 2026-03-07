@@ -7,7 +7,7 @@ slug: /
 
 **Spring 2020, Massachusetts Institute of Technology**
 
-**Class meetings:** Mondays and Wednesdays 2:30pm–4:00pm in 2-146 (before March 14, 2020) and at [Zoom](https://mit.zoom.us/j/654406671) online (after March 14, 2020)
+**Class meetings:** Mondays and Wednesdays 2:30pm–4:00pm in 2-146 (before March 14, 2020) and at Zoom online (after March 14, 2020)
 
 **Instructor:** [Zilin Jiang](https://www.zilin.one/)
 
