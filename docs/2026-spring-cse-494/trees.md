@@ -18,7 +18,7 @@ Equivalent definitions which some problems use:
 
 A **forest** is a collection of trees.
 
-When a problem explicitly gives you a tree, they usually either give you an edge list for unrooted trees or a parent array for rooted trees.
+When a problem explicitly gives you a tree, they usually either give you an edge list or a parent array (implies rooted).
 
 ---
 
@@ -79,13 +79,13 @@ Let's begin with:
 [Company Queries I (CSES)](https://cses.fi/problemset/task/1687)
 
 Precompute “jump pointers” so you can move up the tree in powers of two:
-- 1 step up
-- 2 steps up
-- 4 steps up
-- 8 steps up
+- $1$ step up
+- $2$ steps up
+- $4$ steps up
+- $8$ steps up
 - … and so on
 
-Then any jump of k steps can be decomposed into powers of two (binary representation).
+Then any jump of $k$ steps can be decomposed into powers of two (binary representation).
 
 Trees are not the only place this binary jumping idea is useful - we can do this whenever we have a singular pointer from each state.
 
@@ -124,6 +124,7 @@ Can we use this this new data structure to query the LCA of two nodes in $O(1)$ 
 ### Tree Flattening
 We can flatten a tree by doing a dfs traversal and recording infromation about the in/out times of nodes in the tree. For example, consider what happens if we flatten a tree and record the in-times of each node. 
 
+- [Subtree Queries (CSES)](https://cses.fi/problemset/task/1137)
 - [Path Queries (CSES)](https://cses.fi/problemset/task/1138)
 - [Distinct Colors (CSES)](https://cses.fi/problemset/task/1139)
 
