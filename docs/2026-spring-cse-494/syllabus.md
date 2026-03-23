@@ -39,7 +39,7 @@ You may use **C++**, **C**, **Java**, **Python**, or **Kotlin** in this course.
 
 Weekly 2-hour in-person contests will be held.
 
-**Location:** BYENG 222  
+**Location:** BYAC 150  
 **Time:** Fridays, 1PM–3PM  
 - **2 points** per problem solved during the contest
 - **1 point** per problem solved within one week after the contest
