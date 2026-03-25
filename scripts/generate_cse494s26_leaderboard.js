@@ -15,6 +15,10 @@ const END_DATE = '2026-05-01'; // local date in America/Phoenix (inclusive)
 const OUTPUT_PATH = path.join('src', 'data', 'cse494s26_leaderboard.yaml');
 const EXCEPTIONS_PATH = path.join('src', 'data', 'cse494s26_exceptions.yaml');
 const EXCLUDED_HANDLES_PATH = path.join('src', 'data', 'cse494s26_excluded_handles.yaml');
+const DEFAULT_GROUP_UPSOLVE_WINDOW_SECONDS = 7 * 24 * 60 * 60;
+const GROUP_UPSOLVE_WINDOW_SECONDS_BY_CONTEST_ID = {
+  676579: 14 * 24 * 60 * 60,
+};
 
 function parseDotEnv(filepath) {
   if (!fs.existsSync(filepath)) return {};
@@ -407,6 +411,10 @@ function exceptionKey(handle, contestId, problemId) {
   return `${normalizeHandle(handle)}::${Number(contestId)}::${normalizeProblemId(problemId)}`;
 }
 
+function groupUpsolveWindowSeconds(contestId) {
+  return GROUP_UPSOLVE_WINDOW_SECONDS_BY_CONTEST_ID[Number(contestId)] || DEFAULT_GROUP_UPSOLVE_WINDOW_SECONDS;
+}
+
 function classifySolve({ contest, problemId, submissionTimeSeconds }) {
   const end = contest.endTimeSeconds;
   const solveType = submissionTimeSeconds <= end ? 'live' : 'upsolve';
@@ -417,8 +425,7 @@ function classifySolve({ contest, problemId, submissionTimeSeconds }) {
     if (solveType === 'live') {
       credits = 2;
     } else {
-      // Upsolve only counts within 168 hours (1 week) after contest end.
-      credits = submissionTimeSeconds <= end + 168 * 60 * 60 ? 1 : 0;
+      credits = submissionTimeSeconds <= end + groupUpsolveWindowSeconds(contest.id) ? 1 : 0;
     }
   } else {
     credits = solveType === 'live' ? 2 : 0;
