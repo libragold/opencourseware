@@ -10,3 +10,5 @@ title: "Midterm Review"
 - [ICPC Camp (2020 ICPC NAC Problem G)](https://open.kattis.com/contests/nac20open/problems/icpccamp)
 - [Word Ladder (2022 ICPC NAC Problem M)](https://nac22.kattis.com/contests/nac22/problems/wordladder3)
 - [Arrested Development (2024 ICPC NAC Problem A)](https://open.kattis.com/problems/arresteddevelopment)
+
+- [Wednesday class link](https://nac.icpc.global/problems/2026/nac/index.html)
