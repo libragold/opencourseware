@@ -28,7 +28,7 @@ A 2-SAT instance in CNF can be stated as a bunch of OR clauses with 2 variables 
 
 Determine whether there is an assignment of truth values to $x$, $y$, and $z$ such that the following statement is true:
 $$
-(x \lor y) \land (x \lor \neg x) \land (\neg y \lor \neg z)
+(x \lor y) \land (x \lor \neg z) \land (\neg y \lor \neg z)
 $$
 
 We can transform 2-SAT by creating an implication graph and determining the SCC's of this graph. For each variable in the 2-SAT instance we create $2$ nodes - one for itself and one for its complement. In the example above, the graph would have $6$ nodes: $x, \neg x, y, \neg y, z, \neg z$.
@@ -43,49 +43,45 @@ Problems:
 - [Coprime Solitaire (AC)](https://atcoder.jp/contests/abc210/tasks/abc210_f)
 - [Babysitting (CF)](https://codeforces.com/contest/1903/problem/F)
 ---
-<!-- 
-## 2. Union-Find (Disjoint Set Union, DSU)
+## 3. Union-Find (Disjoint Set Union, DSU)
 
 DSU maintains a partition of nodes into connected components under merges.
 
-When to use
-- Connectivity under union operations
-- Common use case: “How many components?” after each edge addition
-- Can maintain aggregate properties per component (size, min/max, etc.)
-
-Implementation Details
-- Use **path compression** + **union by size/rank** for near-constant time.
-
-Complexity
-- Amortized ~ `O(α(n))` per operation (effectively constant)
+[KACTL Implementation](https://github.com/kth-competitive-programming/kactl/blob/main/content/data-structures/UnionFind.h)
+- Union by rank or size gives a complexity of $O(\log n)$.
+- Use **path compression** as well for near-constant time. (amortized ~ `O(α(n))`) per operation
 
 Practice:
 - [Road Construction (CSES)](https://cses.fi/problemset/task/1676)
-
+- [Graph Destruction (AC)](https://atcoder.jp/contests/abc229/tasks/abc229_e?)
+- [Ada and Branches (SPOJ)](https://www.spoj.com/problems/ADABRANC/)
 ---
-
 ## 3. Minimum Spanning Trees (MST)
 
-Given a connected weighted undirected graph, an MST connects all nodes with minimum total edge weight.
+Given a connected weighted undirected graph, an MST connects all nodes with minimum sum of all edge weight. Note that the resulting produced graph will always be a tree for positive edge weights.
 
-When to use
-- “Connect everything as cheaply as possible”
-- Network design / wiring / roads problems
-- Often paired with DSU or a priority queue
+**Cut property**: For any cut, one of the lightest edges crossing it must be in the MST. Moreover taking any of the lightest edges will result in a MST.
+This is the main property used to reason about MST algorithms and problems.
 
-Two standard algorithms
-- **Kruskal:** sort edges by weight, add if it connects two different components (DSU)
-  - Great when you already have an edge list and `m` is manageable.
-- **Prim:** grow from a start node using a min-heap over frontier edges
-  - Great for dense graphs or adjacency-based input.
+Other properties:
 
-Why greedy works (intuition)
-MST uses the **cut property**: for any cut, the lightest edge crossing it is safe to take.
+**Cycle property**: For any cycle in the graph, if an edge is the unique maximum, it will not be included in any MST.
 
-Complexity
+**Edge Removal**: The two trees created by removing an edge from an MST are MST's of their respective subgraphs.
+
+Two standard algorithms:
+
+**Kruskal:** Process edges in increasing order by weight and include it in the MST if it connects two different components. Use a DSU to maintain the connected components.
+
+**Prim:**: Start with a single node and grow the MST one edge/vertex at a time. Repeatedly pick the smallest edge connected a vertex in the current tree to one outside it. Use a heap over the cut edges to efficiently query the minimum at each step.
+
+Can you use the cut property to prove the correctness of both algorithms?
+
+Complexity:
 - Kruskal: `O(m log m)` (sorting dominates)
-- Prim: `O( (m+n) log n)` with heap
+- Prim: `O(m log n)` with heap
 
 Practice:
 - [Road Reparation (CSES)](https://cses.fi/problemset/task/1675)
--->
+- [Moo Network (USACO)](https://usaco.org/index.php?page=viewproblem2&cpid=1211)
+- [MST Edge Cost](https://cses.fi/problemset/task/3409)
