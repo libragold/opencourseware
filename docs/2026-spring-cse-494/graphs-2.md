@@ -56,9 +56,9 @@ Practice:
 - [Graph Destruction (AC)](https://atcoder.jp/contests/abc229/tasks/abc229_e?)
 - [Ada and Branches (SPOJ)](https://www.spoj.com/problems/ADABRANC/)
 ---
-## 3. Minimum Spanning Trees (MST)
+## 4. Minimum Spanning Trees (MST)
 
-Given a connected weighted undirected graph, an MST connects all nodes with minimum sum of all edge weight. Note that the resulting produced graph will always be a tree for positive edge weights.
+Given a connected weighted undirected graph, an MST is a tree that connects all nodes with minimum sum of all edge weights. 
 
 **Cut property**: For any cut, one of the lightest edges crossing it must be in the MST. Moreover taking any of the lightest edges will result in a MST.
 This is the main property used to reason about MST algorithms and problems.
