@@ -289,8 +289,14 @@ function contestEndSeconds(contest) {
 
 function isDiv1OrDiv2RatedName(name) {
   if (!name) return false;
+  if (isEducationalRoundName(name)) return false;
   // Covers "Div. 1", "Div. 2", and "Div. 1 + Div. 2"
   return /Div\.\s*1/.test(name) || /Div\.\s*2/.test(name);
+}
+
+function isEducationalRoundName(name) {
+  if (!name) return false;
+  return /^Educational Codeforces Round\b/.test(name);
 }
 
 function isDiv2Name(name) {

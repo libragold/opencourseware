@@ -1,4 +1,4 @@
-last_updated: 2026-03-24 15:26:37 MST
+last_updated: 2026-03-24 20:41:29 MST
 competitions:
   - id: 664839
     name: Week 1 - Foundations
@@ -477,30 +477,6 @@ competitions:
       - id: G2
         title: Monotone Monochrome Matrices (Hard Version)
         link: https://codeforces.com/contest/2202/problem/G2
-  - id: 2203
-    name: Educational Codeforces Round 187 (Rated for Div. 2)
-    link: https://codeforces.com/contest/2203
-    start: 2026-02-25 07:35:00 MST
-    end: 2026-02-25 09:35:00 MST
-    problems:
-      - id: A
-        title: Towers of Boxes
-        link: https://codeforces.com/contest/2203/problem/A
-      - id: B
-        title: Beautiful Numbers
-        link: https://codeforces.com/contest/2203/problem/B
-      - id: C
-        title: Test Generator
-        link: https://codeforces.com/contest/2203/problem/C
-      - id: D
-        title: Divisibility Game
-        link: https://codeforces.com/contest/2203/problem/D
-      - id: E
-        title: Probabilistic Card Game
-        link: https://codeforces.com/contest/2203/problem/E
-      - id: F
-        title: Binary Search with One Swap
-        link: https://codeforces.com/contest/2203/problem/F
   - id: 2205
     name: Codeforces Round 1083 (Div. 2)
     link: https://codeforces.com/contest/2205
@@ -639,33 +615,6 @@ competitions:
       - id: E
         title: Counting Cute Arrays
         link: https://codeforces.com/contest/2208/problem/E
-  - id: 2204
-    name: Educational Codeforces Round 188 (Rated for Div. 2)
-    link: https://codeforces.com/contest/2204
-    start: 2026-03-16 07:35:00 MST
-    end: 2026-03-16 09:50:00 MST
-    problems:
-      - id: A
-        title: Passing the Ball
-        link: https://codeforces.com/contest/2204/problem/A
-      - id: B
-        title: Right Maximum
-        link: https://codeforces.com/contest/2204/problem/B
-      - id: C
-        title: Spring
-        link: https://codeforces.com/contest/2204/problem/C
-      - id: D
-        title: Alternating Path
-        link: https://codeforces.com/contest/2204/problem/D
-      - id: E
-        title: Sum of Digits (and Again)
-        link: https://codeforces.com/contest/2204/problem/E
-      - id: F
-        title: Sum of Fractions
-        link: https://codeforces.com/contest/2204/problem/F
-      - id: G
-        title: Grid Path
-        link: https://codeforces.com/contest/2204/problem/G
   - id: 2209
     name: Codeforces Round 1087 (Div. 2)
     link: https://codeforces.com/contest/2209
@@ -2016,13 +1965,6 @@ records_by_handle:
             submitted_at: 2026-02-27 15:44:55 MST
             solve_type: upsolve
             credits: 1
-      - competition_id: 2204
-        total_credits: 0
-        problems:
-          - problem_id: A
-            submitted_at: 2026-03-17 01:29:58 MST
-            solve_type: upsolve
-            credits: 0
   hson17:
     total_credits: 15
     total_live_credits: 2
@@ -2281,8 +2223,8 @@ records_by_handle:
     total_live_credits: 0
     competitions: []
   in_4m8_ion:
-    total_credits: 63
-    total_live_credits: 40
+    total_credits: 57
+    total_live_credits: 34
     competitions:
       - competition_id: 664839
         total_credits: 6
@@ -2494,25 +2436,6 @@ records_by_handle:
             submitted_at: 2026-03-14 12:12:42 MST
             solve_type: upsolve
             credits: 0
-      - competition_id: 2204
-        total_credits: 6
-        problems:
-          - problem_id: A
-            submitted_at: 2026-03-16 07:56:51 MST
-            solve_type: live
-            credits: 0
-          - problem_id: B
-            submitted_at: 2026-03-16 08:07:58 MST
-            solve_type: live
-            credits: 2
-          - problem_id: C
-            submitted_at: 2026-03-16 08:27:07 MST
-            solve_type: live
-            credits: 2
-          - problem_id: D
-            submitted_at: 2026-03-16 09:25:32 MST
-            solve_type: live
-            credits: 2
       - competition_id: 2209
         total_credits: 0
         problems:
