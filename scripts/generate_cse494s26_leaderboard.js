@@ -16,6 +16,10 @@ const OUTPUT_PATH = path.join('src', 'data', 'cse494s26_leaderboard.yaml');
 const EXCEPTIONS_PATH = path.join('src', 'data', 'cse494s26_exceptions.yaml');
 const EXCLUDED_HANDLES_PATH = path.join('src', 'data', 'cse494s26_excluded_handles.yaml');
 const DEFAULT_GROUP_UPSOLVE_WINDOW_SECONDS = 7 * 24 * 60 * 60;
+const INCREMENTAL_OVERLAP_SECONDS = 12 * 60 * 60;
+const SUBMISSION_PAGE_SIZE = 100;
+const MAX_SUBMISSION_PAGES = 500;
+const DEBUG_TIMINGS = process.env.CF_DEBUG_TIMINGS === '1';
 const GROUP_UPSOLVE_WINDOW_SECONDS_BY_CONTEST_ID = {
   676579: 14 * 24 * 60 * 60,
 };
@@ -122,6 +126,16 @@ async function rateLimit(minIntervalMs = 400) {
   lastRequestAtMs = Date.now();
 }
 
+function isTransientHttpStatus(status) {
+  return [408, 425, 429, 500, 502, 503, 504].includes(status);
+}
+
+async function sleepWithBackoff(attempt) {
+  const backoffMs = 500 * 2 ** attempt;
+  const jitterMs = Math.floor(Math.random() * 250);
+  await new Promise((r) => setTimeout(r, backoffMs + jitterMs));
+}
+
 async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false } = {}) {
   if (requireAuth && !(apiKey && apiSecret)) {
     throw new Error(
@@ -131,8 +145,13 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
   const signedParams = withSignature(method, params || {}, apiKey, apiSecret);
   const query = buildSortedQuery(signedParams);
   const url = `${BASE_URL}/${method}${query ? `?${query}` : ''}`;
+  const debugLabel = `${method} ${JSON.stringify(params || {})}`;
+  const startedAt = Date.now();
+  if (DEBUG_TIMINGS) {
+    console.log(`[timing:start] ${debugLabel}`);
+  }
 
-  for (let attempt = 0; attempt < 5; attempt += 1) {
+  for (let attempt = 0; attempt < 7; attempt += 1) {
     await rateLimit();
     let resp;
     try {
@@ -140,14 +159,12 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
         headers: { 'User-Agent': 'cse494s26-leaderboard/1.0 (node)' },
       });
     } catch (err) {
-      const backoff = 500 * 2 ** attempt;
-      await new Promise((r) => setTimeout(r, backoff));
+      await sleepWithBackoff(attempt);
       continue;
     }
 
-    if (resp.status === 429 || resp.status === 503) {
-      const backoff = 500 * 2 ** attempt;
-      await new Promise((r) => setTimeout(r, backoff));
+    if (isTransientHttpStatus(resp.status)) {
+      await sleepWithBackoff(attempt);
       continue;
     }
     if (!resp.ok) {
@@ -155,15 +172,27 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
       throw new Error(`HTTP ${resp.status} for ${method}: ${text.slice(0, 400)}`);
     }
 
-    const data = await resp.json();
+    let data;
+    try {
+      data = await resp.json();
+    } catch (err) {
+      await sleepWithBackoff(attempt);
+      continue;
+    }
     if (data?.status !== 'OK') {
       const comment = data?.comment ? String(data.comment) : '';
-      if (comment.toLowerCase().includes('limit') || comment.toLowerCase().includes('too many')) {
-        const backoff = 500 * 2 ** attempt;
-        await new Promise((r) => setTimeout(r, backoff));
+      if (
+        comment.toLowerCase().includes('limit') ||
+        comment.toLowerCase().includes('too many') ||
+        comment.toLowerCase().includes('try again later')
+      ) {
+        await sleepWithBackoff(attempt);
         continue;
       }
       throw new Error(`API error for ${method}: ${JSON.stringify(data).slice(0, 800)}`);
+    }
+    if (DEBUG_TIMINGS) {
+      console.log(`[timing] ${debugLabel} -> ${Date.now() - startedAt}ms`);
     }
     return data.result;
   }
@@ -172,7 +201,11 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
 }
 
 async function fetchText(url) {
-  for (let attempt = 0; attempt < 5; attempt += 1) {
+  const startedAt = Date.now();
+  if (DEBUG_TIMINGS) {
+    console.log(`[timing:start] GET ${url}`);
+  }
+  for (let attempt = 0; attempt < 7; attempt += 1) {
     await rateLimit();
     let resp;
     try {
@@ -180,18 +213,19 @@ async function fetchText(url) {
         headers: { 'User-Agent': 'cse494s26-leaderboard/1.0 (node)' },
       });
     } catch (err) {
-      const backoff = 500 * 2 ** attempt;
-      await new Promise((r) => setTimeout(r, backoff));
+      await sleepWithBackoff(attempt);
       continue;
     }
-    if (resp.status === 429 || resp.status === 503) {
-      const backoff = 500 * 2 ** attempt;
-      await new Promise((r) => setTimeout(r, backoff));
+    if (isTransientHttpStatus(resp.status)) {
+      await sleepWithBackoff(attempt);
       continue;
     }
     if (!resp.ok) {
       const text = await resp.text().catch(() => '');
       throw new Error(`HTTP ${resp.status} for ${url}: ${text.slice(0, 200)}`);
+    }
+    if (DEBUG_TIMINGS) {
+      console.log(`[timing] GET ${url} -> ${Date.now() - startedAt}ms`);
     }
     return resp.text();
   }
@@ -289,8 +323,14 @@ function contestEndSeconds(contest) {
 
 function isDiv1OrDiv2RatedName(name) {
   if (!name) return false;
+  if (isEducationalRoundName(name)) return false;
   // Covers "Div. 1", "Div. 2", and "Div. 1 + Div. 2"
   return /Div\.\s*1/.test(name) || /Div\.\s*2/.test(name);
+}
+
+function isEducationalRoundName(name) {
+  if (!name) return false;
+  return /^Educational Codeforces Round\b/.test(name);
 }
 
 function isDiv2Name(name) {
@@ -326,17 +366,58 @@ async function fetchContestProblems(contestId, creds, { requireAuth } = {}) {
     .filter((p) => p.id.length > 0);
 }
 
-async function fetchContestSubmissions(handle, contestId, creds) {
+async function collectContestSubmissionsSince(
+  contestId,
+  sinceEpochSeconds,
+  startEpochSeconds,
+  endExclusiveEpochSeconds,
+  creds,
+  canonicalHandleByKey,
+  earliestOkByHandle,
+) {
   // Needed for group contests: group-contest submissions often don't appear in user.status.
-  return apiGet('contest.status', { contestId, handle }, { ...creds, requireAuth: true });
+  let from = 1;
+  for (let page = 0; page < MAX_SUBMISSION_PAGES; page += 1) {
+    const chunk = await apiGet(
+      'contest.status',
+      { contestId, from, count: SUBMISSION_PAGE_SIZE },
+      { ...creds, requireAuth: true },
+    );
+    if (!Array.isArray(chunk) || chunk.length === 0) break;
+
+    for (const sub of chunk) {
+      const created = Number(sub?.creationTimeSeconds || 0);
+      if (created < sinceEpochSeconds) continue;
+      if (!Number.isFinite(created) || created < startEpochSeconds || created >= endExclusiveEpochSeconds) {
+        continue;
+      }
+      if (sub?.verdict !== 'OK') continue;
+      const problemId = normalizeProblemId(sub?.problem?.index || '');
+      if (!problemId) continue;
+      const memberHandles = new Set(
+        (Array.isArray(sub?.author?.members) ? sub.author.members : [])
+          .map((member) => canonicalHandleByKey.get(normalizeHandle(member?.handle)))
+          .filter(Boolean),
+      );
+      for (const handle of memberHandles) {
+        const earliestOk = earliestOkByHandle.get(handle);
+        if (!earliestOk) continue;
+        setEarliestAcceptedSubmission(earliestOk, contestId, problemId, created);
+      }
+    }
+
+    const oldest = chunk[chunk.length - 1];
+    const oldestCreated = Number(oldest?.creationTimeSeconds || 0);
+    if (oldestCreated < sinceEpochSeconds) break;
+    from += SUBMISSION_PAGE_SIZE;
+  }
 }
 
 async function fetchUserSubmissionsSince(handle, sinceEpochSeconds, creds) {
   const submissions = [];
-  const pageSize = 1000;
   let from = 1;
-  for (let page = 0; page < 50; page += 1) {
-    const chunk = await apiGet('user.status', { handle, from, count: pageSize }, { ...creds });
+  for (let page = 0; page < MAX_SUBMISSION_PAGES; page += 1) {
+    const chunk = await apiGet('user.status', { handle, from, count: SUBMISSION_PAGE_SIZE }, { ...creds });
     if (!Array.isArray(chunk) || chunk.length === 0) break;
 
     for (const sub of chunk) {
@@ -347,7 +428,7 @@ async function fetchUserSubmissionsSince(handle, sinceEpochSeconds, creds) {
     const oldest = chunk[chunk.length - 1];
     const oldestCreated = Number(oldest?.creationTimeSeconds || 0);
     if (oldestCreated < sinceEpochSeconds) break;
-    from += pageSize;
+    from += SUBMISSION_PAGE_SIZE;
   }
   return submissions;
 }
@@ -402,6 +483,14 @@ function normalizeProblemId(problemId) {
   return String(problemId || '').trim().toUpperCase();
 }
 
+function parsePhoenixTimestamp(value) {
+  const match = /^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2}) [A-Z]{2,4}$/.exec(String(value || '').trim());
+  if (!match) return NaN;
+  const ms = Date.parse(`${match[1]}T${match[2]}-07:00`);
+  if (!Number.isFinite(ms)) return NaN;
+  return Math.floor(ms / 1000);
+}
+
 function contestProblemLink(contest, problemId) {
   const base = String(contest?.link || `https://codeforces.com/contest/${contest?.id || ''}`).replace(/\/+$/, '');
   return `${base}/problem/${problemId}`;
@@ -442,12 +531,66 @@ function ensureDirForFile(filepath) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+function loadExistingOutput(filepath) {
+  if (!fs.existsSync(filepath)) return null;
+  const raw = fs.readFileSync(filepath, 'utf8');
+  if (!raw.trim()) return null;
+  const data = yaml.load(raw);
+  return data && typeof data === 'object' ? data : null;
+}
+
+function existingCompetitionMap(existingOutput) {
+  const map = new Map();
+  for (const competition of existingOutput?.competitions || []) {
+    const contestId = Number(competition?.id);
+    if (!Number.isFinite(contestId)) continue;
+    map.set(contestId, competition);
+  }
+  return map;
+}
+
+function previousFetchWatermarkEpochSeconds(existingOutput) {
+  const explicit = Number(existingOutput?.last_fetch_started_epoch_seconds);
+  if (Number.isFinite(explicit) && explicit > 0) return explicit;
+  const fallback = parsePhoenixTimestamp(existingOutput?.last_updated);
+  if (Number.isFinite(fallback) && fallback > 0) return fallback;
+  return NaN;
+}
+
+function setEarliestAcceptedSubmission(earliestOk, contestId, problemId, timeSeconds) {
+  if (!Number.isFinite(Number(contestId)) || !problemId || !Number.isFinite(timeSeconds)) return;
+  let byProblem = earliestOk.get(contestId);
+  if (!byProblem) {
+    byProblem = new Map();
+    earliestOk.set(contestId, byProblem);
+  }
+  const existing = byProblem.get(problemId);
+  if (!existing || timeSeconds < existing) byProblem.set(problemId, timeSeconds);
+}
+
+function seedEarliestAcceptedFromExistingRecord(record, contestsById) {
+  const earliestOk = new Map();
+  for (const competition of record?.competitions || []) {
+    const contestId = Number(competition?.competition_id);
+    if (!contestsById.has(contestId)) continue;
+    for (const problem of competition?.problems || []) {
+      const problemId = normalizeProblemId(problem?.problem_id);
+      const submittedAt = parsePhoenixTimestamp(problem?.submitted_at);
+      if (!problemId || !Number.isFinite(submittedAt)) continue;
+      setEarliestAcceptedSubmission(earliestOk, contestId, problemId, submittedAt);
+    }
+  }
+  return earliestOk;
+}
+
 async function main() {
   const args = new Set(process.argv.slice(2));
   if (args.has('--help') || args.has('-h')) {
     console.log('Usage: node scripts/generate_cse494s26_leaderboard.js');
     console.log('');
     console.log(`Activity window (America/Phoenix): ${START_DATE} to ${END_DATE} (inclusive)`);
+    console.log('Defaults to incremental fetching from the previous YAML watermark with a 12-hour overlap.');
+    console.log('Pass --full-refresh to ignore the previous YAML and rebuild from the course start date.');
     console.log('Reads API_KEY/API_SECRET from .env and writes:');
     console.log(`  - ${OUTPUT_PATH}`);
     console.log('Applies manual overrides from:');
@@ -459,7 +602,23 @@ async function main() {
   const startEpochSeconds = phoenixStartOfDayEpochSeconds(START_DATE);
   const endExclusiveEpochSeconds = phoenixStartOfNextDayEpochSeconds(END_DATE);
   const nowEpochSeconds = Math.floor(Date.now() / 1000);
+  const fetchStartedEpochSeconds = nowEpochSeconds;
+  const isFullRefresh = args.has('--full-refresh');
+  const existingOutput = isFullRefresh ? null : loadExistingOutput(OUTPUT_PATH);
+  const existingCompetitionsById = existingCompetitionMap(existingOutput);
+  const previousWatermarkEpochSeconds = previousFetchWatermarkEpochSeconds(existingOutput);
+  const incrementalSinceEpochSeconds =
+    Number.isFinite(previousWatermarkEpochSeconds) && !isFullRefresh
+      ? Math.max(startEpochSeconds, previousWatermarkEpochSeconds - INCREMENTAL_OVERLAP_SECONDS)
+      : startEpochSeconds;
   console.log(`Activity window (America/Phoenix): ${START_DATE} to ${END_DATE} (inclusive)`);
+  if (incrementalSinceEpochSeconds > startEpochSeconds) {
+    console.log(
+      `Fetch mode: incremental since ${formatPhoenix(incrementalSinceEpochSeconds)} (${INCREMENTAL_OVERLAP_SECONDS / 3600}h overlap)`,
+    );
+  } else {
+    console.log('Fetch mode: full refresh from activity window start');
+  }
 
   console.log('Fetching group contests...');
   const groupContests = await fetchGroupContests(GROUP_CODE, creds);
@@ -519,6 +678,11 @@ async function main() {
   console.log('Fetching problem lists for group contests...');
   for (const contest of contestList) {
     if (contest.kind !== 'group') continue;
+    const existingCompetition = existingCompetitionsById.get(contest.id);
+    if (Array.isArray(existingCompetition?.problems) && existingCompetition.problems.length > 0) {
+      contest.problems = existingCompetition.problems;
+      continue;
+    }
     const probs = await fetchContestProblems(contest.id, creds, { requireAuth: true });
     contest.problems = probs.map((p) => ({
       id: p.id,
@@ -530,6 +694,11 @@ async function main() {
   console.log('Fetching problem lists for official contests...');
   for (const contest of contestList) {
     if (contest.kind !== 'official') continue;
+    const existingCompetition = existingCompetitionsById.get(contest.id);
+    if (Array.isArray(existingCompetition?.problems) && existingCompetition.problems.length > 0) {
+      contest.problems = existingCompetition.problems;
+      continue;
+    }
     try {
       const probs = await fetchContestProblems(contest.id, creds, { requireAuth: false });
       contest.problems = probs.map((p) => ({
@@ -568,6 +737,7 @@ async function main() {
   }
   handles.sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
   console.log(`  members: ${handles.length}`);
+  const canonicalHandleByKey = new Map(handles.map((handle) => [normalizeHandle(handle), handle]));
 
   const exceptionsByKey = new Map();
   const exceptionsByHandle = new Map();
@@ -583,37 +753,36 @@ async function main() {
   }
 
   const recordsByHandle = {};
+  const earliestOkByHandle = new Map(
+    handles.map((handle) => [
+      handle,
+      seedEarliestAcceptedFromExistingRecord(existingOutput?.records_by_handle?.[handle], contestsById),
+    ]),
+  );
   const unappliedExceptions = new Set(exceptions.map((e) => exceptionKey(e.handle, e.competition_id, e.problem_id)));
 
-  for (const [idx, handle] of handles.entries()) {
-    console.log(`[${idx + 1}/${handles.length}] Fetching submissions for ${handle}...`);
-    const earliestOk = new Map(); // contestId -> Map(problemId -> submissionTimeSeconds)
+  console.log('Fetching group contest submissions...');
+  for (const [index, contestId] of includedGroupContestIds.entries()) {
+    const contest = contestsById.get(contestId);
+    if (!contest || contest.kind !== 'group') continue;
+    console.log(`[${index + 1}/${includedGroupContestIds.length}] Fetching group submissions for ${contest.name}...`);
+    await collectContestSubmissionsSince(
+      contestId,
+      incrementalSinceEpochSeconds,
+      startEpochSeconds,
+      endExclusiveEpochSeconds,
+      creds,
+      canonicalHandleByKey,
+      earliestOkByHandle,
+    );
+  }
 
-    // Group contests: use contest.status (more reliable than user.status for group contests).
-    for (const contestId of includedGroupContestIds) {
-      const contest = contestsById.get(contestId);
-      if (!contest || contest.kind !== 'group') continue;
-      const subs = await fetchContestSubmissions(handle, contestId, creds);
-      for (const sub of subs || []) {
-        if (sub?.verdict !== 'OK') continue;
-        const problemId = normalizeProblemId(sub?.problem?.index || '');
-        if (!problemId) continue;
-        const created = Number(sub?.creationTimeSeconds || 0);
-        if (!Number.isFinite(created) || created < startEpochSeconds || created >= endExclusiveEpochSeconds) {
-          continue;
-        }
-        let byProblem = earliestOk.get(contestId);
-        if (!byProblem) {
-          byProblem = new Map();
-          earliestOk.set(contestId, byProblem);
-        }
-        const existing = byProblem.get(problemId);
-        if (!existing || created < existing) byProblem.set(problemId, created);
-      }
-    }
+  for (const [idx, handle] of handles.entries()) {
+    console.log(`[${idx + 1}/${handles.length}] Fetching official submissions for ${handle}...`);
+    const earliestOk = earliestOkByHandle.get(handle) || new Map();
 
     // Official contests: use user.status once, then filter.
-    const officialSubs = await fetchUserSubmissionsSince(handle, startEpochSeconds, creds);
+    const officialSubs = await fetchUserSubmissionsSince(handle, incrementalSinceEpochSeconds, creds);
     for (const sub of officialSubs) {
       if (sub?.verdict !== 'OK') continue;
       const contestId = Number(sub?.contestId);
@@ -629,13 +798,7 @@ async function main() {
         continue;
       }
 
-      let byProblem = earliestOk.get(contestId);
-      if (!byProblem) {
-        byProblem = new Map();
-        earliestOk.set(contestId, byProblem);
-      }
-      const existing = byProblem.get(problemId);
-      if (!existing || created < existing) byProblem.set(problemId, created);
+      setEarliestAcceptedSubmission(earliestOk, contestId, problemId, created);
     }
 
     // Ensure any manual exceptions get applied even if no accepted submission was fetched.
@@ -645,17 +808,13 @@ async function main() {
       const contest = contestsById.get(contestId);
       if (!contest) continue;
       const problemId = normalizeProblemId(ex.problem_id);
-      let byProblem = earliestOk.get(contestId);
-      if (!byProblem) {
-        byProblem = new Map();
-        earliestOk.set(contestId, byProblem);
-      }
-      if (!byProblem.has(problemId)) {
+      const byProblem = earliestOk.get(contestId);
+      if (!byProblem || !byProblem.has(problemId)) {
         const ts =
           String(ex.solve_type).toLowerCase() === 'upsolve'
             ? Number(contest.endTimeSeconds) + 1
             : Number(contest.endTimeSeconds);
-        byProblem.set(problemId, ts);
+        setEarliestAcceptedSubmission(earliestOk, contestId, problemId, ts);
       }
     }
 
@@ -720,7 +879,7 @@ async function main() {
   }
 
   if (unappliedExceptions.size > 0) {
-    console.warn('Warning: some exceptions did not match any detected accepted submission since the cutoff date:');
+    console.warn('Warning: some exceptions did not match any detected accepted submission in the merged leaderboard state:');
     for (const key of Array.from(unappliedExceptions).sort()) {
       console.warn(`  - ${key}`);
     }
@@ -742,6 +901,8 @@ async function main() {
   for (const h of orderedHandles) recordsOut[h] = recordsByHandle[h];
 
   const output = {
+    last_fetch_started_at: formatPhoenix(fetchStartedEpochSeconds),
+    last_fetch_started_epoch_seconds: fetchStartedEpochSeconds,
     last_updated: formatPhoenix(Math.floor(Date.now() / 1000)),
     competitions: competitionsOut,
     records_by_handle: recordsOut,
