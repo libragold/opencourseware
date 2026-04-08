@@ -38,9 +38,9 @@ Problems:
 - [Friendship Editing (USACO)](https://usaco.org/index.php?cpid=1499&page=viewproblem2)
 ---
 
-## 2. Range DP
+## 2. Range/Subarray DP
 
-Range DP (interval DP) is used when the natural subproblem is a contiguous interval $[l,r]$.
+Range DP (Subarray DP) is used when the natural subproblem is a contiguous interval $[l,r]$.
 The state is usually something like $dp[l][r]$, and some common transitions are:
 - split the interval at some point
 - choose the **first/last thing to happen** inside the interval
