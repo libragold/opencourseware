@@ -119,7 +119,13 @@ function withSignature(method, params, apiKey, apiSecret) {
 }
 
 let lastRequestAtMs = 0;
-async function rateLimit(minIntervalMs = 400) {
+
+function minIntervalMsForMethod(method) {
+  if (method === 'contest.standings') return 1200;
+  return 400;
+}
+
+async function rateLimit(method, minIntervalMs = minIntervalMsForMethod(method)) {
   const now = Date.now();
   const waitMs = Math.max(0, lastRequestAtMs + minIntervalMs - now);
   if (waitMs > 0) await new Promise((r) => setTimeout(r, waitMs));
@@ -130,8 +136,8 @@ function isTransientHttpStatus(status) {
   return [408, 425, 429, 500, 502, 503, 504].includes(status);
 }
 
-async function sleepWithBackoff(attempt) {
-  const backoffMs = 500 * 2 ** attempt;
+async function sleepWithBackoff(attempt, overrideMs) {
+  const backoffMs = Number.isFinite(overrideMs) && overrideMs > 0 ? overrideMs : 500 * 2 ** attempt;
   const jitterMs = Math.floor(Math.random() * 250);
   await new Promise((r) => setTimeout(r, backoffMs + jitterMs));
 }
@@ -147,24 +153,31 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
   const url = `${BASE_URL}/${method}${query ? `?${query}` : ''}`;
   const debugLabel = `${method} ${JSON.stringify(params || {})}`;
   const startedAt = Date.now();
+  let lastFailure = '';
   if (DEBUG_TIMINGS) {
     console.log(`[timing:start] ${debugLabel}`);
   }
 
   for (let attempt = 0; attempt < 7; attempt += 1) {
-    await rateLimit();
+    await rateLimit(method);
     let resp;
     try {
       resp = await fetch(url, {
         headers: { 'User-Agent': 'cse494s26-leaderboard/1.0 (node)' },
       });
     } catch (err) {
+      lastFailure = `network error: ${err?.message || String(err)}`;
       await sleepWithBackoff(attempt);
       continue;
     }
 
     if (isTransientHttpStatus(resp.status)) {
-      await sleepWithBackoff(attempt);
+      const retryAfterHeader = resp.headers.get('retry-after');
+      const retryAfterSeconds = Number(retryAfterHeader);
+      const retryAfterMs =
+        Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0 ? retryAfterSeconds * 1000 : NaN;
+      lastFailure = `HTTP ${resp.status}${retryAfterHeader ? ` (Retry-After: ${retryAfterHeader})` : ''}`;
+      await sleepWithBackoff(attempt, retryAfterMs);
       continue;
     }
     if (!resp.ok) {
@@ -176,6 +189,7 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
     try {
       data = await resp.json();
     } catch (err) {
+      lastFailure = `invalid JSON response: ${err?.message || String(err)}`;
       await sleepWithBackoff(attempt);
       continue;
     }
@@ -186,6 +200,7 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
         comment.toLowerCase().includes('too many') ||
         comment.toLowerCase().includes('try again later')
       ) {
+        lastFailure = `API status=${String(data?.status || 'FAILED')} comment=${comment || '(empty)'}`;
         await sleepWithBackoff(attempt);
         continue;
       }
@@ -197,7 +212,9 @@ async function apiGet(method, params, { apiKey, apiSecret, requireAuth = false }
     return data.result;
   }
 
-  throw new Error(`Rate limit / transient failures for ${method}: exhausted retries.`);
+  throw new Error(
+    `Rate limit / transient failures for ${method}: exhausted retries.${lastFailure ? ` Last failure: ${lastFailure}` : ''}`,
+  );
 }
 
 async function fetchText(url) {
@@ -549,6 +566,24 @@ function existingCompetitionMap(existingOutput) {
   return map;
 }
 
+function reuseCachedProblems(contest, existingCompetition, isFullRefresh) {
+  if (isFullRefresh) return false;
+  if (!Array.isArray(existingCompetition?.problems) || existingCompetition.problems.length === 0) {
+    return false;
+  }
+  contest.problems = existingCompetition.problems;
+  return true;
+}
+
+function isContestFinalized(contest) {
+  return String(contest?.phase || '') === 'FINISHED';
+}
+
+function isTemporaryServiceUnavailableError(err) {
+  const msg = String(err?.message || err);
+  return msg.includes('HTTP 503') || msg.includes('HTTP 502') || msg.includes('HTTP 504');
+}
+
 function previousFetchWatermarkEpochSeconds(existingOutput) {
   const explicit = Number(existingOutput?.last_fetch_started_epoch_seconds);
   if (Number.isFinite(explicit) && explicit > 0) return explicit;
@@ -581,6 +616,13 @@ function seedEarliestAcceptedFromExistingRecord(record, contestsById) {
     }
   }
   return earliestOk;
+}
+
+function shouldFetchIncrementalGroupSubmissions(contest, sinceEpochSeconds) {
+  if (!contest || contest.kind !== 'group') return false;
+  const relevantUntil =
+    Number(contest.endTimeSeconds || 0) + groupUpsolveWindowSeconds(contest.id);
+  return relevantUntil >= sinceEpochSeconds;
 }
 
 async function main() {
@@ -644,6 +686,7 @@ async function main() {
       link: `https://codeforces.com/group/${GROUP_CODE}/contest/${id}`,
       startTimeSeconds: start,
       endTimeSeconds: contestEndSeconds(c),
+      phase: String(c?.phase || '').trim(),
       problems: [],
       isDiv2: false,
     });
@@ -663,6 +706,7 @@ async function main() {
       link: `https://codeforces.com/contest/${id}`,
       startTimeSeconds: start,
       endTimeSeconds: contestEndSeconds(c),
+      phase: String(c?.phase || '').trim(),
       problems: [],
       isDiv2: isDiv2Name(String(c?.name || '')),
     });
@@ -679,11 +723,34 @@ async function main() {
   for (const contest of contestList) {
     if (contest.kind !== 'group') continue;
     const existingCompetition = existingCompetitionsById.get(contest.id);
-    if (Array.isArray(existingCompetition?.problems) && existingCompetition.problems.length > 0) {
-      contest.problems = existingCompetition.problems;
+    if (reuseCachedProblems(contest, existingCompetition, isFullRefresh)) {
       continue;
     }
-    const probs = await fetchContestProblems(contest.id, creds, { requireAuth: true });
+    if (!isContestFinalized(contest)) {
+      console.warn(
+        `  skipping group problem list for ${contest.id} (${contest.name}) because phase=${contest.phase || 'unknown'}`,
+      );
+      contest.problems = [];
+      continue;
+    }
+    console.log(
+      `  fetching group problem list for ${contest.id} (${contest.name}) [phase=${contest.phase || 'unknown'}]`,
+    );
+    let probs;
+    try {
+      probs = await fetchContestProblems(contest.id, creds, { requireAuth: true });
+    } catch (err) {
+      if (isTemporaryServiceUnavailableError(err)) {
+        console.warn(
+          `  standings unavailable for group contest ${contest.id} (${contest.name}); leaving problems empty for this run`,
+        );
+        contest.problems = [];
+        continue;
+      }
+      throw new Error(
+        `Failed to fetch group contest problems for ${contest.id} (${contest.name}): ${err?.message || String(err)}`,
+      );
+    }
     contest.problems = probs.map((p) => ({
       id: p.id,
       title: p.title,
@@ -695,10 +762,10 @@ async function main() {
   for (const contest of contestList) {
     if (contest.kind !== 'official') continue;
     const existingCompetition = existingCompetitionsById.get(contest.id);
-    if (Array.isArray(existingCompetition?.problems) && existingCompetition.problems.length > 0) {
-      contest.problems = existingCompetition.problems;
+    if (reuseCachedProblems(contest, existingCompetition, isFullRefresh)) {
       continue;
     }
+    console.log(`  fetching official problem list for ${contest.id} (${contest.name})`);
     try {
       const probs = await fetchContestProblems(contest.id, creds, { requireAuth: false });
       contest.problems = probs.map((p) => ({
@@ -762,19 +829,41 @@ async function main() {
   const unappliedExceptions = new Set(exceptions.map((e) => exceptionKey(e.handle, e.competition_id, e.problem_id)));
 
   console.log('Fetching group contest submissions...');
-  for (const [index, contestId] of includedGroupContestIds.entries()) {
+  const groupContestIdsToScan = includedGroupContestIds.filter((contestId) =>
+    shouldFetchIncrementalGroupSubmissions(contestsById.get(contestId), incrementalSinceEpochSeconds),
+  );
+  console.log(
+    `  scanning ${groupContestIdsToScan.length}/${includedGroupContestIds.length} contests whose live/upsolve window overlaps the incremental range`,
+  );
+  for (const [index, contestId] of groupContestIdsToScan.entries()) {
     const contest = contestsById.get(contestId);
     if (!contest || contest.kind !== 'group') continue;
-    console.log(`[${index + 1}/${includedGroupContestIds.length}] Fetching group submissions for ${contest.name}...`);
-    await collectContestSubmissionsSince(
-      contestId,
-      incrementalSinceEpochSeconds,
-      startEpochSeconds,
-      endExclusiveEpochSeconds,
-      creds,
-      canonicalHandleByKey,
-      earliestOkByHandle,
-    );
+    if (!isContestFinalized(contest)) {
+      console.warn(
+        `[${index + 1}/${groupContestIdsToScan.length}] Skipping group submissions for ${contest.name} because phase=${contest.phase || 'unknown'}`,
+      );
+      continue;
+    }
+    console.log(`[${index + 1}/${groupContestIdsToScan.length}] Fetching group submissions for ${contest.name}...`);
+    try {
+      await collectContestSubmissionsSince(
+        contestId,
+        incrementalSinceEpochSeconds,
+        startEpochSeconds,
+        endExclusiveEpochSeconds,
+        creds,
+        canonicalHandleByKey,
+        earliestOkByHandle,
+      );
+    } catch (err) {
+      if (isTemporaryServiceUnavailableError(err)) {
+        console.warn(
+          `[${index + 1}/${groupContestIdsToScan.length}] Group submissions unavailable for ${contest.id} (${contest.name}); skipping this contest for this run`,
+        );
+        continue;
+      }
+      throw err;
+    }
   }
 
   for (const [idx, handle] of handles.entries()) {
