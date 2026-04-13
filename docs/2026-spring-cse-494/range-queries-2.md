@@ -20,7 +20,7 @@ However, $O(\log^2 n)$ per query can be too slow in many cases. If instead we "w
 - The time complexity is now bounded by the height of the tree which is $O(\log n)$.
 
 In general, the walking trick can turn:
-- binary search + segment tree solutions from $O(\log^2 n)$,
+- certain binary search + segment tree solutions from $O(\log^2 n)$,
 - into a single $O(\log n)$ descent.
 
 Some common walking patterns:
@@ -36,7 +36,7 @@ Problems:
 A standard segment tree is great for
 
 - point update + range query,
-- or range query + point update.
+- or range update + point query.
 
 Lazy propogation lets us handle certain types of range update + range query operations.
 
