@@ -19,12 +19,10 @@ const preferredOrder = [
   'number-theory',
   'trees',
   'midterm-review',
-  'strings',
-  'geometry',
   'graphs-2',
   'dynamic-programming-2',
   'range-queries-2',
-  'flows',
+  'strings',
   'game-theory',
   'final-review',
 ];
