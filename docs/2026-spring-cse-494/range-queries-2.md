@@ -51,7 +51,7 @@ Even if a node has not pushed its update to the children yet, the node’s own s
 
 The main three parts to consider when writing the lazy segtree are :
 1) What is the main segment tree storing and what is its combine function?
-This is the same combine function as if the segment tree was not lazy
+This is the same combine function as if the segment tree was not lazy.
 2) What type of lazy update do you need to make and how would the lazy update affect the value stored in a segment tree node?
 3) If a segment tree node already has a lazy tag on it, when we are attempting to update it, we need to combine these lazy updates somehow. How would a lazy update on a node affect an already existing but not yet pushed lazy update?
 
