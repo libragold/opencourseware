@@ -23,7 +23,6 @@ const preferredOrder = [
   'dynamic-programming-2',
   'range-queries-2',
   'strings',
-  'game-theory',
   'final-review',
 ];
 
