@@ -80,7 +80,7 @@ for i in 1..n-1:
   pi[i] = j
 ```
 
-Pseudocode adapted from [CP-Algos](https://cp-algorithms.com/string/prefix-function.html)
+Pseudocode from [CP-Algos](https://cp-algorithms.com/string/prefix-function.html)
 
 Why this works:
 - suppose you want to extend the best border ending at $i-1$
@@ -89,7 +89,53 @@ Why this works:
 
 Since every iteration of the while loop decreases the value of the match by at least one, and the prefix function can only increase by at most one in each step, the whole algorithm runs in an amortized $O(n)$.
 
-
 How can we use KMP to solve the string matching problem in linear time?
-Problems:
-- [Simons and Dividing the Rhythym](https://codeforces.com/problemset/problem/2205/E)
+
+## Z-function
+
+The Z-function is another linear-time array that is often interchangeable with KMP.
+Many problems can be solved with either one and the algorithms are quite similar. In fact, the z-function array and the lps array can be computed from each other.
+
+### Definition
+
+For each index $i$, let $z[i]$ be the length of the longest common prefix of:
+- the whole string `s` with
+- the suffix starting at `i`
+
+So `z[i]` tells you how many characters match if you align `s` with `s[i..]`.
+
+### Linear-time construction
+
+Maintain the rightmost segment $[l,r]$ that matches a prefix.
+When processing position $i$:
+- if $i > r$, start matching from scratch
+- otherwise, reuse information from the mirrored position inside the current "Z-box"
+- then extend greedily if possible (exact details to be discussed in class)
+
+```text
+l = r = 0
+for i in 1..n-1:
+  if i <= r:
+    z[i] = min(r - i + 1, z[i-l])
+  while i + z[i] < n and s[z[i]] == s[i+z[i]]:
+    z[i]++
+  if i + z[i] - 1 > r:
+    l = i
+    r = i + z[i] - 1
+```
+Pseudocode from [CP-Algos](https://cp-algorithms.com/string/z-function.html)
+
+This is also $O(n)$ as the number of iterations of the inner while loop is bounded by the size of the array.
+
+### Relationship to KMP
+- KMP stores: best prefix match ending at each position
+- Z stores: prefix match length starting at each position
+They capture the same string structure from different angles.
+The linked CP-Algos pages are really good references for understanding how and why the algorithms work.
+
+---
+Problems (KMP and/or Z-function):
+- [Prefixes and Suffixes (CF)](https://codeforces.com/problemset/problem/432/D)
+- [Simons and Dividing the Rhythym (CF)](https://codeforces.com/problemset/problem/2205/E)
+- [A Trivial String Problem (CF)](https://codeforces.com/contest/2209/problem/E)
+---
