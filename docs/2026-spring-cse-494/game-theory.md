@@ -1,5 +1,5 @@
 ---
-title: "Final Review"
+title: "Game Theory"
 ---
 
 Content to be available later.

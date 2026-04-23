@@ -23,7 +23,7 @@ const preferredOrder = [
   'dynamic-programming-2',
   'range-queries-2',
   'strings',
-  'final-review',
+  'game-theory',
 ];
 
 // Read the current directory to get all markdown files
