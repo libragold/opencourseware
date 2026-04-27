@@ -58,3 +58,10 @@
   solve_type: live
   credits: 0
   remark: "audit"
+- handle: aglty
+  competition_id: 676579
+  problem_id: C
+  solve_type: upsolve
+  credits: 0
+  remark: "audit"
+  
