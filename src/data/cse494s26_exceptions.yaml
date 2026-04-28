@@ -33,35 +33,35 @@
   problem_id: D
   solve_type: upsolve
   credits: 0
-  remark: "audit"
+  remark: "adjusted"
 - handle: dariodaddamio
   competition_id: 671265
   problem_id: E
   solve_type: upsolve
   credits: 0
-  remark: "audit"
+  remark: "adjusted"
 - handle: anubhav43
   competition_id: 671265
   problem_id: A
   solve_type: live
   credits: 0
-  remark: "audit"
+  remark: "adjusted"
 - handle: anubhav43
   competition_id: 671265
   problem_id: B
   solve_type: live
   credits: 0
-  remark: "audit"
+  remark: "adjusted"
 - handle: anubhav43
   competition_id: 671265
   problem_id: D
   solve_type: live
   credits: 0
-  remark: "audit"
+  remark: "adjusted"
 - handle: aglty
   competition_id: 676579
   problem_id: C
   solve_type: upsolve
   credits: 0
-  remark: "audit"
+  remark: "adjusted"
   
