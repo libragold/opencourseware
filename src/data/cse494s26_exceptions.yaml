@@ -64,4 +64,15 @@
   solve_type: upsolve
   credits: 0
   remark: "adjusted"
-  
+- handle: MangoKing
+  competition_id: 674866
+  problem_id: A
+  solve_type: upsolve
+  credits: 0
+  remark: "adjusted"
+- handle: MangoKing
+  competition_id: 683142
+  problem_id: A
+  solve_type: upsolve
+  credits: 0
+  remark: "adjusted"
