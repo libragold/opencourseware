@@ -10,7 +10,7 @@ const BASE_URL = 'https://codeforces.com/api';
 const GROUP_CODE = 'AnBhEByjKm';
 const TIME_ZONE = 'America/Phoenix';
 const START_DATE = '2026-01-12'; // local date in America/Phoenix
-const END_DATE = '2026-05-01'; // local date in America/Phoenix (inclusive)
+const END_DATE = '2026-05-09'; // local date in America/Phoenix (inclusive)
 
 const OUTPUT_PATH = path.join('src', 'data', 'cse494s26_leaderboard.yaml');
 const EXCEPTIONS_PATH = path.join('src', 'data', 'cse494s26_exceptions.yaml');
