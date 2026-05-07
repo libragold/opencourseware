@@ -1,6 +1,6 @@
-last_fetch_started_at: 2026-05-01 22:50:49 MST
-last_fetch_started_epoch_seconds: 1777701049
-last_updated: 2026-05-01 22:51:15 MST
+last_fetch_started_at: 2026-05-07 15:40:56 MST
+last_fetch_started_epoch_seconds: 1778193656
+last_updated: 2026-05-07 15:41:24 MST
 competitions:
   - id: 664839
     name: Week 1 - Foundations
@@ -6085,24 +6085,6 @@ records_by_handle:
             credits: 2
           - problem_id: C
             submitted_at: 2026-04-07 08:55:10 MST
-            solve_type: live
-            credits: 2
-  tgossett:
-    total_credits: 2
-    total_live_credits: 2
-    competitions:
-      - competition_id: 2226
-        total_credits: 0
-        problems:
-          - problem_id: D
-            submitted_at: 2026-04-28 14:13:09 MST
-            solve_type: upsolve
-            credits: 0
-      - competition_id: 690037
-        total_credits: 2
-        problems:
-          - problem_id: A
-            submitted_at: 2026-05-01 15:23:20 MST
             solve_type: live
             credits: 2
   thegingeraffe:
