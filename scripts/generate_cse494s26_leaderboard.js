@@ -369,6 +369,29 @@ async function fetchOfficialDiv1Div2Contests(sinceEpochSeconds, creds) {
     .filter((c) => isDiv1OrDiv2RatedName(String(c?.name || '')));
 }
 
+function compareProblemIds(a, b) {
+  return String(a || '').localeCompare(String(b || ''), 'en', { numeric: true });
+}
+
+function normalizeProblemList(problems) {
+  return (Array.isArray(problems) ? problems : [])
+    .map((p) => ({
+      id: normalizeProblemId(p?.id || p?.index || ''),
+      title: String(p?.title || p?.name || '').trim(),
+    }))
+    .filter((p) => p.id && p.title);
+}
+
+function mergeProblemLists(...problemLists) {
+  const byId = new Map();
+  for (const problems of problemLists) {
+    for (const problem of normalizeProblemList(problems)) {
+      if (!byId.has(problem.id)) byId.set(problem.id, problem);
+    }
+  }
+  return Array.from(byId.values()).sort((a, b) => compareProblemIds(a.id, b.id));
+}
+
 async function fetchContestProblems(contestId, creds, { requireAuth } = {}) {
   // standings includes problem list; using count=1 keeps response small.
   const result = await apiGet(
@@ -385,11 +408,70 @@ async function fetchContestProblems(contestId, creds, { requireAuth } = {}) {
     .filter((p) => p.id.length > 0);
 }
 
+let officialProblemsByContestId = null;
+
+async function fetchOfficialProblemsByContestId(creds) {
+  if (officialProblemsByContestId) return officialProblemsByContestId;
+  const result = await apiGet('problemset.problems', {}, { ...creds });
+  const problems = Array.isArray(result?.problems) ? result.problems : [];
+  officialProblemsByContestId = new Map();
+  for (const problem of problems) {
+    const contestId = Number(problem?.contestId);
+    const id = normalizeProblemId(problem?.index || '');
+    const title = String(problem?.name || '').trim();
+    if (!Number.isFinite(contestId) || !id || !title) continue;
+    const list = officialProblemsByContestId.get(contestId) || [];
+    list.push({ id, title });
+    officialProblemsByContestId.set(contestId, list);
+  }
+  for (const list of officialProblemsByContestId.values()) {
+    list.sort((a, b) => compareProblemIds(a.id, b.id));
+  }
+  return officialProblemsByContestId;
+}
+
+function seedProblemInfoByContest(contests) {
+  const info = new Map();
+  for (const contest of contests || []) {
+    const byId = new Map();
+    for (const problem of normalizeProblemList(contest?.problems || [])) {
+      byId.set(problem.id, problem);
+    }
+    info.set(Number(contest.id), byId);
+  }
+  return info;
+}
+
+function rememberProblemInfo(problemInfoByContestId, contestId, problem) {
+  const id = normalizeProblemId(problem?.index || problem?.id || '');
+  const title = String(problem?.name || problem?.title || '').trim();
+  if (!Number.isFinite(Number(contestId)) || !id || !title) return;
+  let byId = problemInfoByContestId.get(Number(contestId));
+  if (!byId) {
+    byId = new Map();
+    problemInfoByContestId.set(Number(contestId), byId);
+  }
+  if (!byId.has(id)) byId.set(id, { id, title });
+}
+
+function applyObservedProblemInfo(contests, problemInfoByContestId) {
+  for (const contest of contests || []) {
+    const observed = problemInfoByContestId.get(Number(contest.id));
+    if (!observed || observed.size === 0) continue;
+    contest.problems = mergeProblemLists(contest.problems, Array.from(observed.values()))
+      .map((p) => ({
+        id: p.id,
+        title: p.title,
+        link: contestProblemLink(contest, p.id),
+      }));
+  }
+}
+
 async function collectContestSubmissionsSince(
   contestId,
   sinceEpochSeconds,
   startEpochSeconds,
-  endExclusiveEpochSeconds,
+  submissionEndExclusiveEpochSeconds,
   creds,
   canonicalHandleByKey,
   earliestOkByHandle,
@@ -407,7 +489,7 @@ async function collectContestSubmissionsSince(
     for (const sub of chunk) {
       const created = Number(sub?.creationTimeSeconds || 0);
       if (created < sinceEpochSeconds) continue;
-      if (!Number.isFinite(created) || created < startEpochSeconds || created >= endExclusiveEpochSeconds) {
+      if (!Number.isFinite(created) || created < startEpochSeconds || created >= submissionEndExclusiveEpochSeconds) {
         continue;
       }
       if (sub?.verdict !== 'OK') continue;
@@ -627,7 +709,7 @@ function shouldFetchIncrementalGroupSubmissions(contest, sinceEpochSeconds) {
   return relevantUntil >= sinceEpochSeconds;
 }
 
-function groupSubmissionSinceEpochSeconds(startEpochSeconds, incrementalSinceEpochSeconds, nowEpochSeconds) {
+function groupSubmissionLookbackSinceEpochSeconds(startEpochSeconds, incrementalSinceEpochSeconds, nowEpochSeconds) {
   const lookbackStart = Number(nowEpochSeconds) - GROUP_SUBMISSION_LOOKBACK_SECONDS;
   return Math.max(startEpochSeconds, Math.min(incrementalSinceEpochSeconds, lookbackStart));
 }
@@ -635,6 +717,18 @@ function groupSubmissionSinceEpochSeconds(startEpochSeconds, incrementalSinceEpo
 function officialSubmissionSinceEpochSeconds(startEpochSeconds, incrementalSinceEpochSeconds, nowEpochSeconds) {
   const lookbackStart = Number(nowEpochSeconds) - OFFICIAL_SUBMISSION_LOOKBACK_SECONDS;
   return Math.max(startEpochSeconds, Math.min(incrementalSinceEpochSeconds, lookbackStart));
+}
+
+function groupSubmissionEndExclusiveEpochSeconds(contest, courseEndExclusiveEpochSeconds) {
+  if (!contest || contest.kind !== 'group') return courseEndExclusiveEpochSeconds;
+  const upsolveEndExclusive =
+    Number(contest.endTimeSeconds || 0) + groupUpsolveWindowSeconds(contest.id) + 1;
+  return Math.max(courseEndExclusiveEpochSeconds, upsolveEndExclusive);
+}
+
+function groupContestSubmissionSinceEpochSeconds(contest, groupSinceEpochSeconds) {
+  if (!contest || contest.kind !== 'group') return groupSinceEpochSeconds;
+  return Math.min(groupSinceEpochSeconds, Number(contest.startTimeSeconds || 0));
 }
 
 async function main() {
@@ -778,17 +872,22 @@ async function main() {
       continue;
     }
     console.log(`  fetching official problem list for ${contest.id} (${contest.name})`);
+    let probs = [];
     try {
-      const probs = await fetchContestProblems(contest.id, creds, { requireAuth: false });
-      contest.problems = probs.map((p) => ({
-        id: p.id,
-        title: p.title,
-        link: contestProblemLink(contest, p.id),
-      }));
+      probs = await fetchContestProblems(contest.id, creds, { requireAuth: false });
     } catch {
-      // For BEFORE contests or temporarily unavailable standings, leave problems empty.
-      contest.problems = [];
+      probs = [];
     }
+    if (probs.length === 0) {
+      const officialProblems = await fetchOfficialProblemsByContestId(creds);
+      probs = officialProblems.get(contest.id) || [];
+    }
+    probs = mergeProblemLists(probs, existingCompetition?.problems || []);
+    contest.problems = probs.map((p) => ({
+      id: p.id,
+      title: p.title,
+      link: contestProblemLink(contest, p.id),
+    }));
   }
 
   const exceptions = loadExceptions(EXCEPTIONS_PATH);
@@ -839,9 +938,10 @@ async function main() {
     ]),
   );
   const unappliedExceptions = new Set(exceptions.map((e) => exceptionKey(e.handle, e.competition_id, e.problem_id)));
+  const problemInfoByContestId = seedProblemInfoByContest(contestList);
 
   console.log('Fetching group contest submissions...');
-  const groupSinceEpochSeconds = groupSubmissionSinceEpochSeconds(
+  const groupSinceEpochSeconds = groupSubmissionLookbackSinceEpochSeconds(
     startEpochSeconds,
     incrementalSinceEpochSeconds,
     nowEpochSeconds,
@@ -870,9 +970,9 @@ async function main() {
     try {
       await collectContestSubmissionsSince(
         contestId,
-        groupSinceEpochSeconds,
+        groupContestSubmissionSinceEpochSeconds(contest, groupSinceEpochSeconds),
         startEpochSeconds,
-        endExclusiveEpochSeconds,
+        groupSubmissionEndExclusiveEpochSeconds(contest, endExclusiveEpochSeconds),
         creds,
         canonicalHandleByKey,
         earliestOkByHandle,
@@ -914,6 +1014,7 @@ async function main() {
 
       const problemId = normalizeProblemId(sub?.problem?.index || '');
       if (!problemId) continue;
+      rememberProblemInfo(problemInfoByContestId, contestId, sub?.problem);
 
       const created = Number(sub?.creationTimeSeconds || 0);
       if (!Number.isFinite(created) || created < startEpochSeconds || created >= endExclusiveEpochSeconds) {
@@ -999,6 +1100,8 @@ async function main() {
       competitions,
     };
   }
+
+  applyObservedProblemInfo(contestList, problemInfoByContestId);
 
   if (unappliedExceptions.size > 0) {
     console.warn('Warning: some exceptions did not match any detected accepted submission in the merged leaderboard state:');

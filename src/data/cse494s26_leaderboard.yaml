@@ -1,6 +1,6 @@
-last_fetch_started_at: 2026-05-07 21:23:27 MST
-last_fetch_started_epoch_seconds: 1778214207
-last_updated: 2026-05-07 21:24:22 MST
+last_fetch_started_at: 2026-05-08 13:28:16 MST
+last_fetch_started_epoch_seconds: 1778272096
+last_updated: 2026-05-08 13:28:38 MST
 competitions:
   - id: 664839
     name: Week 1 - Foundations
@@ -859,13 +859,40 @@ competitions:
     link: https://codeforces.com/contest/2219
     start: 2026-04-13 07:35:00 MST
     end: 2026-04-13 09:35:00 MST
-    problems: []
+    problems:
+      - id: A
+        title: Grid L
+        link: https://codeforces.com/contest/2219/problem/A
+      - id: B1
+        title: Unique Values (Easy version)
+        link: https://codeforces.com/contest/2219/problem/B1
+      - id: B2
+        title: Unique Values (Hard version)
+        link: https://codeforces.com/contest/2219/problem/B2
+      - id: C
+        title: Coloring a Red Black Tree
+        link: https://codeforces.com/contest/2219/problem/C
+      - id: D
+        title: MEX Replacement on Tree
+        link: https://codeforces.com/contest/2219/problem/D
+      - id: E
+        title: Weird Chessboard
+        link: https://codeforces.com/contest/2219/problem/E
   - id: 2220
     name: Codeforces Round 1093 (Div. 2)
     link: https://codeforces.com/contest/2220
     start: 2026-04-13 07:35:00 MST
     end: 2026-04-13 09:35:00 MST
-    problems: []
+    problems:
+      - id: A
+        title: Blocked
+        link: https://codeforces.com/contest/2220/problem/A
+      - id: B
+        title: OIE Excursion
+        link: https://codeforces.com/contest/2220/problem/B
+      - id: C
+        title: Grid L
+        link: https://codeforces.com/contest/2220/problem/C
   - id: 686698
     name: Week 13
     link: https://codeforces.com/group/AnBhEByjKm/contest/686698
@@ -919,13 +946,58 @@ competitions:
     link: https://codeforces.com/contest/2222
     start: 2026-04-25 07:35:00 MST
     end: 2026-04-25 10:05:00 MST
-    problems: []
+    problems:
+      - id: A
+        title: A Wonderful Contest
+        link: https://codeforces.com/contest/2222/problem/A
+      - id: B
+        title: Artistic Balance Tree
+        link: https://codeforces.com/contest/2222/problem/B
+      - id: C
+        title: Median Partition
+        link: https://codeforces.com/contest/2222/problem/C
+      - id: D
+        title: Permutation Construction
+        link: https://codeforces.com/contest/2222/problem/D
+      - id: E
+        title: Seek the Truth
+        link: https://codeforces.com/contest/2222/problem/E
+      - id: F
+        title: Building Tree
+        link: https://codeforces.com/contest/2222/problem/F
+      - id: G
+        title: Statistics on Tree
+        link: https://codeforces.com/contest/2222/problem/G
+      - id: H
+        title: Counting Sort?
+        link: https://codeforces.com/contest/2222/problem/H
   - id: 2226
     name: Codeforces Round 1095 (Div. 2)
     link: https://codeforces.com/contest/2226
     start: 2026-04-28 07:35:00 MST
     end: 2026-04-28 09:50:00 MST
-    problems: []
+    problems:
+      - id: A
+        title: Disturbing Distribution
+        link: https://codeforces.com/contest/2226/problem/A
+      - id: B
+        title: Everything Everywhere
+        link: https://codeforces.com/contest/2226/problem/B
+      - id: C
+        title: Mental Monumental (Easy Version)
+        link: https://codeforces.com/contest/2226/problem/C
+      - id: D
+        title: Reserved Reversals
+        link: https://codeforces.com/contest/2226/problem/D
+      - id: E
+        title: Mental Monumental (Hard Version)
+        link: https://codeforces.com/contest/2226/problem/E
+      - id: F
+        title: Inversion Invasion
+        link: https://codeforces.com/contest/2226/problem/F
+      - id: G
+        title: Stop Spot
+        link: https://codeforces.com/contest/2226/problem/G
   - id: 690037
     name: Week 15 - Final Contest
     link: https://codeforces.com/group/AnBhEByjKm/contest/690037
@@ -955,13 +1027,40 @@ competitions:
     link: https://codeforces.com/contest/2223
     start: 2026-05-05 23:05:00 MST
     end: 2026-05-06 01:35:00 MST
-    problems: []
+    problems:
+      - id: A
+        title: Zhily and Bracket Swapping
+        link: https://codeforces.com/contest/2223/problem/A
+      - id: B
+        title: Zhily and Barknights
+        link: https://codeforces.com/contest/2223/problem/B
+      - id: C
+        title: Zhily and Signpost
+        link: https://codeforces.com/contest/2223/problem/C
+      - id: D
+        title: Zhily and Cycle
+        link: https://codeforces.com/contest/2223/problem/D
+      - id: E
+        title: Zhily and Permutation
+        link: https://codeforces.com/contest/2223/problem/E
+      - id: F
+        title: Zhily and Colorful Strings
+        link: https://codeforces.com/contest/2223/problem/F
   - id: 2224
     name: Codeforces Round 1097 (Div. 2,  Based on Zhili Cup 2026)
     link: https://codeforces.com/contest/2224
     start: 2026-05-05 23:05:00 MST
     end: 2026-05-06 01:35:00 MST
-    problems: []
+    problems:
+      - id: A
+        title: Zhily and Array Operating
+        link: https://codeforces.com/contest/2224/problem/A
+      - id: B
+        title: Zhily and Mex and Max
+        link: https://codeforces.com/contest/2224/problem/B
+      - id: C
+        title: Zhily and Bracket Swapping
+        link: https://codeforces.com/contest/2224/problem/C
 records_by_handle:
   agarc553:
     total_credits: 32
@@ -1788,7 +1887,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
   Cerluain:
-    total_credits: 55
+    total_credits: 58
     total_live_credits: 28
     competitions:
       - competition_id: 664839
@@ -1991,7 +2090,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 690037
-        total_credits: 3
+        total_credits: 6
         problems:
           - problem_id: A
             submitted_at: 2026-05-01 14:00:03 MST
@@ -1999,6 +2098,18 @@ records_by_handle:
             credits: 2
           - problem_id: D
             submitted_at: 2026-05-02 18:31:01 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: E
+            submitted_at: 2026-05-08 00:08:45 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-05-08 01:54:54 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: F
+            submitted_at: 2026-05-08 03:05:10 MST
             solve_type: upsolve
             credits: 1
   Chaiwallah:
@@ -3159,7 +3270,7 @@ records_by_handle:
             solve_type: live
             credits: 2
   hson17:
-    total_credits: 30
+    total_credits: 33
     total_live_credits: 6
     competitions:
       - competition_id: 664839
@@ -3296,7 +3407,7 @@ records_by_handle:
             solve_type: upsolve
             credits: 1
       - competition_id: 690037
-        total_credits: 4
+        total_credits: 7
         problems:
           - problem_id: A
             submitted_at: 2026-05-01 13:45:11 MST
@@ -3306,6 +3417,18 @@ records_by_handle:
             submitted_at: 2026-05-01 14:22:26 MST
             solve_type: live
             credits: 2
+          - problem_id: F
+            submitted_at: 2026-05-07 23:39:10 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: E
+            submitted_at: 2026-05-07 23:44:54 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-05-07 23:59:07 MST
+            solve_type: upsolve
+            credits: 1
   hzhan421:
     total_credits: 35
     total_live_credits: 16
@@ -4012,7 +4135,7 @@ records_by_handle:
             solve_type: live
             credits: 2
   kashyap.hegde:
-    total_credits: 19
+    total_credits: 20
     total_live_credits: 10
     competitions:
       - competition_id: 664839
@@ -4071,7 +4194,7 @@ records_by_handle:
             solve_type: live
             credits: 2
       - competition_id: 690037
-        total_credits: 6
+        total_credits: 7
         problems:
           - problem_id: A
             submitted_at: 2026-05-01 14:08:56 MST
@@ -4087,6 +4210,10 @@ records_by_handle:
             credits: 1
           - problem_id: C
             submitted_at: 2026-05-07 02:32:09 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: E
+            submitted_at: 2026-05-07 22:17:19 MST
             solve_type: upsolve
             credits: 1
       - competition_id: 2224
@@ -6055,6 +6182,13 @@ records_by_handle:
             submitted_at: 2026-03-01 12:39:22 MST
             solve_type: upsolve
             credits: 0
+      - competition_id: 666056
+        total_credits: 0
+        problems:
+          - problem_id: A
+            submitted_at: 2026-04-30 17:08:13 MST
+            solve_type: upsolve
+            credits: 0
       - competition_id: 676579
         total_credits: 4
         problems:
@@ -6137,7 +6271,7 @@ records_by_handle:
             solve_type: live
             credits: 2
   Souradeep1101:
-    total_credits: 28
+    total_credits: 34
     total_live_credits: 12
     competitions:
       - competition_id: 664839
@@ -6264,6 +6398,33 @@ records_by_handle:
             submitted_at: 2026-04-07 08:55:10 MST
             solve_type: live
             credits: 2
+      - competition_id: 690037
+        total_credits: 6
+        problems:
+          - problem_id: A
+            submitted_at: 2026-05-08 07:20:26 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: B
+            submitted_at: 2026-05-08 07:44:27 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: D
+            submitted_at: 2026-05-08 07:58:50 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: E
+            submitted_at: 2026-05-08 08:46:20 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: F
+            submitted_at: 2026-05-08 09:11:51 MST
+            solve_type: upsolve
+            credits: 1
+          - problem_id: C
+            submitted_at: 2026-05-08 10:08:59 MST
+            solve_type: upsolve
+            credits: 1
   thegingeraffe:
     total_credits: 57
     total_live_credits: 28
