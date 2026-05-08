@@ -17,6 +17,8 @@ const EXCEPTIONS_PATH = path.join('src', 'data', 'cse494s26_exceptions.yaml');
 const EXCLUDED_HANDLES_PATH = path.join('src', 'data', 'cse494s26_excluded_handles.yaml');
 const DEFAULT_GROUP_UPSOLVE_WINDOW_SECONDS = 7 * 24 * 60 * 60;
 const INCREMENTAL_OVERLAP_SECONDS = 12 * 60 * 60;
+const GROUP_SUBMISSION_LOOKBACK_SECONDS = 7 * 24 * 60 * 60;
+const OFFICIAL_SUBMISSION_LOOKBACK_SECONDS = 7 * 24 * 60 * 60;
 const SUBMISSION_PAGE_SIZE = 100;
 const MAX_SUBMISSION_PAGES = 500;
 const DEBUG_TIMINGS = process.env.CF_DEBUG_TIMINGS === '1';
@@ -625,6 +627,16 @@ function shouldFetchIncrementalGroupSubmissions(contest, sinceEpochSeconds) {
   return relevantUntil >= sinceEpochSeconds;
 }
 
+function groupSubmissionSinceEpochSeconds(startEpochSeconds, incrementalSinceEpochSeconds, nowEpochSeconds) {
+  const lookbackStart = Number(nowEpochSeconds) - GROUP_SUBMISSION_LOOKBACK_SECONDS;
+  return Math.max(startEpochSeconds, Math.min(incrementalSinceEpochSeconds, lookbackStart));
+}
+
+function officialSubmissionSinceEpochSeconds(startEpochSeconds, incrementalSinceEpochSeconds, nowEpochSeconds) {
+  const lookbackStart = Number(nowEpochSeconds) - OFFICIAL_SUBMISSION_LOOKBACK_SECONDS;
+  return Math.max(startEpochSeconds, Math.min(incrementalSinceEpochSeconds, lookbackStart));
+}
+
 async function main() {
   const args = new Set(process.argv.slice(2));
   if (args.has('--help') || args.has('-h')) {
@@ -829,11 +841,21 @@ async function main() {
   const unappliedExceptions = new Set(exceptions.map((e) => exceptionKey(e.handle, e.competition_id, e.problem_id)));
 
   console.log('Fetching group contest submissions...');
+  const groupSinceEpochSeconds = groupSubmissionSinceEpochSeconds(
+    startEpochSeconds,
+    incrementalSinceEpochSeconds,
+    nowEpochSeconds,
+  );
+  if (groupSinceEpochSeconds < incrementalSinceEpochSeconds) {
+    console.log(
+      `Group submission fetch lookback: since ${formatPhoenix(groupSinceEpochSeconds)} (${GROUP_SUBMISSION_LOOKBACK_SECONDS / 86400}d lookback)`,
+    );
+  }
   const groupContestIdsToScan = includedGroupContestIds.filter((contestId) =>
-    shouldFetchIncrementalGroupSubmissions(contestsById.get(contestId), incrementalSinceEpochSeconds),
+    shouldFetchIncrementalGroupSubmissions(contestsById.get(contestId), groupSinceEpochSeconds),
   );
   console.log(
-    `  scanning ${groupContestIdsToScan.length}/${includedGroupContestIds.length} contests whose live/upsolve window overlaps the incremental range`,
+    `  scanning ${groupContestIdsToScan.length}/${includedGroupContestIds.length} contests whose live/upsolve window overlaps the group fetch range`,
   );
   for (const [index, contestId] of groupContestIdsToScan.entries()) {
     const contest = contestsById.get(contestId);
@@ -848,7 +870,7 @@ async function main() {
     try {
       await collectContestSubmissionsSince(
         contestId,
-        incrementalSinceEpochSeconds,
+        groupSinceEpochSeconds,
         startEpochSeconds,
         endExclusiveEpochSeconds,
         creds,
@@ -866,12 +888,23 @@ async function main() {
     }
   }
 
+  const officialSinceEpochSeconds = officialSubmissionSinceEpochSeconds(
+    startEpochSeconds,
+    incrementalSinceEpochSeconds,
+    nowEpochSeconds,
+  );
+  if (officialSinceEpochSeconds < incrementalSinceEpochSeconds) {
+    console.log(
+      `Official submission fetch lookback: since ${formatPhoenix(officialSinceEpochSeconds)} (${OFFICIAL_SUBMISSION_LOOKBACK_SECONDS / 86400}d lookback)`,
+    );
+  }
+
   for (const [idx, handle] of handles.entries()) {
     console.log(`[${idx + 1}/${handles.length}] Fetching official submissions for ${handle}...`);
     const earliestOk = earliestOkByHandle.get(handle) || new Map();
 
     // Official contests: use user.status once, then filter.
-    const officialSubs = await fetchUserSubmissionsSince(handle, incrementalSinceEpochSeconds, creds);
+    const officialSubs = await fetchUserSubmissionsSince(handle, officialSinceEpochSeconds, creds);
     for (const sub of officialSubs) {
       if (sub?.verdict !== 'OK') continue;
       const contestId = Number(sub?.contestId);
